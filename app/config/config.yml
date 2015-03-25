@@ -53,6 +53,8 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
+        types:
+          currency: Sonata\Component\Currency\CurrencyDoctrineType
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
@@ -65,3 +67,102 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+sonata_user:
+    #... Your conf
+    profile:
+        menu:
+            - { route: 'sonata_user_profile_edit', label: 'link_edit_profile', domain: 'SonataUserBundle'}
+            - { route: 'sonata_user_profile_edit_authentication', label: 'link_edit_authentication', domain: 'SonataUserBundle'}
+            - { route: 'sonata_order_index', label: 'order_list', domain: 'SonataOrderBundle'}
+
+sonata_delivery:
+    services:
+        free_address_required:
+            name: Free
+            enabled: true
+            priority: 1
+            code: free
+
+    selector: sonata.delivery.selector.default
+
+sonata_media:
+    # if you don't use default namespace configuration
+    #class:
+    #    media: MyVendor\MediaBundle\Entity\Media
+    #    gallery: MyVendor\MediaBundle\Entity\Gallery
+    #    gallery_has_media: MyVendor\MediaBundle\Entity\GalleryHasMedia
+    default_context: default
+    db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr
+    contexts:
+        default:  # the default context is mandatory
+            providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+
+    cdn:
+        server:
+            path: /uploads/media # http://media.sonata-project.org/
+
+    filesystem:
+        local:
+            directory:  %kernel.root_dir%/../web/uploads/media
+            create:     false
+
+sonata_payment:
+    services:
+        pass:
+            name:    Pass
+            enabled: true
+            code:    pass
+            browser: sonata.payment.browser.curl
+
+            transformers:
+                basket: sonata.payment.transformer.basket
+                order:  sonata.payment.transformer.order
+
+            options:
+                shop_secret_key: assdsds
+                url_callback:    sonata_payment_callback
+                url_return_ko:   sonata_payment_error
+                url_return_ok:   sonata_payment_confirmation
+
+    # service which find the correct payment methods for a basket
+    selector: sonata.payment.selector.simple
+
+    # service which generate the correct order and invoice number
+    generator: sonata.payment.generator.mysql
+
+    transformers:
+        order:  sonata.payment.transformer.order
+        basket: sonata.payment.transformer.basket
+
+sonata_price:
+    currency: EUR
+
+services:
+# Register dedicated Product Managers
+#           sonata.product.manager.amazon:
+#                class: Sonata\ProductBundle\Entity\ProductManager
+#                arguments:
+#                    - Application\Sonata\ProductBundle\Entity\Amazon
+#                    - @sonata.product.entity_manager
+#
+#           sonata.product.manager.bottle:
+#                class: Sonata\ProductBundle\Entity\ProductManager
+#                arguments:
+#                    - Application\Sonata\ProductBundle\Entity\Bottle
+#                    - @sonata.product.entity_manager
+#
+#           # Register dedicated Product Providers
+#            sonata.product.type.amazon:
+#                class: Application\Sonata\ProductBundle\Entity\AmazonProductProvider
+#
+#           sonata.product.type.bottle:
+#                class: Application\Sonata\ProductBundle\Entity\BottleProductProvider
