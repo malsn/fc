@@ -45,19 +45,19 @@ class AppKernel extends Kernel
             // USER
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
-            //new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
 
             // PAGE
             new Sonata\PageBundle\SonataPageBundle(),
-            //new Application\Sonata\PageBundle\ApplicationSonataPageBundle(),
+            new Application\Sonata\PageBundle\ApplicationSonataPageBundle(),
 
             // NEWS
             new Sonata\NewsBundle\SonataNewsBundle(),
-            //new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
+            new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
 
             // MEDIA
             new Sonata\MediaBundle\SonataMediaBundle(),
-            //new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             // new Liip\ImagineBundle\LiipImagineBundle(),
 
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
@@ -74,24 +74,24 @@ class AppKernel extends Kernel
 
             // E-COMMERCE
             new Sonata\BasketBundle\SonataBasketBundle(),
-            //new Application\Sonata\BasketBundle\ApplicationSonataBasketBundle(),
+            new Application\Sonata\BasketBundle\ApplicationSonataBasketBundle(),
             new Sonata\CustomerBundle\SonataCustomerBundle(),
-            //new Application\Sonata\CustomerBundle\ApplicationSonataCustomerBundle(),
+            new Application\Sonata\CustomerBundle\ApplicationSonataCustomerBundle(),
             new Sonata\DeliveryBundle\SonataDeliveryBundle(),
-            //new Application\Sonata\DeliveryBundle\ApplicationSonataDeliveryBundle(),
+            new Application\Sonata\DeliveryBundle\ApplicationSonataDeliveryBundle(),
             new Sonata\InvoiceBundle\SonataInvoiceBundle(),
-            //new Application\Sonata\InvoiceBundle\ApplicationSonataInvoiceBundle(),
+            new Application\Sonata\InvoiceBundle\ApplicationSonataInvoiceBundle(),
             new Sonata\OrderBundle\SonataOrderBundle(),
-            //new Application\Sonata\OrderBundle\ApplicationSonataOrderBundle(),
+            new Application\Sonata\OrderBundle\ApplicationSonataOrderBundle(),
             new Sonata\PaymentBundle\SonataPaymentBundle(),
-            //new Application\Sonata\PaymentBundle\ApplicationSonataPaymentBundle(),
+            new Application\Sonata\PaymentBundle\ApplicationSonataPaymentBundle(),
             new Sonata\ProductBundle\SonataProductBundle(),
-            //new Application\Sonata\ProductBundle\ApplicationSonataProductBundle(),
+            new Application\Sonata\ProductBundle\ApplicationSonataProductBundle(),
             new Sonata\PriceBundle\SonataPriceBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new FOS\CommentBundle\FOSCommentBundle(),
             new Sonata\CommentBundle\SonataCommentBundle(),
-            //new Application\Sonata\CommentBundle\ApplicationSonataCommentBundle(),
+            new Application\Sonata\CommentBundle\ApplicationSonataCommentBundle(),
 
             // SONATA CORE & HELPER BUNDLES
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
@@ -102,10 +102,10 @@ class AppKernel extends Kernel
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
-            //new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
+            new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             new Sonata\NotificationBundle\SonataNotificationBundle(),
-            //new Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
-            //new Application\Sonata\SeoBundle\ApplicationSonataSeoBundle(),
+            new Application\Sonata\NotificationBundle\ApplicationSonataNotificationBundle(),
+            new Application\Sonata\SeoBundle\ApplicationSonataSeoBundle(),
             new Sonata\DatagridBundle\SonataDatagridBundle(),
 
             // Search Integration
@@ -117,7 +117,7 @@ class AppKernel extends Kernel
             // Disable this if you don't want the timeline in the admin
             new Spy\TimelineBundle\SpyTimelineBundle(),
             new Sonata\TimelineBundle\SonataTimelineBundle(),
-            //new Application\Sonata\TimelineBundle\ApplicationSonataTimelineBundle(), // easy extends integration
+            new Application\Sonata\TimelineBundle\ApplicationSonataTimelineBundle(), // easy extends integration
 
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle()
         );
