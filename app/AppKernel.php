@@ -119,7 +119,7 @@ class AppKernel extends Kernel
             new Sonata\TimelineBundle\SonataTimelineBundle(),
             new Application\Sonata\TimelineBundle\ApplicationSonataTimelineBundle(), // easy extends integration
 
-            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle()
+            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
