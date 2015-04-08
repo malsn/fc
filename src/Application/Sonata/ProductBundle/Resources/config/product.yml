@@ -1,11 +1,22 @@
 services:
-    sonata.ecommerce_demo.product.bowl.manager:
+    sonata.clothing_store.product.shoe.manager:
         class: Sonata\ProductBundle\Entity\ProductManager
         arguments:
-            - Application\Sonata\ProductBundle\Entity\Bowl
+            - Application\Sonata\ProductBundle\Entity\Shoe
             - @doctrine
 
-    sonata.ecommerce_demo.product.bowl.type:
-        class: Application\Sonata\ProductBundle\Provider\BowlProductProvider
+    sonata.clothing_store.product.shoe.type:
+        class: Application\Sonata\ProductBundle\Provider\ShoeProductProvider
+        arguments:
+            - @serializer
+
+    sonata.clothing_store.product.trouwser.manager:
+        class: Sonata\ProductBundle\Entity\ProductManager
+        arguments:
+            - Application\Sonata\ProductBundle\Entity\Trouwser
+            - @doctrine
+
+    sonata.clothing_store.product.trouwser.type:
+        class: Application\Sonata\ProductBundle\Provider\TrouwserProductProvider
         arguments:
             - @serializer

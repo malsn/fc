@@ -66,6 +66,10 @@
                 <source>form_travelDays</source>
                 <target>Days number</target>
             </trans-unit>
+                <trans-unit id="form.label_brand">
+                <source>form.label_brand</source>
+                <target>Brand</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

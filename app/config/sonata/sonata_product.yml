@@ -1,16 +1,16 @@
 sonata_product:
     products:
-        #Goodies
-        sonata.ecommerce_demo.product.goodie:
-            provider: sonata.ecommerce_demo.product.goodie.type
-            manager:  sonata.ecommerce_demo.product.goodie.manager
-
-        #Bowl
-        sonata.ecommerce_demo.product.bowl:
-            provider: sonata.ecommerce_demo.product.bowl.type
-            manager: sonata.ecommerce_demo.product.bowl.manager
+        sonata.clothing_store.product.shoe:
+            provider: sonata.clothing_store.product.shoe.type
+            manager: sonata.clothing_store.product.shoe.manager
             variations:
-                fields: [size]
+                fields: [color]
+
+        sonata.clothing_store.product.trouwser:
+            provider: sonata.clothing_store.product.trouwser.type
+            manager: sonata.clothing_store.product.trouwser.manager
+            variations:
+                fields: [type, length, size]
 
     seo:
         product:

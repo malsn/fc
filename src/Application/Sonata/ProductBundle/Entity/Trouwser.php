@@ -18,12 +18,33 @@ namespace Application\Sonata\ProductBundle\Entity;
  *
  * @author <yourname> <youremail>
  */
-class Goodie extends Product
+class Trouwser extends Product
 {
     /**
      * @var integer $id
      */
     protected $id;
+
+    /**
+     * @var string $size
+     */
+    protected $size;
+
+    /**
+     * @param string $size
+     */
+    public function setSize($size)
+    {
+        $this->size = $size;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
 
     /**
      * Get id
@@ -33,5 +54,27 @@ class Goodie extends Product
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return array Size List
+     */
+    public static function getSizeList()
+    {
+        return array(
+            '30x32' => '30x32',
+            '32x32' => '32x32',
+            '32x34' => '32x34',
+            '30x34' => '30x34',
+            '34x34' => '34x34',
+        );
     }
 }

@@ -18,7 +18,7 @@ use Sonata\ProductBundle\Entity\BaseDelivery as BaseDelivery;
  * References :
  *   working with object : http://www.doctrine-project.org/projects/orm/2.0/docs/reference/working-with-objects/en
  *
- * @author <yourname> <youremail>
+ * @author Lander Vanderstraeten <lander.vanderstraeten@hotmail.com>
  */
 class Delivery extends BaseDelivery
 {

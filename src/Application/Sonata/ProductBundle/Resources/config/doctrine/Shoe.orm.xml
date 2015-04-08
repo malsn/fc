@@ -9,9 +9,9 @@
             association mapping  : http://www.doctrine-project.org/projects/orm/2.0/docs/reference/association-mapping/en
     -->
     <entity
-        name="Application\Sonata\ProductBundle\Entity\Goodie"
+        name="Application\Sonata\ProductBundle\Entity\Shoe"
         table="product__product"
-        repository-class="Application\Sonata\ProductBundle\Repository\GoodieRepository"
+        repository-class="Application\Sonata\ProductBundle\Repository\ShoeRepository"
         >
 
         <!--
@@ -19,6 +19,7 @@
 
             ie : <field name="customField" column="prefix_custom_field" type="string" length="255" />
         -->
+        <field name="color" column="color" type="string" length="40" nullable="false" />
 
     </entity>
 </doctrine-mapping>

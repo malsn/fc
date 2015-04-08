@@ -22,7 +22,6 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
     exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 }
 
-
 $request = Sonata\PageBundle\Request\RequestFactory::createFromGlobals('host_with_path');
 
 $kernel = new AppKernel('dev', true);

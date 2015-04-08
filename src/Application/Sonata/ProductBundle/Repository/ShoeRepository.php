@@ -18,8 +18,8 @@ use Sonata\ProductBundle\Repository\BaseProductRepository;
  * References :
  *   working with object : http://www.doctrine-project.org/projects/orm/2.0/docs/reference/working-with-objects/en
  *
- * @author <yourname> <youremail>
+ * @author Lander Vanderstraeten <lander.vanderstraeten@hotmail.com>
  */
-class GoodieRepository extends BaseProductRepository
+class ShoeRepository extends BaseProductRepository
 {
 }
