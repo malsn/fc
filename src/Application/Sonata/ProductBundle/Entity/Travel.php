@@ -18,7 +18,7 @@ namespace Application\Sonata\ProductBundle\Entity;
  *
  * @author <yourname> <youremail>
  */
-class Travel extends Product
+abstract class Travel extends Product
 {
     /**
      * @var integer

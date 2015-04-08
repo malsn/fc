@@ -20,5 +20,18 @@ namespace Application\Sonata\ProductBundle\Entity;
  */
 class Goodie extends Product
 {
+    /**
+     * @var integer $id
+     */
+    protected $id;
 
+    /**
+     * Get id
+     *
+     * @return integer $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

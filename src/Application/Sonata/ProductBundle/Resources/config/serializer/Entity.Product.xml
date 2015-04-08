@@ -7,6 +7,7 @@
         -->
         <discriminator-class value="sonata.ecommerce_demo.product.travel">Application\Sonata\ProductBundle\Entity\Travel</discriminator-class>
         <discriminator-class value="sonata.ecommerce_demo.product.goodie">Application\Sonata\ProductBundle\Entity\Goodie</discriminator-class>
+        <discriminator-class value="sonata.ecommerce_demo.product.bowl">Application\Sonata\ProductBundle\Entity\Bowl</discriminator-class>
 
         <property xml-attribute-map="true" name="id" type="integer" expose="true" since-version="1.0" groups="sonata_api_read,sonata_api_write,sonata_search" />
 

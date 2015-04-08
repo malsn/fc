@@ -21,7 +21,7 @@ use Sonata\ProductBundle\Entity\BaseProduct as BaseProduct;
  *
  * @author <yourname> <youremail>
  */
-class Product extends BaseProduct
+abstract class Product extends BaseProduct
 {
     /**
      * @var integer $id

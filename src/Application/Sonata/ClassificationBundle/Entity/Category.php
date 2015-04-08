@@ -19,7 +19,7 @@ use Sonata\ClassificationBundle\Entity\BaseCategory as BaseCategory;
  * References :
  *   working with object : http://www.doctrine-project.org/projects/orm/2.0/docs/reference/working-with-objects/en
  *
- * @author <yourname> <youremail>
+ * @author Lander Vanderstraeten <lander_vanderstraeten
  */
 class Category extends BaseCategory
 {

@@ -1,16 +1,16 @@
 sonata_product:
     products:
-        # Goodies
-        #sonata.ecommerce_demo.product.goodie:
-            #provider: sonata.ecommerce_demo.product.goodie.type
-            #manager:  sonata.ecommerce_demo.product.goodie.manager
+        #Goodies
+        sonata.ecommerce_demo.product.goodie:
+            provider: sonata.ecommerce_demo.product.goodie.type
+            manager:  sonata.ecommerce_demo.product.goodie.manager
 
-        # Travel
-        #sonata.ecommerce_demo.product.travel:
-            #provider: sonata.ecommerce_demo.product.travel.type
-            #manager: sonata.ecommerce_demo.product.travel.manager
-            #variations:
-                #fields: [travellers, travelDays, sku, slug, name, price, stock, vatRate, priceIncludingVat, enabled]
+        #Bowl
+        sonata.ecommerce_demo.product.bowl:
+            provider: sonata.ecommerce_demo.product.bowl.type
+            manager: sonata.ecommerce_demo.product.bowl.manager
+            variations:
+                fields: [size]
 
     seo:
         product:
@@ -28,5 +28,5 @@ doctrine:
         entity_managers:
             default:
                 mappings:
-                    #ApplicationSonataProductBundle: ~
+                    ApplicationSonataProductBundle: ~
                     SonataProductBundle: ~

@@ -44,6 +44,7 @@ imports:
     - { resource: sonata/sonata_delivery.yml }
     - { resource: sonata/sonata_customer.yml }
     - { resource: sonata/sonata_basket.yml }
+    - { resource: @ApplicationSonataProductBundle/Resources/config/product.yml }
 
 framework:
     #esi:                   ~
