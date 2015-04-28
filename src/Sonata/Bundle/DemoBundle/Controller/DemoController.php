@@ -37,10 +37,13 @@ class DemoController extends Controller
         $dump = ob_get_contents();
         ob_clean();
 
-        return $this->render('SonataDemoBundle:Demo:car.html.twig', array(
-            'form' => $form->createView(),
-            'dump' => $dump
-        ));
+        return $this->render(
+            'SonataDemoBundle:Demo:car.html.twig',
+            array(
+                'form' => $form->createView(),
+                'dump' => $dump
+            )
+        );
     }
 
     /**
@@ -60,9 +63,13 @@ class DemoController extends Controller
             3 => new \Sonata\Bundle\DemoBundle\Entity\Engine('Rescue 3', 150),
         );
 
-        $form = $this->createForm('sonata_demo_form_type_car', $car, array(
-            'rescue_engines' => $rescueEngines
-        ));
+        $form = $this->createForm(
+            'sonata_demo_form_type_car',
+            $car,
+            array(
+                'rescue_engines' => $rescueEngines
+            )
+        );
 
         if ($request->getMethod() == 'POST') {
             $form->bind($request);
@@ -74,10 +81,13 @@ class DemoController extends Controller
         ob_clean();
 
 
-        return $this->render('SonataDemoBundle:Demo:car.html.twig', array(
-            'form' => $form->createView(),
-            'dump' => $dump
-        ));
+        return $this->render(
+            'SonataDemoBundle:Demo:car.html.twig',
+            array(
+                'form' => $form->createView(),
+                'dump' => $dump
+            )
+        );
     }
 
     /**
@@ -97,10 +107,14 @@ class DemoController extends Controller
 
         // create the form
         $builder = $this->createFormBuilder($mediaPreview);
-        $builder->add('media', 'sonata_media_type', array(
-             'provider' => 'sonata.media.provider.youtube',
-             'context'  => 'default'
-        ));
+        $builder->add(
+            'media',
+            'sonata_media_type',
+            array(
+                'provider' => 'sonata.media.provider.youtube',
+                'context' => 'default'
+            )
+        );
 
         $form = $builder->getForm();
 
@@ -111,14 +125,16 @@ class DemoController extends Controller
             $this->getSeoPage()
                 ->setTitle($media->getName())
                 ->addMeta('property', 'og:description', $media->getDescription())
-                ->addMeta('property', 'og:type', 'video')
-            ;
+                ->addMeta('property', 'og:type', 'video');
         }
 
-        return $this->render('SonataDemoBundle:Demo:media.html.twig', array(
-            'form' => $form->createView(),
-            'media' => $mediaPreview->getMedia()
-        ));
+        return $this->render(
+            'SonataDemoBundle:Demo:media.html.twig',
+            array(
+                'form' => $form->createView(),
+                'media' => $mediaPreview->getMedia()
+            )
+        );
     }
 
     /**
@@ -135,9 +151,12 @@ class DemoController extends Controller
 
         $message = 'sonata.demo.block.newsletter.message';
 
-        return $this->render('SonataDemoBundle:Block:newsletter_confirmation.html.twig', array(
-            'message' => $form->isValid() ? $message : null
-        ));
+        return $this->render(
+            'SonataDemoBundle:Block:newsletter_confirmation.html.twig',
+            array(
+                'message' => $form->isValid() ? $message : null
+            )
+        );
     }
 
     /**

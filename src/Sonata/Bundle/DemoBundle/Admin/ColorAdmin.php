@@ -32,8 +32,7 @@ class ColorAdmin extends Admin
             ->add('g')
             ->add('b')
             ->add('material')
-            ->add('enabled')
-        ;
+            ->add('enabled');
     }
 
     /**
@@ -46,8 +45,7 @@ class ColorAdmin extends Admin
             ->addIdentifier('g')
             ->addIdentifier('b')
             ->add('material')
-            ->add('enabled')
-        ;
+            ->add('enabled');
     }
 
     /**
@@ -60,8 +58,7 @@ class ColorAdmin extends Admin
             ->add('g')
             ->add('b')
             ->add('material')
-            ->add('enabled')
-        ;
+            ->add('enabled');
     }
 
     /**
@@ -74,7 +71,6 @@ class ColorAdmin extends Admin
             ->add('g')
             ->add('b')
             ->add('material', 'sonata_type_model_list')
-            ->add('enabled')
-        ;
+            ->add('enabled');
     }
 }

@@ -4,5 +4,5 @@ doctrine:
         entity_managers:
             default:
                 mappings:
-                    #ApplicationSonataCustomerBundle: ~
+                    ApplicationSonataCustomerBundle: ~
                     SonataCustomerBundle: ~

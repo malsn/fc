@@ -32,8 +32,7 @@ class CarAdmin extends Admin
             ->add('name')
             ->add('engine')
             ->add('rescueEngine')
-            ->add('createdAt')
-        ;
+            ->add('createdAt');
     }
 
     /**
@@ -46,8 +45,7 @@ class CarAdmin extends Admin
             ->add('engine')
             ->add('rescueEngine')
             ->add('createdAt')
-            ->add('color')
-        ;
+            ->add('color');
     }
 
     /**
@@ -60,8 +58,7 @@ class CarAdmin extends Admin
             ->add('engine')
             ->add('rescueEngine')
             ->add('createdAt')
-            ->add('color')
-        ;
+            ->add('color');
     }
 
     /**
@@ -71,24 +68,28 @@ class CarAdmin extends Admin
     {
         $formMapper
             ->with('General', array('class' => 'col-md-6'))
-                ->add('name')
-                ->add('rescueEngine')
-                ->add('createdAt')
+            ->add('name')
+            ->add('rescueEngine')
+            ->add('createdAt')
             ->end()
             ->with('Options', array('class' => 'col-md-6'))
-                ->add('engine', 'sonata_type_model_list')
-                ->add('color', 'sonata_type_model_list')
+            ->add('engine', 'sonata_type_model_list')
+            ->add('color', 'sonata_type_model_list')
             ->end()
             ->with('inspections', array('class' => 'col-md-12'))
-                ->add('inspections', 'sonata_type_collection', array(
-                    'by_reference'       => false,
+            ->add(
+                'inspections',
+                'sonata_type_collection',
+                array(
+                    'by_reference' => false,
                     'cascade_validation' => true,
-                ), array(
+                ),
+                array(
                     'edit' => 'inline',
                     'inline' => 'table'
-                ))
-            ->end()
-        ;
+                )
+            )
+            ->end();
     }
 
     /**

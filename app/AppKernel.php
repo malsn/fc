@@ -114,12 +114,16 @@ class AppKernel extends Kernel
             // CMF Integration
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
 
+            // DEMO and QA - Can be deleted
+            new Sonata\Bundle\DemoBundle\SonataDemoBundle(),
+//            new Sonata\Bundle\QABundle\SonataQABundle(),
+
             // Disable this if you don't want the timeline in the admin
             new Spy\TimelineBundle\SpyTimelineBundle(),
             new Sonata\TimelineBundle\SonataTimelineBundle(),
             new Application\Sonata\TimelineBundle\ApplicationSonataTimelineBundle(), // easy extends integration
 
-            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
+            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -127,7 +131,6 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Bazinga\Bundle\FakerBundle\BazingaFakerBundle();
             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-            $bundles[] = new Sonata\Bundle\DemoBundle\SonataDemoBundle();
         }
 
         return $bundles;

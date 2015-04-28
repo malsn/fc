@@ -30,8 +30,7 @@ class EngineAdmin extends Admin
         $showMapper
             ->add('name')
             ->add('power')
-            ->add('media')
-        ;
+            ->add('media');
     }
 
     /**
@@ -42,8 +41,7 @@ class EngineAdmin extends Admin
         $listMapper
             ->addIdentifier('name')
             ->add('power')
-            ->add('media')
-        ;
+            ->add('media');
     }
 
     /**
@@ -53,8 +51,7 @@ class EngineAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
-            ->add('power')
-        ;
+            ->add('power');
     }
 
     /**
@@ -65,10 +62,13 @@ class EngineAdmin extends Admin
         $formMapper
             ->add('name')
             ->add('power')
-            ->add('media', 'sonata_media_type', array(
-                 'provider' => 'sonata.media.provider.youtube',
-                 'context'  => 'default'
-            ));
-        ;
+            ->add(
+                'media',
+                'sonata_media_type',
+                array(
+                    'provider' => 'sonata.media.provider.youtube',
+                    'context' => 'default'
+                )
+            );
     }
 }
