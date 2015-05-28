@@ -39,10 +39,14 @@ class ShoeProductProvider extends ProductProvider
 
         if ($isVariation) {
             $formMapper->with('Product')
-                ->add('color', 'choice', array(
-                        'choices'            => Shoe::getColorList(),
+                ->add(
+                    'size',
+                    'choice',
+                    array(
+                        'choices' => Shoe::getSizesList(),
                         'translation_domain' => 'ApplicationSonataProductBundle',
-                    ))
+                    )
+                )
                 ->end();
         }
     }

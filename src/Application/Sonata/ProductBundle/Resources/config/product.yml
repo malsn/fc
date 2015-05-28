@@ -9,14 +9,3 @@ services:
         class: Application\Sonata\ProductBundle\Provider\ShoeProductProvider
         arguments:
             - @serializer
-
-    sonata.clothing_store.product.trouwser.manager:
-        class: Sonata\ProductBundle\Entity\ProductManager
-        arguments:
-            - Application\Sonata\ProductBundle\Entity\Trouwser
-            - @doctrine
-
-    sonata.clothing_store.product.trouwser.type:
-        class: Application\Sonata\ProductBundle\Provider\TrouwserProductProvider
-        arguments:
-            - @serializer

@@ -4,13 +4,7 @@ sonata_product:
             provider: sonata.clothing_store.product.shoe.type
             manager: sonata.clothing_store.product.shoe.manager
             variations:
-                fields: [color]
-
-        sonata.clothing_store.product.trouwser:
-            provider: sonata.clothing_store.product.trouwser.type
-            manager: sonata.clothing_store.product.trouwser.manager
-            variations:
-                fields: [type, length, size]
+                fields: [size]
 
     seo:
         product:

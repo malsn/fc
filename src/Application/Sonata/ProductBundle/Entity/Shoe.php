@@ -20,9 +20,9 @@ namespace Application\Sonata\ProductBundle\Entity;
  */
 class Shoe extends Product
 {
-    const COLOR_BLACK = 'Black';
-    const COLOR_BLUE = 'Blue';
-    const COLOR_RED = 'Red';
+    const SIZE_41 = '41';
+    const SIZE_42 = '42';
+    const SIZE_43 = '43';
 
     /**
      * @var integer $id
@@ -32,22 +32,22 @@ class Shoe extends Product
     /**
      * @var integer $size
      */
-    protected $color;
+    protected $size;
 
     /**
      * @param int $color
      */
-    public function setColor($color)
+    public function setSize($color)
     {
-        $this->color = $color;
+        $this->size = $color;
     }
 
     /**
      * @return int
      */
-    public function getColor()
+    public function getSize()
     {
-        return $this->color;
+        return $this->size;
     }
 
     /**
@@ -71,12 +71,12 @@ class Shoe extends Product
     /**
      * @return array
      */
-    public static function getColorList()
+    public static function getSizesList()
     {
         return array(
-            static::COLOR_BLACK => static::COLOR_BLACK,
-            static::COLOR_BLUE => static::COLOR_BLUE,
-            static::COLOR_RED => static::COLOR_RED,
+            static::SIZE_41 => static::SIZE_41,
+            static::SIZE_42 => static::SIZE_42,
+            static::SIZE_43 => static::SIZE_43,
         );
     }
 }
