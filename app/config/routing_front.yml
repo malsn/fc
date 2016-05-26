@@ -49,7 +49,7 @@ sonata_customer:
     prefix: /shop/user
 
 sonata_basket:
-    resource: @SonataBasketBundle/Resources/config/routing/basket.xml
+    resource: @ApplicationSonataBasketBundle/Resources/config/routing/basket.xml
     prefix: /shop/basket
 
 sonata_order:

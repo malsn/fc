@@ -1,0 +1,53 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+<div id="korzina" class="shopping_cart_wrap">
+        <button otkr="0" id="open_shopping_cart" class="open_button" data-amount="{{ basket.countBasketElements }}">
+            <b id="mestokorz" class="title">Корзина</b>
+            <b id="mestovsego" class="total_price" style="height:17px;"><span id="totalPrice" class="korzPoln">{{ basket.getTotal(true) | number_format_currency(basket.currency.label, {}, {}, basket.locale) }}</span></b>
+        </button>
+        <div class="shopping_cart dropdown">
+            <div id="mesto_Tov" style="max-height: 270px;">
+                {% if basket.hasBasketElements %}
+                {% for basketElement in basket.basketElements %}
+                <div id="strokTov{{ basketElement.product.id }}" class="animated_item">
+                    <div class="clearfix sc_product">
+                        <a href="{{ basketElement.product.sku }}" class="product_thumb">
+                           {% thumbnail basketElement.product.image, 'preview' with {'itemprop':'image', 'class': 'img-rounded img-responsive', 'width': '60'} %}
+                        </a>
+                        <a class="product_name" href="{{ basketElement.product.sku }}" style="line-height:1;">
+                            {{ basketElement.name }}
+                        </a>
+                        <p>
+                            <img id="bolTov{{ basketElement.product.id }}" tov="{{ basketElement.product.id }}" src="http://mamaitalia.ru/pic/bol.png" alt="" width="13" height="11" style="cursor:pointer">
+                            <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" id="mestoKolTov{{ basketElement.product.id }}" tov="{{ basketElement.product.id }}" type="text" value="{{ basketElement.quantity }}" style="width:23px; height:18px; padding:1px; margin:0; text-align:center; color: #81b51f;">
+                            <img id="menTov{{ basketElement.product.id }}" tov="{{ basketElement.product.id }}" src="http://mamaitalia.ru/pic/men.png" alt="" width="13" height="11" style="cursor:pointer">
+                            x {{ basketElement.getUnitPrice(true)|number_format_currency(basket.currency.label, {}, {}, basket.locale) }}
+                        </p>
+                        <button id="udTov{{ basketElement.product.id }}" tov="{{ basketElement.product.id }}" class="close2"></button>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                    <div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>
+                {% endif %}
+            </div>
+            {% if basket.hasBasketElements %}
+            <div class="animated_item  korzPoln" style="transition-delay:0.4s">
+                <ul class="total_info" style="margin-bottom:10px;">
+                    <li class="total"><b><span class="price">Cумма:</span> <span id="totalPrice2">{{ basket.getTotal(true) | number_format_currency(basket.currency.label, {}, {}, basket.locale) }}</span></b>
+                        <a id="ochKorz" class="curs"><button style="margin:3px 20px 0 0;" class="close2"></button></a>
+                    </li>
+                </ul>
+                <a id="oformit" class="button_blue ofzakaz curs">Оформить заказ</a>
+            </div>
+            {% endif %}
+        </div>
+</div>

@@ -1,0 +1,46 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+{% spaceless %}
+
+    {% set link = url('sonata_product_view', {'productId': product.id, 'slug': product.slug}) %}
+
+        <div class="product_item">
+            <div class="image_wrap">
+                <div style="float:right; position:absolute; right:-20px; bottom:10px; z-index:100;">
+                    <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" id="pole_tov_dop{{ product.id }}" type="text" style="display:none; width:20px; height:15px; text-align:center; margin:0 0 0 10px;" value="1" />
+                    <a id="1237-520" class="curs middle_btn add_to_cart dobKorz">
+                        <img style="float:left; margin-right:0px;" src="{{ asset('bundles/sonatademo/images/kupit.png') }}" />
+                    </a>
+                </div>
+                <a href="/" class="fancybox_item_media" rel="lightbox{{ product.id }}">
+                    {% media product.image, 'preview' with {'itemprop': 'image', 'width': 220, 'height': null, 'id': 'imgTov' ~  product.id } %}
+                </a>
+                <div class="label_new">Новинка</div>
+            </div>
+            <div class="description">
+                <a id="nazvTov{{ product.id }}" tov_lat="{{ product.sku }}" href="{{ link }}">{{ product.name }}</a>
+                <div class="clearfix product_info">
+                    <p class="product_price alignleft"><b>
+                        {% if not sonata_product_has_variations(product) %}
+                            {{ sonata_product_price(product, currency, true)|number_format_currency(currency) }}
+                        {% else %}
+                            {% trans from 'SonataProductBundle' %}product_variation_min_price{% endtrans %}
+                            {% set cheapest_variation = sonata_product_cheapest_variation(product) %}
+                            {{ sonata_product_price(cheapest_variation, currency, true)|number_format_currency(currency) }}
+                        {% endif %}</b>
+                    </p>
+                    <div align="right" id="tovuzeest{{ product.id }}"  class="tovuzeest kr" style="margin:0px 0 1px 0;"><span class="bel">-</span></div>
+                </div>
+            </div>
+        </div>
+    
+{% endspaceless %}

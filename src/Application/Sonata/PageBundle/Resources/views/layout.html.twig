@@ -1,0 +1,202 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+{% extends 'SonataPageBundle::base_layout.html.twig' %}
+
+{% block sonata_page_container %}
+
+<header id="header" class="type_2" style="padding-bottom: 0px;">
+
+
+    <div class="bottom_part">
+
+        <div class="sticky_part">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="main_header_row">
+
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+
+                            {% block navbar_top_logo %}
+                            <a href="{{ path('sonata_demo_index') }}"><img src="{{ asset('bundles/applicationsonatapage/images/logo.jpg') }}" /></a>
+                            {% endblock navbar_top_logo %}
+
+                        </div><!--/ колонка-->
+
+                        <div class="col-lg-7 col-md-6 col-sm-6 col-xs-3">
+
+                            <nav>
+
+                                <ul class="topbar">
+
+                                    <li class=""> <a  href="catalog" class="has_submenu">Каталог</a></li><li class=""> <a  href="recipes" class=" has_submenu">Рецепты</a></li><li class=""> <a  href="o-nas" class=" has_submenu">О нас</a></li><li class=""> <a  href="dostavka" class=" has_submenu">Доставка</a></li><li class=""> <a  href="contact" class=" has_submenu">Контакты</a></li>
+
+                                </ul>
+
+                            </nav>
+
+
+                            <div id="mestotel" class="call_us" style="float:left; margin:12px 25px 10px 0;">
+
+                                <span></span> <b class="c_info_phone"> <i class="fa fa-rub"></i>+7(812) 111-11-11</b>
+
+                            </div>
+
+                            <form id="form_poisk" action="catalog/poisk" method="post" class="clearfix search">
+
+                                <input type="text" id="pole_poisk" name="poisk" tabindex="1" placeholder="Найти..." class="alignleft">
+                                <input name="a" type="hidden" value="poisk"/>
+
+
+
+                                <button id="kn_poisk" class="button_blue def_icon_btn alignleft"></button>
+
+                            </form>
+
+                        </div>
+
+
+                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4">
+
+                            <div class="clearfix">
+
+
+                                <div id="mestolich" class="alignright site_settings">
+
+                                    {% if app.user %}
+
+                                        <div class="btn-group">
+
+                                            {% block use_top_showlogin %}
+                                                <a href="{{ path('sonata_user_profile_show') }}">{{ app.user.username }}</a> |
+                                                <a href="{{ path ('sonata_user_security_logout') }}"> {{   "layout.logout" | trans ({}, 'FOSUserBundle') }}</a>
+                                            {% endblock %}
+
+                                            {#
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                    aria-expanded="true">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+
+                                                {% block user_top_actions %}
+
+                                                    {% block user_top_action_logout %}
+
+                                                        <li class="divider"></li>
+
+                                                        <li><a href="{{ path ('sonata_user_security_logout') }}"> <span
+                                                                        class="glyphicon glyphicon-log-out"
+                                                                        aria-hidden="true"></span> {{   "layout.logout" | trans ({}, 'FOSUserBundle') }}</a></li>
+
+                                                    {% endblock user_top_action_logout %}
+
+                                                {% endblock user_top_actions %}
+                                            </ul>#}
+                                        </div>
+
+                                    {% else %}
+
+                                            <a style="margin:0 3px 0 0;" href="{{ path ('sonata_user_security_login') }}" id="vhod">{{   "layout.login" | trans ({}, 'FOSUserBundle') }}</a>
+                                            |
+                                            <a style="margin:0 0 0 3px;" href="{{ path ('sonata_user_registration_register') }}" id="reg">{{   "layout.register" | trans ({}, 'FOSUserBundle') }}</a>
+
+                                    {% endif %}
+
+                                </div>
+
+                            </div>
+
+                            <div class="align_right v_centered">
+
+                                {% block navbar_basket %}
+                                    {{ render(controller('ApplicationSonataBasketBundle:Basket:headerPreview')) }}
+                                {% endblock navbar_basket %}
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+    <div class="container main">
+
+        <div class="content">
+            {#<div class="row page-header">
+                {{ sonata_page_render_container('header', 'global') }}
+            </div>#}
+
+            {% block sonata_page_breadcrumb %}
+                <div class="row">
+                    {% if sonata_seo_context is not defined %}
+                        {% set sonata_seo_context = 'homepage' %}
+                    {% endif %}
+                    {{ sonata_block_render_event('breadcrumb', { 'context': sonata_seo_context, 'current_uri': app.request.requestUri }) }}
+                </div>
+            {% endblock %}
+
+            {% if page is defined %}
+                <div class="row">
+                    {% if page.name != 'global'%}
+                        {{ sonata_page_render_container('content_top', 'global') }}
+                    {% endif %}
+                    {{ sonata_page_render_container('content_top', page) }}
+                    {% if page.name == 'Homepage' %}
+                        {{ render(controller('SonataProductBundle:Catalog:index')) }}
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <div class="row">
+                {% block page_content %}
+                    {% if content is defined %}
+                        {{ content|raw }}
+                    {% else %}
+                        {% set content = block('content') %}
+                        {% if content|length > 0 %}
+                            {{ content|raw }}
+                        {% elseif page is defined %}
+                            {{ sonata_page_render_container('content', page) }}
+                        {% endif %}
+                    {% endif %}
+                {% endblock %}
+            </div>
+
+            {% if page is defined %}
+                <div class="row">
+                    {{ sonata_page_render_container('content_bottom', page) }}
+
+                    {% if page.name != 'global'%}
+                        {{ sonata_page_render_container('content_bottom', 'global') }}
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+
+        <footer class="row">
+            {{ sonata_page_render_container('footer', 'global') }}
+        </footer>
+    </div>
+{% endblock %}

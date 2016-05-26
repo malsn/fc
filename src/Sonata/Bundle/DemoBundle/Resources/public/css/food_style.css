@@ -1,0 +1,106 @@
+/* --------------------------------------------
+			4.2 Shopping cart
+	-------------------------------------------- */
+
+.shopping_cart_wrap{
+    position: relative;
+    z-index: 116;
+    text-align: left;
+}
+
+.shopping_cart{
+    position:absolute;
+    top:100%;
+    right:0px;
+    width:263px;
+    margin-top:2px;
+}
+
+.shopping_cart .title + *{ margin-top:8px; }
+
+.shopping_cart .animated_item:not(:last-child){ border-bottom: none; }
+
+.shopping_cart .animated_item:first-child{ border-radius: 3px 3px 0 0; }
+
+.shopping_cart .animated_item{
+    background: #fff;
+    padding:12px 19px 13px;
+    border:1px solid #eaeaea;
+}
+
+.shopping_cart .animated_item:last-child{
+    padding-top:10px;
+    padding-bottom: 10px;
+    border-radius: 0 0 3px 3px;
+}
+
+.sc_product{
+    position:relative;
+    padding:2px 25px 0 0;
+    font-size:13px;
+    line-height: 16px;
+}
+
+.product_name{
+    display: block;
+    margin-bottom:5px;
+}
+
+.sc_product .product_thumb{
+    display: block;
+    float: left;
+    margin-right:10px;
+}
+
+.total_info{ font-size:13px; }
+
+.total_info li{ margin: 1px 0; }
+
+.total_info [class*="price"]{
+    display: inline-block;
+    width:65px;
+}
+
+.total_info .total{ color:#333; }
+
+.sticky_inner .shopping_cart{
+    right: -1px;
+    margin-top: 0px;
+}
+
+#open_shopping_cart{
+    position: relative;
+    padding:5px 10px 9px 65px;
+    border:1px solid #eaeaea;
+    margin-left:15px;
+    line-height: 18px;
+    text-align: left;
+    border-radius: 3px;
+}
+
+#open_shopping_cart > *{ display: block; }
+
+.shopping_cart .title,
+#open_shopping_cart .title{
+    font-size:13px;
+    color:#b2b2b2;
+}
+
+#open_shopping_cart .title::after{ font-size:9px; }
+
+#open_shopping_cart .total_price{
+    font-size: 18px;
+    color:#333;
+}
+
+#open_shopping_cart::before{
+    font-family: 'fontello';
+    content: '\eb77';
+    color:#279c45;
+    font-size: 42px;
+    line-height: 42px;
+    position: absolute;
+    left:18px;
+    top: 50%;
+    margin-top: -22px;
+}

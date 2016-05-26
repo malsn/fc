@@ -100,6 +100,7 @@ class AppKernel extends Kernel
             new Sonata\FormatterBundle\SonataFormatterBundle(),
             new Sonata\CacheBundle\SonataCacheBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
+            new Application\Sonata\BlockBundle\ApplicationSonataBlockBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),

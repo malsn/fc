@@ -40,4 +40,9 @@ class TakeAwayDelivery extends BaseServiceDelivery
     {
         return 'take_away';
     }
+
+    public function getName()
+    {
+        return 'Take Away Free';
+    }
 }

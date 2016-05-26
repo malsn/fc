@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/Application/Sonata/BasketBundle/Resources/translations/SonataBasketBundle.ru.xliff" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Application/Sonata/BasketBundle/Resources/views/Basket/header_preview.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Application/Sonata/ClassificationBundle/Entity/Category.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Application/Sonata/PageBundle/Resources/views/layout.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Application/Sonata/ProductBundle/Entity/Product.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Application/Sonata/ProductBundle/Resources/translations/SonataProductBundle.ru.xliff" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Application/Sonata/ProductBundle/Resources/views/Catalog/_product_grid.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Application/Sonata/ProductBundle/Resources/views/Catalog/grid.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Application/Sonata/ProductBundle/Resources/views/Product/view_thumbnail.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vendor/sonata-project/classification-bundle/Model/Tag.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/vendor/sonata-project/ecommerce/src/Component/Delivery/Pool.php" charset="windows-1251" />
+  </component>
+</project>

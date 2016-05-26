@@ -1,13 +1,18 @@
 sonata_delivery:
     methods:
-        free: ~
+        free_address_required: ~
+        free_address_not_required: ~
         take_away: application.sonata.delivery.take_away
 
     services:
         free_address_required:
-            name: Free
+            name: free_address_required
             priority: 1
-            code: free
+            code: free_address_required
+        free_address_not_required:
+            name: free_address_not_required
+            priority: 1
+            code: free_address_not_required
 
     selector: sonata.delivery.selector.default
 
