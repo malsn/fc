@@ -1,4 +1,2 @@
-sonata-ecommerce-platform
+fc
 =========================
-
-A Symfony project created on March 25, 2015, 2:46 pm.
