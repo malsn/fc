@@ -196,7 +196,7 @@ div.col-sm-3 a.lead .badge {
  * Product grid
  */
 .product-grid {
-    padding: 10px 0px 10px 0px;
+    padding: 0px;
 }
 .product-grid .thumbnail {
     margin-bottom: 20px;
@@ -370,7 +370,6 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 
 /* main container animate */
 .container.main {
-    background: rgb(248, 248, 248);
     position: relative;
     top: 0;
     opacity: 0;
