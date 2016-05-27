@@ -27,6 +27,10 @@
             <argument type="service" id="sonata.payment.selector" />
         </service>
 
+        <service id="flash_bag" class="Sonata\Bundle\DemoBundle\Service\FlashBag">
+            <argument type="service" id="session"></argument>
+        </service>
+
     </services>
 
 </container>

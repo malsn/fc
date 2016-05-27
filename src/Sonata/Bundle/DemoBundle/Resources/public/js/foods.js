@@ -18,4 +18,37 @@ $(document).ready(function(){
 
     });
 
+    var ajax_to_modal = function($button){
+        $.ajax({
+            url: $button.attr('path-controller'),
+            cache: false,
+            type: $button.attr('method') || 'POST',
+            data: null ,
+            beforeSend: function () {
+            },
+            success: function (response) {
+                if (response !== false) {
+                    var $alertModal = $('#alert_modal');
+                    $alertModal
+                        .find('div.modal-body')
+                        .html(response);
+                    $('.btn-ajax-to-modal').click(function(){
+                        ajax_to_modal($(this));
+                    });
+                    $('.finish-resetting-button').click(function(){
+                        finish_resetting();
+                    });
+                    $('.pre-register-phone-button').click(function(){
+                        pre_register_phone();
+                    });
+                    $("#PreRegister_phone").mask("+7(999) 999-99-99");
+                    $alertModal.modal({show: true});
+                }
+            },
+            error: function () {
+
+            }
+        });
+    }
+
 })

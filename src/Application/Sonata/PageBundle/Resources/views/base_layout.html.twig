@@ -49,6 +49,25 @@ file that was distributed with this source code.
 
             <script src="/bundles/sonatademo/js/foods.js"></script>
 
+            <script>
+                $(function () {
+                    $('.tTip').tooltip();
+                    {% set messages = app.session.flashBag.get(constant('Sonata\\Bundle\\DemoBundle\\Service\\FlashBag::MESSAGE')) %}
+                    {% if messages is not empty %}
+                    var $alertModal = $('#alert_modal');
+                    $alertModal
+                            .find('div.modal-body')
+                            .html('{{ messages | join('<br/>') | raw }}');
+
+                    $('.btn-ajax-to-modal').click(function(){
+                        ajax_to_modal($(this));
+                    });
+
+                    $alertModal.modal('toggle');
+                    {% endif %}
+                });
+            </script>
+
         </head>
     {% endblock %}
 
@@ -174,6 +193,20 @@ file that was distributed with this source code.
                 {{ sonata_block_include_javascripts('screen', app.request.basePath) }}
             {% endblock %}
         {% endblock %}
+
+        {% block flash_bag %}
+            <div class="modal fade" id="alert_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock flash_bag %}
 
         <!-- monitoring:3e9fda56df2cdd3b039f189693ab7844fbb2d4f6 -->
     </body>
