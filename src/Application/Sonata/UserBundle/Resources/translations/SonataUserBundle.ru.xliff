@@ -4,11 +4,11 @@
         <body>
             <trans-unit id="title_user_authentication">
                 <source>title_user_authentication</source>
-                <target>Авторизация на сайте</target>
+                <target>РђРІС‚РѕСЂРёР·Р°С†РёСЏ РЅР° СЃР°Р№С‚Рµ</target>
             </trans-unit>
             <trans-unit id="forgotten_password">
                 <source>forgotten_password</source>
-                <target>Забыли пароль?</target>
+                <target>Р—Р°Р±С‹Р»Рё РїР°СЂРѕР»СЊ?</target>
             </trans-unit>
         </body>
     </file>
