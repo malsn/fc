@@ -2920,7 +2920,7 @@
 		.seller,
 		.product_item{
 			position: relative;
-			padding: 1px;
+			padding: 19px;
 			background: #fff;
 			/*border: 1px solid #eaeaea;*/
 			background-clip: padding-box;
