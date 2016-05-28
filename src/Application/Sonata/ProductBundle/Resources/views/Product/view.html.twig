@@ -62,14 +62,128 @@ file that was distributed with this source code.
 
     </div>
 
-    <div class="col-sm-9">
+    <div class="col-sm-9" itemscope itemtype="http://schema.org/Product">
 
         {% block product %}
+            {% include 'SonataCoreBundle:FlashMessage:render.html.twig' %}
+                <section class="section_offset">
+
+                    <div class="clearfix">
+
+                        <div class="single_product">
+
+                            <div class="image_preview_container">
+
+                                {% block product_carousel %}
+                                    <div>
+                                        {% if product.gallery and product.gallery.galleryHasMedias|length > 0 %}
+                                            {% include "SonataProductBundle:Product:carousel.html.twig" %}
+                                        {% else %}
+                                            {% thumbnail product.image, 'small' with {'itemprop':'image', 'class': 'img-rounded img-responsive', 'width': '360', 'style': 'margin: 0 10px 10px 0;'} %}
+                                        {% endif %}
+                                    </div>
+                                {% endblock %}
+
+                                <!--<img id="img_zoom" data-zoom-image="images/qv_large_1.JPG" src="images/qv_img_1.jpg" alt="">
+                                <a class="gallery" rel="lightbox" href="http://mamaitalia.ru/pic/catalog/1449667152.jpg">
+                                    <img id="imgTov1170" style="margin:0 10px 3px 0;" src="http://mamaitalia.ru/pic/catalog/1449667152.jpg" width="360"></a>
+                                <!--<button class="button_grey_2 icon_btn middle_btn open_qv"><i class="icon-resize-full-6"></i></button>-->
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="single_product_description">
+
+                            <h3 class="offset_title" id="nazvTov{{ product.id }}">{% block product_title %}{{ product.name }}{% endblock %}</h3>
+
+                            <div class="description_section v_centered">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        {{ sonata_block_render({'type': 'sonata.product.block.variations_form'}, {'product': product, 'variations_properties': variations_properties, 'form_field_options': {'horizontal_input_wrapper_class': 'col-lg-4', 'horizontal_label_class': 'control-label col-lg-8', 'render_required_asterisk': false}}) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="description_section">
+
+                                <p id="tovuzeest{{ product.id }}" class="or tovuzeest" style="margin:10px 0 1px 0;"></p>
+
+                            </div>
+
+
+
+
+
+                            <p class="product_price"><s></s> <b class="theme_color">{{ sonata_product_price(product, currency, true)|number_format_currency(currency) }}</b></p>
+
+                            <div class="description_section_2 v_centered">
+
+                                <div class="qty min clearfix">
+
+                                    <button class="theme_button" data-direction="minus">&#45;</button>
+                                    <input id="pole_tov_dop{{ product.id }}" type="text" name="" value="1">
+                                    <button class="theme_button" data-direction="plus">&#43;</button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="buttons_row">
+
+                                <button id="1170-240" class="button_blue middle_btn dobKorz"><img class="imgico" src="pic/korzinadob.png" style="margin-right:8px;" /> Добавить в корзину</button>
+                                {% block product_basket %}
+                                    {% include "SonataBasketBundle:Basket:add_product_form.html.twig" %}
+                                {% endblock %}
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+                <div class="section_offset">
+
+                    <div class="tabs type_2">
+
+                        <ul class="tabs_nav clearfix">
+
+                            <li><a href="#tab-1">Описание</a></li>
+
+                        </ul>
+
+
+                        <div class="tab_containers_wrap">
+
+
+                            <div id="tab-1" class="tab_container">
+                                {% block product_full_description %}
+                                    {{ product.description|raw }}
+                                {% endblock %}
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+        {% endblock %}
+
+
+
+        {# block product %}
             {% include 'SonataCoreBundle:FlashMessage:render.html.twig' %}
             <!-- Begin product display -->
             <div class="row">
                 <div class="col-lg-12">
-                    {# sonata_template_box 'This is the product view template. Feel free to override it.' #}
+                    {%  sonata_template_box 'This is the product view template. Feel free to override it.' %}
                 </div>
             </div>
             <div class="row" itemscope itemtype="http://schema.org/Product">
@@ -161,7 +275,7 @@ file that was distributed with this source code.
                     </div>
                 {% endblock %}
             </div>
-        {% endblock %}
+        {% endblock #}
 
         {% block product_cross %}
             <!-- Cross selling -->
