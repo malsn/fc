@@ -287,7 +287,7 @@ file that was distributed with this source code.
             <!-- End Cross selling -->
         {% endblock %}
 
-        {% block product_full_description %}
+        {# block product_full_description %}
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title"><a id="fullDescription"></a>{% trans from "SonataProductBundle" %}product_full_description{% endtrans %}</h3>
@@ -296,7 +296,7 @@ file that was distributed with this source code.
                     {{ product.description|raw }}
                 </div>
             </div>
-        {% endblock %}
+        {% endblock #}
         {% block product_comments %}
             {# sonata_block_render_event('sonata.comment', {'id': 'front-product-' ~ product.id}) #}
         {% endblock %}
