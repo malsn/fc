@@ -120,29 +120,34 @@ file that was distributed with this source code.
 
                             <p class="product_price"><s></s> <b class="theme_color">{{ sonata_product_price(product, currency, true)|number_format_currency(currency) }}</b></p>
 
-                            <div class="description_section_2 v_centered">
+                            <form id="form_add_basket" class="form-horizontal" action="{{ url('sonata_basket_add_product') }}" method="POST"{% if provider.getOption('product_add_modal') %} data-target="#add_basket_modal_{{ product.id }}"{% endif %}>
+                                <div class="description_section_2 v_centered">
 
-                                <div class="qty min clearfix">
+                                    <div class="qty min clearfix">
 
-                                    {% if sonata_product_stock(product) == 0 %}
-                                        {% set quantityAttrs = {'min': 1, 'disabled': true} %}
-                                    {% else %}
-                                        {% set quantityAttrs = {'min': 1} %}
-                                    {% endif %}
+                                        {% if sonata_product_stock(product) == 0 %}
+                                            {% set quantityAttrs = {'min': 1, 'disabled': true} %}
+                                        {% else %}
+                                            {% set quantityAttrs = {'min': 1} %}
+                                        {% endif %}
 
-                                    <button class="theme_button" data-direction="minus" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>&#45;</button>
-                                    <input type="text" id="add_basket_quantity" name="add_basket[quantity]" required="required" min="1" value="1"  {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>
-                                    <button class="theme_button" data-direction="plus" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>&#43;</button>
+                                        <button class="theme_button" data-direction="minus" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>&#45;</button>
+                                        <input type="text" id="add_basket_quantity" name="add_basket[quantity]" required="required" min="1" value="1"  {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>
+                                        <button class="theme_button" data-direction="plus" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>&#43;</button>
+
+                                    </div>
 
                                 </div>
 
-                            </div>
+                                <div class="buttons_row">
+                                    {% block product_basket %}
+                                        <button type="submit" class="button_blue middle_btn dobKorz" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}><img class="imgico" src="{{ asset('bundles/sonatademo/images/korzinadob.png') }}" style="margin-right:8px;" />{% trans from 'SonataProductBundle' %}sonata.product.btn_add_to_basket{% endtrans %}</button>
+                                    {% endblock %}
+                                </div>
 
-                            <div class="buttons_row">
-                                {% block product_basket %}
-                                    <button type="submit" class="button_blue middle_btn dobKorz" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}><img class="imgico" src="{{ asset('bundles/sonatademo/images/korzinadob.png') }}" style="margin-right:8px;" />{% trans from 'SonataProductBundle' %}sonata.product.btn_add_to_basket{% endtrans %}</button>
-                                {% endblock %}
-                            </div>
+                                {{ form_rest(form) }}
+                                
+                            </form>
 
                         </div>
 
