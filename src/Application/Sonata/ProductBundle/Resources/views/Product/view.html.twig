@@ -134,7 +134,7 @@ file that was distributed with this source code.
                                         <button class="theme_button" data-direction="minus" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>&#45;</button>
                                         <input type="text" id="add_basket_quantity" name="add_basket[quantity]" required="required" min="1" value="1"  {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>
                                         <button class="theme_button" data-direction="plus" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>&#43;</button>
-
+    
                                     </div>
 
                                 </div>
@@ -144,9 +144,6 @@ file that was distributed with this source code.
                                         <button type="submit" class="button_blue middle_btn dobKorz" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}><img class="imgico" src="{{ asset('bundles/sonatademo/images/korzinadob.png') }}" style="margin-right:8px;" />{% trans from 'SonataProductBundle' %}sonata.product.btn_add_to_basket{% endtrans %}</button>
                                     {% endblock %}
                                 </div>
-
-                                {{ form_rest(form) }}
-                                
                             </form>
 
                         </div>
