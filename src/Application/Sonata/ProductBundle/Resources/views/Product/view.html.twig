@@ -124,21 +124,24 @@ file that was distributed with this source code.
 
                                 <div class="qty min clearfix">
 
-                                    <button class="theme_button" data-direction="minus">&#45;</button>
-                                    <input id="pole_tov_dop{{ product.id }}" type="text" name="" value="1">
-                                    <button class="theme_button" data-direction="plus">&#43;</button>
+                                    {% if sonata_product_stock(product) == 0 %}
+                                        {% set quantityAttrs = {'min': 1, 'disabled': true} %}
+                                    {% else %}
+                                        {% set quantityAttrs = {'min': 1} %}
+                                    {% endif %}
+
+                                    <button class="theme_button" data-direction="minus" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>&#45;</button>
+                                    {{ form_row(form.quantity, {'label': '', 'attr': quantityAttrs, 'render_required_asterisk': false}) }}
+                                    <button class="theme_button" data-direction="plus" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>&#43;</button>
 
                                 </div>
 
                             </div>
 
                             <div class="buttons_row">
-
-                                <button id="1170-240" class="button_blue middle_btn dobKorz"><img class="imgico" src="pic/korzinadob.png" style="margin-right:8px;" /> Добавить в корзину</button>
                                 {% block product_basket %}
-                                    {% include "SonataBasketBundle:Basket:add_product_form.html.twig" %}
+                                    <button type="submit" class="button_blue middle_btn dobKorz" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}><img class="imgico" src="pic/korzinadob.png" style="margin-right:8px;" />{% trans from 'SonataProductBundle' %}sonata.product.btn_add_to_basket{% endtrans %}</button>
                                 {% endblock %}
-
                             </div>
 
                         </div>
