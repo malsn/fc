@@ -50,7 +50,9 @@ file that was distributed with this source code.
                         </span>
                     </div>
                     <div class="col-lg-6 col-xs-6">
-                        <button type="submit" class="button_blue middle_btn dobKorz" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}><img class="imgico" src="pic/korzinadob.png" style="margin-right:8px;" />{% trans from 'SonataProductBundle' %}sonata.product.btn_add_to_basket{% endtrans %}</button>
+                        <button type="submit" class="btn btn-primary btn-sm pull-right" id="sonata_add_basket_submit"{% if sonata_product_stock(product) == 0 %} disabled{% endif %}>
+                            <i class="glyphicon glyphicon-shopping-cart icon-white"></i> {% trans from 'SonataProductBundle' %}sonata.product.btn_add_to_basket{% endtrans %}
+                        </button>
                     </div>
                 </div>
 
