@@ -40,7 +40,7 @@ class AppKernel extends Kernel
             // KNP HELPER BUNDLES
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
-            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Application\Knp\Bundle\PaginatorBundle\ApplicationKnpPaginatorBundle(),
 
             // USER
             new FOS\UserBundle\FOSUserBundle(),
