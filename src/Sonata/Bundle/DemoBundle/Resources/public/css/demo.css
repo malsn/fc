@@ -397,6 +397,16 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     border-color: #279c45;
 }
 
+.pagination>.disabled>span,
+.pagination>.disabled>span:hover,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>a,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>a:focus {
+   background-color: #fff;
+    border-color: #ddd;
+}
+
 .pagination>li>a, .pagination>li>span {
     color: #279c45;
 }
