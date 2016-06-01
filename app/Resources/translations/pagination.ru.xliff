@@ -3,11 +3,11 @@
   <file source-language="ru" target-language="ru" datatype="plaintext"  original="file.ext">
     <body>
       <trans-unit id="0" resname="label_previous">
-        <source>label_previous</source>
+        <source>‹ Previous</source>
         <target>Пред</target>
       </trans-unit>
       <trans-unit id="1" resname="label_next">
-        <source>label_next</source>
+        <source>Next ›</source>
         <target>След</target>
       </trans-unit>
     </body>
