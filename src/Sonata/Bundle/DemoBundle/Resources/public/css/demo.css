@@ -385,3 +385,19 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     transform: translateY(40px);
 }
 
+/* pagination style */
+
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+    background-color: #279c45;
+    border-color: #279c45;
+}
+
+.pagination>li>a, .pagination>li>span {
+    color: #279c45;
+}
+
