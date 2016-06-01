@@ -239,6 +239,10 @@ div.col-sm-3 a.lead .badge {
     vertical-align: middle;
 }
 
+a[class*="fancybox_item"] {
+    display: block;
+}
+
 /* Small resolution */
 @media(max-width:767px) {
     .product-grid .col-sm-3 {
