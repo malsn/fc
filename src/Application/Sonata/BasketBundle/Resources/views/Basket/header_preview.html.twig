@@ -14,7 +14,7 @@ file that was distributed with this source code.
             <b id="mestovsego" class="total_price" style="height:17px;"><span id="totalPrice" class="korzPoln">{{ basket.getTotal(true) | number_format_currency(basket.currency.label, {}, {}, basket.locale) }}</span></b>
         </button>
         <div class="shopping_cart dropdown">
-            <div id="mesto_Tov" style="max-height: 270px;">
+            <div id="mesto_Tov" style="max-height: 270px; margin-top: 0px; overflow-y: scroll;">
                 {% if basket.hasBasketElements %}
                 {% for basketElement in basket.basketElements %}
                 <div id="strokTov{{ basketElement.product.id }}" class="animated_item">
