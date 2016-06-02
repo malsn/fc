@@ -12,6 +12,10 @@
         <default key="_controller">ApplicationSonataBasketBundle:Basket:addProduct</default>
     </route>
 
+    <route id="sonata_basket_delete_product" pattern="/delete-product/{element_id}">
+        <default key="_controller">ApplicationSonataBasketBundle:Basket:deleteProduct</default>
+    </route>
+
     <route id="sonata_basket_update" pattern="/update">
         <default key="_controller">ApplicationSonataBasketBundle:Basket:update</default>
     </route>

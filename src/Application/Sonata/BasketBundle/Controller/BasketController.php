@@ -88,6 +88,19 @@ class BasketController extends Controller
     }
 
     /**
+     * @param $element_id
+     * response JsonResponse
+     */
+    public function deleteProductAction($element_id)
+    {
+        $response = new JsonResponse();
+        $element = $this->get('sonata.basket.manager')->find($element_id);
+        $this->get('sonata.basket.manager')->delete($element, true);
+
+        return $response;
+    }
+
+    /**
      * Adds a product to the basket
      *
      * @throws MethodNotAllowedException
