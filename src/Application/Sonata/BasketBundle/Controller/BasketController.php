@@ -95,8 +95,8 @@ class BasketController extends Controller
     public function deleteProductAction($element_id)
     {
         $response = new JsonResponse();
-        $element = $this->get('sonata.basket.manager')->find($element_id);
-        //$this->get('sonata.basket.manager')->delete($element, true);
+        $element = $this->get('sonata.basket_element.manager')->findOneBy(['id'=>$element_id]);
+        $this->get('sonata.basket_element.manager')->delete($element, true);
 
         return $response;
     }
