@@ -31,7 +31,7 @@ file that was distributed with this source code.
                             <img id="menTov{{ basketElement.product.id }}" tov="{{ basketElement.product.id }}" src="/bundles/sonatademo/images/men.png" alt="" width="13" height="11" style="cursor:pointer">
                             x {{ basketElement.getUnitPrice(true)|number_format_currency(basket.currency.label, {}, {}, basket.locale) }}
                         </p>
-                        <button path-controller="{{ path ('sonata_basket_delete_product', {'element_id': basketElement.id }) }}" class="close2"></button>
+                        <button path-controller="{{ path ('sonata_basket_delete_product', {'element_id': basketElement.id }) }}" class="close2 btn-ajax-to-modal"></button>
                     </div>
                 </div>
                 {% endfor %}
