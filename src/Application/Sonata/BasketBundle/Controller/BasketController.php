@@ -97,11 +97,13 @@ class BasketController extends Controller
         $response = new JsonResponse();
         $element = $this->get('sonata.basket_element.manager')->findOneBy(['id'=>$element_id]);
         $this->get('sonata.basket_element.manager')->delete($element, true);
+        $totalPrice = $this->get('sonata.basket')->getTotal() + $this->get('sonata.basket')->getVatAmount();
+        setlocale(LC_MONETARY, 'ru_RU');
         $response->setData(
             array(
                 'type' => 'basket',
                 'element' => $element_id,
-                'totalPrice' => ($this->get('sonata.basket')->getTotal() + $this->get('sonata.basket')->getVatAmount())." руб.",
+                'totalPrice' => money_format('%.2n', $totalPrice),
                 'countElements' => $this->get('sonata.basket')->countBasketElements()
             )
         );
