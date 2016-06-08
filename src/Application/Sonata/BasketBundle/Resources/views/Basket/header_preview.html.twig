@@ -17,7 +17,7 @@ file that was distributed with this source code.
             <div id="mesto_Tov" style="max-height: 270px; margin-top: 0px; overflow-y: scroll;">
                 {% if basket.hasBasketElements %}
                 {% for basketElement in basket.basketElements %}
-                <div id="strokTov{{ basketElement.product.id }}" class="animated_item">
+                <div id="basket-element-{{ basketElement.id }}" class="animated_item">
                     <div class="clearfix sc_product">
                         <a href="{{ basketElement.product.sku }}" class="product_thumb">
                            {% thumbnail basketElement.product.image, 'preview' with {'itemprop':'image', 'class': 'img-rounded img-responsive', 'width': '60'} %}

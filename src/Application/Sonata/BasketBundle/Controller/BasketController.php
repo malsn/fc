@@ -97,7 +97,13 @@ class BasketController extends Controller
         $response = new JsonResponse();
         $element = $this->get('sonata.basket_element.manager')->findOneBy(['id'=>$element_id]);
         $this->get('sonata.basket_element.manager')->delete($element, true);
-
+        $response->setData(
+            array(
+                'product' => $element_id,
+                'total' => $this->get('sonata.basket')->getTotal(),
+                'countElements' => $this->get('sonata.basket')->countBasketElements()
+            )
+        );
         return $response;
     }
 
