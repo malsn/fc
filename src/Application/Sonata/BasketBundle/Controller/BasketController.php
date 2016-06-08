@@ -170,7 +170,7 @@ class BasketController extends Controller
                     'totalPrice' => sprintf("%01.2f", $totalPrice),
                     'countElements' => $this->get('sonata.basket')->countBasketElements()
                 )
-            )
+            );
 
             return $response;
 
