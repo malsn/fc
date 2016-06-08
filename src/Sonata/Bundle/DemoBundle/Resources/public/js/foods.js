@@ -59,14 +59,12 @@ $(document).ready(function(){
                         $("#basket-element-"+response.element).remove();
                         $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
                         if (response.totalPrice == 0){
-                            $("#mesto_Tov").html('<div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>');
+                            $("#mesto_Tov").append('<div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>');
                             $(".korzPoln.order-button").hide();
                         }
                         $("#totalPrice,#totalPrice2").html(response.totalPrice + '&nbsp;руб.');
                     }
                     if (response.type == 'basket-add'){
-                        $("#mesto_Tov").append('<div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>');
-
                         $("#basket-element-"+response.element).remove();
                         $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
                         if (response.totalPrice != 0){
