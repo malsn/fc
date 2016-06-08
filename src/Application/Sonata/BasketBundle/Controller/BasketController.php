@@ -102,7 +102,7 @@ class BasketController extends Controller
             array(
                 'type' => 'basket',
                 'element' => $element_id,
-                'totalPrice' => $totalPrice,
+                'totalPrice' => sprintf("%01,2f руб.", $totalPrice),
                 'countElements' => $this->get('sonata.basket')->countBasketElements()
             )
         );

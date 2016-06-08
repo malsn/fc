@@ -31,7 +31,12 @@ $(document).ready(function(){
                     if (response.type == 'basket'){
                         $("#basket-element-"+response.element).remove();
                         $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
-                        $("#totalPrice,#totalPrice2").html(response.totalPrice);
+                        if (response.totalPrice != 0){
+                            $("#totalPrice").html(response.totalPrice + ' руб.');
+                        } else {
+                            $("#mesto_Tov").html('<div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>');
+                        }
+
 
                     } else {
                         var $alertModal = $('#alert_modal');
