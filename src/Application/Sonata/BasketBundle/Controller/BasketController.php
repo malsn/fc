@@ -114,10 +114,11 @@ class BasketController extends Controller
      *
      * @throws MethodNotAllowedException
      * @throws NotFoundHttpException
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     * @return JsonResponse
      */
     public function addProductAction()
     {
+        $response = new JsonResponse();
         $request = $this->get('request');
         $params  = $request->get('add_basket');
 
@@ -159,26 +160,21 @@ class BasketController extends Controller
 
             $this->get('sonata.basket.factory')->save($basket);
 
-            if ($request->isXmlHttpRequest() && $provider->getOption('product_add_modal')) {
-                return $this->render('SonataBasketBundle:Basket:add_product_popin.html.twig', array(
-                    'basketElement' => $basketElement,
-                    'locale'        => $basket->getLocale(),
-                    'product'       => $product,
-                    'price'         => $price,
-                    'currency'      => $currency,
-                    'quantity'      => $quantity,
-                    'provider'      => $provider,
-                ));
-            } else {
-                return new RedirectResponse($this->generateUrl('sonata_basket_index'));
-            }
-        }
+            $totalPrice = $this->get('sonata.basket')->getTotal() + $this->get('sonata.basket')->getVatAmount();
+            $response->setData(
+                array(
+                    'type' => 'basket-add',
+                    'element' => $basketElement,
+                    'price' => $price,
+                    'quantity' => $quantity,
+                    'totalPrice' => sprintf("%01.2f", $totalPrice),
+                    'countElements' => $this->get('sonata.basket')->countBasketElements()
+                )
+            )
 
-        // an error occur, forward the request to the view
-        return $this->forward('SonataProductBundle:Product:view', array(
-            'productId' => $product,
-            'slug'      => $product->getSlug(),
-        ));
+            return $response;
+
+        }
     }
 
     /**

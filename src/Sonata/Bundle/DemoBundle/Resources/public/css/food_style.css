@@ -108,3 +108,7 @@
 a[class*="fancybox_item"] {
     display: block;
 }
+
+div.basket-element-prototype {
+    display: block;
+}

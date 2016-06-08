@@ -65,14 +65,19 @@ $(document).ready(function(){
                         $("#totalPrice,#totalPrice2").html(response.totalPrice + '&nbsp;руб.');
                     }
                     if (response.type == 'basket-add'){
-                        $("#basket-element-"+response.element).remove();
-                        $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
-                        if (response.totalPrice != 0){
-                            $("#totalPrice").html(response.totalPrice + '&nbsp;руб.');
-                        } else {
-                            $("#mesto_Tov").html('<div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>');
-                            $(".korzPoln.order-button").hide();
-                        }
+                        $basketElement = $("div.basket-element-prototype").clone().appendTo("#mesto_Tov");
+                        $basketElement.attr('id','basket-element-'+response.element);
+                        $basketElementImage = $basketElement.find('img.prototype-image');
+                        $basketElementImage.attr('src',response.element.image);
+                        $basketElementA = $basketElement.find('a.product-name');
+                        $basketElementA.html(response.element.name);
+                        $basketElementQuantity = $basketElement.find('input.mestoKolTov');
+                        $basketElementQuantity.val(response.quantity);
+                        $basketElementPrice = $basketElement.find('span.priceTov');
+                        $basketElementPrice.html(response.price);
+                        $basketElementDel = $basketElement.find('button.close2');
+                        $basketElementDel.attr('path-controller',response.element.delUrl);
+                        $("#totalPrice,#totalPrice2").html(response.totalPrice + '&nbsp;руб.');
                     }
                 }
             },
