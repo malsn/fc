@@ -28,14 +28,21 @@ $(document).ready(function(){
             },
             success: function (response) {
                 if (response !== false) {
-                    var $alertModal = $('#alert_modal');
-                    $alertModal
-                        .find('div.modal-body')
-                        .html(response);
-                    $('.btn-ajax-to-modal').click(function(){
-                        ajax_to_modal($(this));
-                    });
-                    $alertModal.modal({show: true});
+                    if (response.type == 'basket'){
+                        $("#basket-element-"+response.element).remove();
+                        $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
+                        $("#totalPrice,#totalPrice2").html(response.totalPrice);
+
+                    } else {
+                        var $alertModal = $('#alert_modal');
+                        $alertModal
+                            .find('div.modal-body')
+                            .html(response);
+                        $('.btn-ajax-to-modal').click(function(){
+                            ajax_to_modal($(this));
+                        });
+                        $alertModal.modal({show: true});
+                    }
                 }
             },
             error: function () {
