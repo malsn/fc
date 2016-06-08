@@ -31,11 +31,28 @@ file that was distributed with this source code.
                             <img id="menTov{{ basketElement.product.id }}" tov="{{ basketElement.product.id }}" src="/bundles/sonatademo/images/men.png" alt="" width="13" height="11" style="cursor:pointer">
                             x {{ basketElement.getUnitPrice(true)|number_format_currency(basket.currency.label, {}, {}, basket.locale) }}
                         </p>
-                        <button path-controller="{{ path ('sonata_basket_delete_product', {'element_id': basketElement.id }) }}" class="close2 btn-ajax-to-modal"></button>
+                        <button path-controller="{{ path ('sonata_basket_delete_product', {'element_id': basketElement.id }) }}" class="close2 btn-ajax-basket"></button>
                     </div>
                 </div>
                 {% endfor %}
                 {% else %}
+                    <div id="basket-element-prototype" class="animated_item">
+                        <div class="clearfix sc_product">
+                            <a class="product_thumb">
+                                <img width="60" itemprop="image" class="img-rounded img-responsive">
+                            </a>
+                            <a class="product_name" style="line-height:1;">
+                                proto_name
+                            </a>
+                            <p>
+                                <img class="bolTov" src="/bundles/sonatademo/images/bol.png" alt="" width="13" height="11" style="cursor:pointer">
+                                <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" class="mestoKolTov" type="text" value="1" style="width:23px; height:18px; padding:1px; margin:0; text-align:center; color: #81b51f;">
+                                <img class="menTov" src="/bundles/sonatademo/images/men.png" alt="" width="13" height="11" style="cursor:pointer">
+                                x <span class="priceTov"></span>
+                            </p>
+                            <button class="close2 btn-ajax-basket"></button>
+                        </div>
+                    </div>
                     <div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>
                 {% endif %}
             </div>

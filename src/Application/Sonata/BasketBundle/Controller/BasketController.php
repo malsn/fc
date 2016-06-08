@@ -100,7 +100,7 @@ class BasketController extends Controller
         $totalPrice = $this->get('sonata.basket')->getTotal() + $this->get('sonata.basket')->getVatAmount();
         $response->setData(
             array(
-                'type' => 'basket',
+                'type' => 'basket-del',
                 'element' => $element_id,
                 'totalPrice' => sprintf("%01.2f", $totalPrice),
                 'countElements' => $this->get('sonata.basket')->countBasketElements()

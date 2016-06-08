@@ -28,7 +28,34 @@ $(document).ready(function(){
             },
             success: function (response) {
                 if (response !== false) {
-                    if (response.type == 'basket'){
+                    var $alertModal = $('#alert_modal');
+                    $alertModal
+                        .find('div.modal-body')
+                        .html(response);
+                    $('.btn-ajax-to-modal').click(function(){
+                        ajax_to_modal($(this));
+                    });
+                    $alertModal.modal({show: true});
+                }
+            },
+            error: function () {
+
+            }
+        });
+    }
+
+
+    var ajax_basket = function($button){
+        $.ajax({
+            url: $button.attr('path-controller'),
+            cache: false,
+            type: $button.attr('method') || 'POST',
+            data: null ,
+            beforeSend: function () {
+            },
+            success: function (response) {
+                if (response !== false) {
+                    if (response.type == 'basket-del'){
                         $("#basket-element-"+response.element).remove();
                         $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
                         if (response.totalPrice != 0){
@@ -37,17 +64,18 @@ $(document).ready(function(){
                             $("#mesto_Tov").html('<div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>');
                             $(".korzPoln.order-button").hide();
                         }
+                    }
+                    if (response.type == 'basket-add'){
+                        $("#mesto_Tov").append('<div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>');
 
-
-                    } else {
-                        var $alertModal = $('#alert_modal');
-                        $alertModal
-                            .find('div.modal-body')
-                            .html(response);
-                        $('.btn-ajax-to-modal').click(function(){
-                            ajax_to_modal($(this));
-                        });
-                        $alertModal.modal({show: true});
+                        $("#basket-element-"+response.element).remove();
+                        $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
+                        if (response.totalPrice != 0){
+                            $("#totalPrice").html(response.totalPrice + '&nbsp;руб.');
+                        } else {
+                            $("#mesto_Tov").html('<div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>');
+                            $(".korzPoln.order-button").hide();
+                        }
                     }
                 }
             },
@@ -59,6 +87,10 @@ $(document).ready(function(){
 
     $('.btn-ajax-to-modal').click(function(){
         ajax_to_modal($(this));
+    });
+
+    $('.btn-ajax-basket').click(function(){
+        ajax_basket($(this));
     });
 
 })
