@@ -101,7 +101,7 @@ class BasketController extends Controller
             array(
                 'type' => 'basket',
                 'element' => $element_id,
-                'totalPrice' => $this->get('sonata.basket')->getTotal(),
+                'totalPrice' => $this->get('sonata.basket')->getTotal() + $this->get('sonata.basket')->getVatAmount(),
                 'countElements' => $this->get('sonata.basket')->countBasketElements()
             )
         );
