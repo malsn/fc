@@ -32,9 +32,9 @@ $(document).ready(function(){
                         $("#basket-element-"+response.element).remove();
                         $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
                         if (response.totalPrice != 0){
-                            $("#totalPrice").html(response.totalPrice + ' руб.');
+                            $("#totalPrice").html(response.totalPrice + '&nbsp;СЂСѓР±.');
                         } else {
-                            $("#mesto_Tov").html('<div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>');
+                            $("#mesto_Tov").html('<div class="animated_item korzPust"><p class="title">РљРѕСЂР·РёРЅР° РїСѓСЃС‚Р°</p></div>');
                         }
 
 
