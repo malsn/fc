@@ -35,6 +35,7 @@ $(document).ready(function(){
                             $("#totalPrice").html(response.totalPrice + '&nbsp;руб.');
                         } else {
                             $("#mesto_Tov").html('<div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>');
+                            $(".korzPoln.order-button").hide();
                         }
 
 

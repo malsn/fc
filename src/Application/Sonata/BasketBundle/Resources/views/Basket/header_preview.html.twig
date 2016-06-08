@@ -40,7 +40,7 @@ file that was distributed with this source code.
                 {% endif %}
             </div>
             {% if basket.hasBasketElements %}
-            <div class="animated_item  korzPoln" style="transition-delay:0.4s">
+            <div class="animated_item  korzPoln order-button" style="transition-delay:0.4s">
                 <ul class="total_info" style="margin-bottom:10px;">
                     <li class="total"><b><span class="price">Cумма:</span> <span id="totalPrice2">{{ basket.getTotal(true) | number_format_currency(basket.currency.label, {}, {}, basket.locale) }}</span></b>
                         <a id="ochKorz" class="curs"><button style="margin:3px 20px 0 0;" class="close2"></button></a>
