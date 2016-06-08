@@ -15,6 +15,23 @@ file that was distributed with this source code.
         </button>
         <div class="shopping_cart dropdown">
             <div id="mesto_Tov" style="max-height: 270px; margin-top: 0px; overflow-y: scroll;">
+                <div id="basket-element-prototype" class="animated_item">
+                    <div class="clearfix sc_product">
+                        <a class="product_thumb">
+                            <img width="60" itemprop="image" class="img-rounded img-responsive">
+                        </a>
+                        <a class="product_name" style="line-height:1;">
+                            proto_name
+                        </a>
+                        <p>
+                            <img class="bolTov" src="/bundles/sonatademo/images/bol.png" alt="" width="13" height="11" style="cursor:pointer">
+                            <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" class="mestoKolTov" type="text" value="1" style="width:23px; height:18px; padding:1px; margin:0; text-align:center; color: #81b51f;">
+                            <img class="menTov" src="/bundles/sonatademo/images/men.png" alt="" width="13" height="11" style="cursor:pointer">
+                            x <span class="priceTov"></span>
+                        </p>
+                        <button class="close2 btn-ajax-basket"></button>
+                    </div>
+                </div>
                 {% if basket.hasBasketElements %}
                 {% for basketElement in basket.basketElements %}
                 <div id="basket-element-{{ basketElement.id }}" class="animated_item">
@@ -36,23 +53,6 @@ file that was distributed with this source code.
                 </div>
                 {% endfor %}
                 {% else %}
-                    <div id="basket-element-prototype" class="animated_item">
-                        <div class="clearfix sc_product">
-                            <a class="product_thumb">
-                                <img width="60" itemprop="image" class="img-rounded img-responsive">
-                            </a>
-                            <a class="product_name" style="line-height:1;">
-                                proto_name
-                            </a>
-                            <p>
-                                <img class="bolTov" src="/bundles/sonatademo/images/bol.png" alt="" width="13" height="11" style="cursor:pointer">
-                                <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" class="mestoKolTov" type="text" value="1" style="width:23px; height:18px; padding:1px; margin:0; text-align:center; color: #81b51f;">
-                                <img class="menTov" src="/bundles/sonatademo/images/men.png" alt="" width="13" height="11" style="cursor:pointer">
-                                x <span class="priceTov"></span>
-                            </p>
-                            <button class="close2 btn-ajax-basket"></button>
-                        </div>
-                    </div>
                     <div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>
                 {% endif %}
             </div>
