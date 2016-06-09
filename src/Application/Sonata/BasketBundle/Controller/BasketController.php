@@ -165,6 +165,7 @@ class BasketController extends Controller
                 array(
                     'type' => 'basket-add',
                     'element' => $basketElement->getId(),
+                    'name' => $basketElement->getName(),
                     'price' => $price,
                     'quantity' => $quantity,
                     'totalPrice' => sprintf("%01.2f", $totalPrice),
