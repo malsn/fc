@@ -66,14 +66,13 @@ $(document).ready(function(){
                         $("#totalPrice,#totalPrice2").html(response.totalPrice + '&nbsp;руб.');
                     }
                     if (response.type == 'basket-add'){
-                        alert(1);
                         $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
                         $basketElement = $("div.basket-element-prototype").clone().appendTo("#mesto_Tov");
                         $basketElement.attr('id','basket-element-'+response.element);
                         $basketElementImage = $basketElement.find('img.prototype-image');
                         $basketElementImage.attr('src',response.element.image);
                         $basketElementA = $basketElement.find('a.product-name');
-                        $basketElementA.html(response.element.name);
+                        $basketElementA.html(response.name);
                         $basketElementQuantity = $basketElement.find('input.mestoKolTov');
                         $basketElementQuantity.val(response.quantity);
                         $basketElementPrice = $basketElement.find('span.priceTov');
