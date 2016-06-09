@@ -43,9 +43,9 @@ file that was distributed with this source code.
                             {{ basketElement.name }}
                         </a>
                         <p>
-                            <img id="bolTov{{ basketElement.product.id }}" tov="{{ basketElement.product.id }}" src="/bundles/sonatademo/images/bol.png" alt="" width="13" height="11" style="cursor:pointer">
-                            <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" id="mestoKolTov{{ basketElement.product.id }}" tov="{{ basketElement.product.id }}" type="text" value="{{ basketElement.quantity }}" style="width:23px; height:18px; padding:1px; margin:0; text-align:center; color: #81b51f;">
-                            <img id="menTov{{ basketElement.product.id }}" tov="{{ basketElement.product.id }}" src="/bundles/sonatademo/images/men.png" alt="" width="13" height="11" style="cursor:pointer">
+                            <img class="bolTov" src="/bundles/sonatademo/images/bol.png" alt="" width="13" height="11" style="cursor:pointer">
+                            <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" class="mestoKolTov" type="text" value="{{ basketElement.quantity }}" style="width:23px; height:18px; padding:1px; margin:0; text-align:center; color: #81b51f;">
+                            <img class="menTov" src="/bundles/sonatademo/images/men.png" alt="" width="13" height="11" style="cursor:pointer">
                             x {{ basketElement.getUnitPrice(true)|number_format_currency(basket.currency.label, {}, {}, basket.locale) }}
                         </p>
                         <button path-controller="{{ path ('sonata_basket_delete_product', {'element_id': basketElement.id }) }}" class="close2 btn-ajax-basket"></button>
