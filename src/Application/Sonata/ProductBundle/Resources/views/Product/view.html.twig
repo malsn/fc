@@ -120,7 +120,7 @@ file that was distributed with this source code.
 
                             <p class="product_price"><s></s> <b class="theme_color">{{ sonata_product_price(product, currency, true)|number_format_currency(currency) }}</b></p>
 
-                            <form id="form_add_basket" class="form-horizontal" action="{{ url('sonata_basket_add_product') }}" method="POST"{% if provider.getOption('product_add_modal') %} data-target="#add_basket_modal_{{ product.id }}"{% endif %}>
+                            <form id="form_add_basket" class="form-horizontal" method="POST"{% if provider.getOption('product_add_modal') %} data-target="#add_basket_modal_{{ product.id }}"{% endif %}>
                                 <div class="description_section_2 v_centered">
 
                                     <div class="qty min clearfix">
