@@ -66,6 +66,7 @@ $(document).ready(function(){
                         $("#totalPrice,#totalPrice2").html(response.totalPrice + '&nbsp;руб.');
                     }
                     if (response.type == 'basket-add'){
+                        $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
                         $basketElement = $("div.basket-element-prototype").clone().appendTo("#mesto_Tov");
                         $basketElement.attr('id','basket-element-'+response.element);
                         $basketElementImage = $basketElement.find('img.prototype-image');
