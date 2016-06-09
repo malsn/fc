@@ -142,7 +142,7 @@ file that was distributed with this source code.
                                 <div class="buttons_row">
                                     {% block product_basket %}
                                         <input type="hidden" id="add_basket_product_id" name="add_basket[productId]" value="{{ product.id }}">
-                                        <button path-controller="{{ path ('sonata_basket_add_product') }}" class="button_blue middle_btn btn-ajax-basket" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}><img class="imgico" src="{{ asset('bundles/sonatademo/images/korzinadob.png') }}" style="margin-right:8px;" />{% trans from 'SonataProductBundle' %}sonata.product.btn_add_to_basket{% endtrans %}</button>
+                                        <div path-controller="{{ path ('sonata_basket_add_product') }}" class="button_blue middle_btn btn-ajax-basket" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}><img class="imgico" src="{{ asset('bundles/sonatademo/images/korzinadob.png') }}" style="margin-right:8px;" />{% trans from 'SonataProductBundle' %}sonata.product.btn_add_to_basket{% endtrans %}</div>
                                     {% endblock %}
                                 </div>
                             </form>
