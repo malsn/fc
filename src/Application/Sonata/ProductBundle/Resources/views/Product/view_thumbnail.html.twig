@@ -17,7 +17,7 @@ file that was distributed with this source code.
             <div class="image_wrap">
                 <div style="float:right; position:absolute; right:-20px; bottom:10px; z-index:100;">
                     <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" id="pole_tov_dop{{ product.id }}" type="text" style="display:none; width:20px; height:15px; text-align:center; margin:0 0 0 10px;" value="1" />
-                    <a id="1237-520" class="curs middle_btn add_to_cart dobKorz">
+                    <a id="1237-520" path-controller="{{ path ('sonata_basket_add_product', {'productId':  product.id }) }}" class="curs middle_btn add_to_cart dobKorz btn-ajax-basket">
                         <img style="float:left; margin-right:0px;" src="{{ asset('bundles/sonatademo/images/kupit.png') }}" />
                     </a>
                 </div>
