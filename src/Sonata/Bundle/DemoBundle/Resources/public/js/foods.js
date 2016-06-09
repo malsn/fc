@@ -56,6 +56,7 @@ $(document).ready(function(){
             },
             success: function (response) {
                 if (response !== false) {
+                    alert(1);
                     if (response.type == 'basket-del'){
                         $("#basket-element-"+response.element).remove();
                         $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
