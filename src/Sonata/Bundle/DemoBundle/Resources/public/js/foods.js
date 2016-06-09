@@ -66,6 +66,7 @@ $(document).ready(function(){
                         $("#totalPrice,#totalPrice2").html(response.totalPrice + '&nbsp;руб.');
                     }
                     if (response.type == 'basket-add'){
+                        alert(2);
                         $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
                         $basketElement = $("div.basket-element-prototype").clone().appendTo("#mesto_Tov");
                         $basketElement.attr('id','basket-element-'+response.element);
@@ -80,6 +81,7 @@ $(document).ready(function(){
                         $basketElementDel = $basketElement.find('button.close2');
                         $basketElementDel.attr('path-controller',response.element.delUrl);
                         $("#totalPrice,#totalPrice2").html(response.totalPrice + '&nbsp;руб.');
+                        alert(3);
                     }
                 }
             },
