@@ -67,18 +67,23 @@ $(document).ready(function(){
                     }
                     if (response.type == 'basket-add'){
                         $("#open_shopping_cart.countElements").attr("data-amount",response.countElements);
-                        $basketElement = $("div.basket-element-prototype").clone().appendTo("#mesto_Tov");
-                        $basketElement.attr('id','basket-element-'+response.element);
-                        $basketElementImage = $basketElement.find('img.prototype-image');
-                        $basketElementImage.attr('src',response.element.image);
-                        $basketElementA = $basketElement.find('a.product-name');
-                        $basketElementA.html(response.name);
+
+                        if ( $("#basket-element-"+response.element) ){
+                            $basketElement = $("#basket-element-"+response.element);
+                        } else {
+                            $basketElement = $("div.basket-element-prototype").clone().appendTo("#mesto_Tov");
+                            $basketElement.attr('id','basket-element-'+response.element);
+                            $basketElementImage = $basketElement.find('img.prototype-image');
+                            $basketElementImage.attr('src',response.image);
+                            $basketElementA = $basketElement.find('a.product-name');
+                            $basketElementA.html(response.name);
+                            $basketElementPrice = $basketElement.find('span.priceTov');
+                            $basketElementPrice.html(response.price);
+                            $basketElementDel = $basketElement.find('button.close2');
+                            $basketElementDel.attr('path-controller',response.element.delUrl);
+                        }
                         $basketElementQuantity = $basketElement.find('input.mestoKolTov');
                         $basketElementQuantity.val(response.quantity);
-                        $basketElementPrice = $basketElement.find('span.priceTov');
-                        $basketElementPrice.html(response.price);
-                        $basketElementDel = $basketElement.find('button.close2');
-                        $basketElementDel.attr('path-controller',response.element.delUrl);
                         $("#totalPrice,#totalPrice2").html(response.totalPrice + '&nbsp;руб.');
                     }
                 }
