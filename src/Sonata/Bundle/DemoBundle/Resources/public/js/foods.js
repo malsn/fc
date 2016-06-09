@@ -46,11 +46,12 @@ $(document).ready(function(){
 
 
     var ajax_basket = function($button){
+        var $form = $("form[id='form_add_basket']");
         $.ajax({
             url: $button.attr('path-controller'),
             cache: false,
             type: $button.attr('method') || 'POST',
-            data: null ,
+            data: $form.serialize(),
             beforeSend: function () {
             },
             success: function (response) {
