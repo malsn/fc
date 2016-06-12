@@ -16,10 +16,12 @@ file that was distributed with this source code.
         <div class="product_item">
             <div class="image_wrap">
                 <div style="float:right; position:absolute; right:-20px; bottom:10px; z-index:100;">
-                    <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" id="pole_tov_dop{{ product.id }}" type="text" style="display:none; width:20px; height:15px; text-align:center; margin:0 0 0 10px;" value="1" />
-                    <a id="1237-520" path-controller="{{ path ('sonata_basket_add_product') }}" class="curs middle_btn add_to_cart dobKorz btn-ajax-basket">
-                        <img style="float:left; margin-right:0px;" src="{{ asset('bundles/sonatademo/images/kupit.png') }}" />
-                    </a>
+                    <form id="form_add_basket" class="form-horizontal form_add_basket-{{ product.id }}" method="POST"{% if provider.getOption('product_add_modal') %} data-target="#add_basket_modal_{{ product.id }}"{% endif %}>
+                        <input type="hidden" class="add_basket_quantity" name="add_basket[quantity]" required="required" value="1"  {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>
+                        <a path-controller="{{ path ('sonata_basket_add_product') }}" class="curs middle_btn add_to_cart btn-ajax-basket">
+                            <img style="float:left; margin-right:0px;" src="{{ asset('bundles/sonatademo/images/kupit.png') }}" />
+                        </a>
+                    </form>
                 </div>
                 <a href="{{ link }}" class="fancybox_item_media" rel="lightbox{{ product.id }}">
                     {% media product.image, 'small' with {'itemprop': 'image', 'width': 220, 'height': null, 'id': 'imgTov' ~  product.id } %}
