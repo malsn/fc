@@ -10,14 +10,5 @@ file that was distributed with this source code.
 #}
 
 <div id="korzina" class="shopping_cart_wrap">
-        <button otkr="0" id="open_shopping_cart" class="open_button countElements" data-amount="{{ basket.countBasketElements }}">
-            <b class="title">Корзина</b>
-            <b id="totalElements" class="total_price" style="height:17px;"><span id="totalPrice" class="korzPoln">{{ basket.getTotal(true) | number_format_currency(basket.currency.label, {}, {}, basket.locale) }}</span></b>
-        </button>
-        <div class="shopping_cart dropdown">
-            <form id='form_basket_update' path-controller="{{ url('sonata_basket_update_json') }}" method="POST" novalidate="novalidate">
-
-            
-            </form>
-        </div>
+        
 </div>
