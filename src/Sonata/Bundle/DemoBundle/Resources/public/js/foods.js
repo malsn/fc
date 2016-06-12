@@ -63,6 +63,9 @@ $(document).ready(function(){
                     $('.btn-basket-delete').click(function(){
                         basket_delete($(this));
                     });
+                    $("input.input-quantity").on('change',function(){
+                        basket_update($(this));
+                    })
                 }
             },
             error: function () {
@@ -88,6 +91,9 @@ $(document).ready(function(){
                     $('.btn-basket-delete').click(function(){
                         basket_delete($(this));
                     });
+                    $("input.input-quantity").on('change',function(){
+                        basket_update($(this));
+                    })
                 }
             },
             error: function () {
@@ -131,7 +137,6 @@ $(document).ready(function(){
     });
 
     $("input.input-quantity").on('change',function(){
-        alert(5);
         basket_update($(this));
     })
 
