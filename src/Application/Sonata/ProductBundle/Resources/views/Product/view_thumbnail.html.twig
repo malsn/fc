@@ -16,10 +16,10 @@ file that was distributed with this source code.
         <div class="product_item">
             <div class="image_wrap">
                 <div style="float:right; position:absolute; right:-20px; bottom:10px; z-index:100;">
-                    <form id="form_add_basket-{{ product.id }}" class="form-horizontal form_add_basket" method="POST">
+                    <form id="form-add-basket-{{ product.id }}" class="form-horizontal" method="POST">
                         <input type="hidden" class="add_basket_quantity" name="add_basket[quantity]" required="required" value="1" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>
                         <input type="hidden" id="add_basket_product_id" name="add_basket[productId]" value="{{ product.id }}" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>
-                        <a path-controller="{{ path ('sonata_basket_add_product') }}" class="curs middle_btn add_to_cart{% if sonata_product_stock(product) != 0 %} btn-ajax-basket{% endif %}">
+                        <a path-controller="{{ path ('sonata_basket_add_product') }}" data-content="{{ product.id }}" class="curs middle_btn add_to_cart{% if sonata_product_stock(product) != 0 %} btn-ajax-basket{% endif %}">
                             <img style="float:left; margin-right:0px;" src="{{ asset('bundles/sonatademo/images/kupit.png') }}" />
                         </a>
                     </form>

@@ -48,7 +48,8 @@ $(document).ready(function(){
 
 
     var basket_add = function($button){
-        var $form = $("form[class='form-horizontal form_add_basket']");
+        var formId = 'form-add-basket-'+$button.attr('data-content');
+        var $form = $("form[id='"+formId+"']");
         $.ajax({
             url: $button.attr('path-controller'),
             cache: false,
