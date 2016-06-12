@@ -155,11 +155,11 @@ class BasketController extends Controller
     {
         $response = new JsonResponse();
         $basketElement = $this->get('sonata.basket')->getElementByPos($position);
-        $basketElement->setQuantity($this->getRequest()->get('quantity'));
+        $basketRequest = $this->getRequest()->get('sonata_basket_basket');
+        $basketElement->setQuantity((int)$basketRequest['basketElements'][$position]['quantity']);
         $totalPrice = $this->get('sonata.basket')->getTotal() + $this->get('sonata.basket')->getVatAmount();
         $response->setData(
             array(
-                'element' => $position,
                 'totalPrice' => sprintf("%01.2f", $totalPrice),
                 'countElements' => $this->get('sonata.basket')->countBasketElements()
             )

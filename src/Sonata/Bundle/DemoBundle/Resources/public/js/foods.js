@@ -113,8 +113,9 @@ $(document).ready(function(){
             },
             success: function (response) {
                 if (response !== false) {
-                    console.log(response);
-                }
+                    $("#totalPrice,#totalPrice2").html(response.totalPrice + '&nbsp;руб.');
+                    $("#open_shopping_cart").attr('data-amount', response.countElements);
+                    }
             },
             error: function () {
 
@@ -132,12 +133,11 @@ $(document).ready(function(){
         basket_add($(this));
     });
 
-    $('.btn-basket-delete').click(function(){
+    $('.btn-basket-delete').click(function() {
         basket_delete($(this));
     });
 
     $("input.input-quantity").on('change',function(){
         basket_update($(this));
-    })
-
-})
+    });
+});
