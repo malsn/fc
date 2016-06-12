@@ -10,5 +10,36 @@ file that was distributed with this source code.
 #}
 
 <div id="korzina" class="shopping_cart_wrap">
-        
+        <button otkr="0" id="open_shopping_cart" class="open_button countElements" data-amount="{{ basket.countBasketElements }}">
+            <b class="title">Корзина</b>
+            <b id="totalElements" class="total_price" style="height:17px;"><span id="totalPrice" class="korzPoln">{{ basket.getTotal(true) | number_format_currency(basket.currency.label, {}, {}, basket.locale) }}</span></b>
+        </button>
+        <div class="shopping_cart dropdown">
+            <form id='form_basket_update' path-controller="{{ url('sonata_basket_update_json') }}" method="POST" novalidate="novalidate">
+            <div id="mesto_Tov" style="max-height: 270px; margin-top: 0px; overflow-y: scroll;">
+                {% if basket.hasBasketElements %}
+                {% for basketElement in basket.basketElements %}
+                    {% render controller('SonataProductBundle:Product:renderFormBasketElement', {
+                    'formView':       form.basketElements.children[basketElement.position],
+                    'basketElement':  basketElement,
+                    'basket':         basket
+                    }) %}
+                {% endfor %}
+                {% else %}
+                    <div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>
+                {% endif %}
+            </div>
+            {% if basket.hasBasketElements %}
+            <div class="animated_item  korzPoln order-button" style="transition-delay:0.4s">
+                <ul class="total_info" style="margin-bottom:10px;">
+                    <li class="total"><b><span class="price">Cумма:</span> <span id="totalPrice2">{{ basket.getTotal(true) | number_format_currency(basket.currency.label, {}, {}, basket.locale) }}</span></b>
+                        <a id="ochKorz" class="curs"><button style="margin:3px 20px 0 0;" class="close2"></button></a>
+                    </li>
+                </ul>
+                <a id="oformit" class="button_blue">Оформить заказ</a>
+            </div>
+                {{ form_rest(form) }}
+            {% endif %}
+            </form>
+        </div>
 </div>
