@@ -108,6 +108,17 @@
 a[class*="fancybox_item"] {
     display: block;
 }
+.div-quantity {
+    display: inline;
+}
+
+.div-quantity > input {
+    display: inline;
+    width: 40px;
+    height: 23px;
+    font-size: 11px;
+    padding: 0 4px;
+}
 
 div.basket-element-prototype {
     display: block;

@@ -1,0 +1,26 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+<div id="basket-element-{{ basketElement.product.id }}" class="animated_item">
+    <div class="clearfix sc_product">
+        {{ form_widget(formView.productId) }}
+        <a href="{{ url('sonata_product_view', {'productId': basketElement.product.id, 'slug': basketElement.product.slug}) }}" class="product_thumb">
+            {% thumbnail basketElement.product.image, 'preview' with {'itemprop':'image', 'class': 'img-rounded img-responsive', 'width': '60'} %}
+        </a>
+        <a class="product_name" href="{{ url('sonata_product_view', {'productId': basketElement.product.id, 'slug': basketElement.product.slug}) }}" style="line-height:1;">
+            {{ basketElement.name }}
+        </a>
+            {{ form_widget(formView.quantity, {'attr': {'class': 'input-mini input-quantity', 'min': 1, 'path-controller' : url('sonata_basket_update_element', {'position' : basketElement.position }) }, 'horizontal_input_wrapper_class': 'div-basket-quantity'}) }}
+            x {{ basketElement.getUnitPrice(true)|number_format_currency(basket.currency.label, {}, {}, basket.locale) }}
+        <a path-controller="{{ url('sonata_basket_update_json') }}" data-content="{{ basketElement.product.id }}" class="close2 btn-basket-delete"></a>
+        {{ form_widget(formView.delete, {'label_render': false, 'attr': {'class': 'checkbox-delete-' ~ basketElement.product.id }, 'horizontal_input_wrapper_class': 'div-basket-delete'}) }}
+    </div>
+</div>

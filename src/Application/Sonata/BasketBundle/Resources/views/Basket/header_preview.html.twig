@@ -8,49 +8,22 @@ For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 
 #}
+
 <div id="korzina" class="shopping_cart_wrap">
         <button otkr="0" id="open_shopping_cart" class="open_button countElements" data-amount="{{ basket.countBasketElements }}">
             <b class="title">Корзина</b>
             <b id="totalElements" class="total_price" style="height:17px;"><span id="totalPrice" class="korzPoln">{{ basket.getTotal(true) | number_format_currency(basket.currency.label, {}, {}, basket.locale) }}</span></b>
         </button>
         <div class="shopping_cart dropdown">
+            <form id='form_basket_update' path-controller="{{ url('sonata_basket_update_json') }}" method="POST" novalidate="novalidate">
             <div id="mesto_Tov" style="max-height: 270px; margin-top: 0px; overflow-y: scroll;">
-                <div class="animated_item basket-element-prototype">
-                    <div class="clearfix sc_product">
-                        <a class="product_thumb">
-                            <img width="60" itemprop="image" class="prototype-image img-rounded img-responsive">
-                        </a>
-                        <a class="product-name" style="line-height:1;">
-                            proto_name
-                        </a>
-                        <p>
-                            <img class="bolTov" src="/bundles/sonatademo/images/bol.png" alt="" width="13" height="11" style="cursor:pointer">
-                            <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" class="mestoKolTov" type="text" value="1" style="width:23px; height:18px; padding:1px; margin:0; text-align:center; color: #81b51f;">
-                            <img class="menTov" src="/bundles/sonatademo/images/men.png" alt="" width="13" height="11" style="cursor:pointer">
-                            x <span class="priceTov"></span>
-                        </p>
-                        <button class="close2 btn-ajax-basket"></button>
-                    </div>
-                </div>
                 {% if basket.hasBasketElements %}
                 {% for basketElement in basket.basketElements %}
-                <div id="basket-element-{{ basketElement.id }}" class="animated_item">
-                    <div class="clearfix sc_product">
-                        <a href="{{ basketElement.product.sku }}" class="product_thumb">
-                           {% thumbnail basketElement.product.image, 'preview' with {'itemprop':'image', 'class': 'img-rounded img-responsive', 'width': '60'} %}
-                        </a>
-                        <a class="product_name" href="{{ basketElement.product.sku }}" style="line-height:1;">
-                            {{ basketElement.name }}
-                        </a>
-                        <p>
-                            <img class="bolTov" src="/bundles/sonatademo/images/bol.png" alt="" width="13" height="11" style="cursor:pointer">
-                            <input onkeyup="return tolkoCif(this);" onchange="return tolkoCif(this);" class="mestoKolTov" type="text" value="{{ basketElement.quantity }}" style="width:23px; height:18px; padding:1px; margin:0; text-align:center; color: #81b51f;">
-                            <img class="menTov" src="/bundles/sonatademo/images/men.png" alt="" width="13" height="11" style="cursor:pointer">
-                            x {{ basketElement.getUnitPrice(true)|number_format_currency(basket.currency.label, {}, {}, basket.locale) }}
-                        </p>
-                        <button path-controller="{{ path ('sonata_basket_delete_product', {'element_id': basketElement.id }) }}" class="close2 btn-ajax-basket"></button>
-                    </div>
-                </div>
+                    {% render controller('SonataProductBundle:Product:renderFormBasketElement', {
+                    'formView':       form.basketElements.children[basketElement.position],
+                    'basketElement':  basketElement,
+                    'basket':         basket
+                    }) %}
                 {% endfor %}
                 {% else %}
                     <div class="animated_item korzPust"><p class="title">Корзина пуста</p></div>
@@ -63,8 +36,10 @@ file that was distributed with this source code.
                         <a id="ochKorz" class="curs"><button style="margin:3px 20px 0 0;" class="close2"></button></a>
                     </li>
                 </ul>
-                <a id="oformit" class="button_blue ofzakaz curs">Оформить заказ</a>
+                <a id="oformit" class="button_blue">Оформить заказ</a>
             </div>
+                {{ form_rest(form) }}
             {% endif %}
+            </form>
         </div>
 </div>

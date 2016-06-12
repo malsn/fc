@@ -8,16 +8,28 @@
         <default key="_controller">ApplicationSonataBasketBundle:Basket:index</default>
     </route>
 
+    <route id="sonata_basket_index_json" pattern="/json">
+        <default key="_controller">ApplicationSonataBasketBundle:Basket:indexJson</default>
+    </route>
+
     <route id="sonata_basket_add_product" pattern="/add-product">
         <default key="_controller">ApplicationSonataBasketBundle:Basket:addProduct</default>
     </route>
 
-    <route id="sonata_basket_delete_product" pattern="/delete-product/{element_id}">
+    <route id="sonata_basket_delete_product" pattern="/delete-product/{productId}">
         <default key="_controller">ApplicationSonataBasketBundle:Basket:deleteProduct</default>
     </route>
 
     <route id="sonata_basket_update" pattern="/update">
         <default key="_controller">ApplicationSonataBasketBundle:Basket:update</default>
+    </route>
+
+    <route id="sonata_basket_update_json" pattern="/update/json">
+        <default key="_controller">ApplicationSonataBasketBundle:Basket:updateJson</default>
+    </route>
+
+    <route id="sonata_basket_update_element" pattern="/update/{position}">
+        <default key="_controller">ApplicationSonataBasketBundle:Basket:updateElement</default>
     </route>
 
     <route id="sonata_basket_reset" pattern="/reset">

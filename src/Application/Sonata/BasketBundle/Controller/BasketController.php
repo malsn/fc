@@ -56,10 +56,43 @@ class BasketController extends Controller
 
         $this->get('sonata.seo.page')->setTitle($this->get('translator')->trans('basket_index_title', array(), "SonataBasketBundle"));
 
-        return $this->render('SonataBasketBundle:Basket:index.html.twig', array(
+        return $this->render('SonataBasketBundle:Basket:header_preview.html.twig', array(
             'basket' => $this->get('sonata.basket'),
             'form'   => $form->createView(),
         ));
+    }
+
+    /**
+     * jsons the basket
+     *
+     * @param  Form                                       $form
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function indexJsonAction($form = null)
+    {
+        $response = new JsonResponse();
+
+        $form = $form ?: $this->createForm('sonata_basket_basket', $this->get('sonata.basket'), array(
+            'validation_groups' => array('elements')
+        ));
+
+        // always validate the basket
+        if (!$form->isBound()) {
+            if ($violations = $this->get('validator')->validate($form)) {
+                $violationMapper = new ViolationMapper();
+                foreach ($violations as $violation) {
+                    $violationMapper->mapViolation($violation, $form, true);
+                }
+            }
+        }
+
+        $this->get('session')->set('sonata_basket_delivery_redirect', 'sonata_basket_delivery_address');
+
+        $this->get('sonata.seo.page')->setTitle($this->get('translator')->trans('basket_index_title', array(), "SonataBasketBundle"));
+
+        $response->setData(['basket'=>$this->get('sonata.basket')]);
+
+        return $response;
     }
 
     /**
@@ -89,19 +122,44 @@ class BasketController extends Controller
     }
 
     /**
-     * @param $element_id
-     * response JsonResponse
+     * Update basket form rendering & saving
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteProductAction($element_id)
+    public function updateJsonAction()
+    {
+        $form = $this->createForm('sonata_basket_basket', $this->get('sonata.basket'), array('validation_groups' => array('elements')));
+        $form->bind($this->get('request'));
+
+        if ($form->isValid()) {
+            $basket = $form->getData();
+            $basket->reset(false); // remove delivery and payment information
+            $basket->clean(); // clean the basket
+
+            // update the basket
+            $this->get('sonata.basket.factory')->save($basket);
+
+            return new RedirectResponse($this->generateUrl('sonata_basket_index'));
+        }
+
+        return $this->forward('SonataBasketBundle:Basket:index', array(
+            'form' => $form
+        ));
+    }
+
+    /**
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function updateElementAction($position)
     {
         $response = new JsonResponse();
-        $element = $this->get('sonata.basket_element.manager')->findOneBy(['id'=>$element_id]);
-        $this->get('sonata.basket_element.manager')->delete($element, true);
+        $basketElement = $this->get('sonata.basket')->getElementByPos($position);
+        $basketElement->setQuantity($this->getRequest()->get('quantity'));
         $totalPrice = $this->get('sonata.basket')->getTotal() + $this->get('sonata.basket')->getVatAmount();
         $response->setData(
             array(
-                'type' => 'basket-del',
-                'element' => $element_id,
+                'element' => $position,
                 'totalPrice' => sprintf("%01.2f", $totalPrice),
                 'countElements' => $this->get('sonata.basket')->countBasketElements()
             )
@@ -160,20 +218,7 @@ class BasketController extends Controller
 
             $this->get('sonata.basket.factory')->save($basket);
 
-            $totalPrice = $this->get('sonata.basket')->getTotal() + $this->get('sonata.basket')->getVatAmount();
-            $response->setData(
-                array(
-                    'type' => 'basket-add',
-                    'element' => $basketElement->getId(),
-                    'name' => $basketElement->getName(),
-                    'price' => $price,
-                    'quantity' => $quantity,
-                    'totalPrice' => sprintf("%01.2f", $totalPrice),
-                    'countElements' => $this->get('sonata.basket')->countBasketElements()
-                )
-            );
-
-            return $response;
+            return new RedirectResponse($this->generateUrl('sonata_basket_index'));
 
         }
     }
@@ -197,8 +242,13 @@ class BasketController extends Controller
      */
     public function headerPreviewAction()
     {
+        $form = $this->createForm('sonata_basket_basket', $this->get('sonata.basket'), array(
+            'validation_groups' => array('elements')
+        ));
+
         return $this->render('SonataBasketBundle:Basket:header_preview.html.twig', array(
-            'basket' => $this->get('sonata.basket')
+            'basket' => $this->get('sonata.basket'),
+            'form'   => $form->createView(),
         ));
     }
 
