@@ -121,7 +121,7 @@ file that was distributed with this source code.
                             <div class="align_right v_centered div-cart">
 
                                 {% block navbar_basket %}
-                                    
+                                    {{ render(controller('ApplicationSonataBasketBundle:Basket:headerPreview')) }}
                                 {% endblock navbar_basket %}
 
                             </div>
