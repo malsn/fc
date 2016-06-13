@@ -21,6 +21,6 @@ file that was distributed with this source code.
             {{ form_widget(formView.quantity, {'attr': {'class': 'input-mini input-quantity', 'min': 1, 'path-controller' : url('sonata_basket_update_element', {'position' : basketElement.position }) }, 'horizontal_input_wrapper_class': 'div-basket-quantity'}) }}
             x {{ basketElement.getUnitPrice(true)|number_format_currency(basket.currency.label, {}, {}, basket.locale) }}
         <a path-controller="{{ url('sonata_basket_update_json') }}" data-content="{{ basketElement.product.id }}" class="close2 btn-basket-delete"></a>
-        {{ form_widget(formView.delete, {'label_render': false, 'attr': {'class': 'checkbox-delete-' ~ basketElement.product.id }, 'horizontal_input_wrapper_class': 'div-basket-delete'}) }}
+        {{ form_widget(formView.delete, {'label_render': false, 'attr': {'class': 'checkbox-delete- checkbox-delete-' ~ basketElement.product.id }, 'horizontal_input_wrapper_class': 'div-basket-delete'}) }}
     </div>
 </div>

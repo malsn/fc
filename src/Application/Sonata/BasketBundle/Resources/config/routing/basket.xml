@@ -28,10 +28,6 @@
         <default key="_controller">ApplicationSonataBasketBundle:Basket:updateJson</default>
     </route>
 
-    <route id="sonata_basket_clean_json" pattern="/clean/json">
-        <default key="_controller">ApplicationSonataBasketBundle:Basket:cleanJson</default>
-    </route>
-
     <route id="sonata_basket_update_element" pattern="/update/{position}">
         <default key="_controller">ApplicationSonataBasketBundle:Basket:updateElement</default>
     </route>
