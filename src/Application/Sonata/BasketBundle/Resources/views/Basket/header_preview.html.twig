@@ -36,7 +36,7 @@ file that was distributed with this source code.
                         <a path-controller="{{ url('sonata_basket_update_json') }}" data-content="" class="close2 btn-basket-delete" style="margin:3px 20px 0 0;"></a>
                     </li>
                 </ul>
-                <a id="oformit" href="{{ url('sonata_basket_delivery_address') }}" class="button_blue">Оформить заказ</a>
+                <a id="oformit" path-controller="{{ url('sonata_basket_delivery_address') }}" class="button_blue btn-ajax-to-modal">Оформить заказ</a>
             </div>
                 {{ form_rest(form) }}
             {% endif %}
