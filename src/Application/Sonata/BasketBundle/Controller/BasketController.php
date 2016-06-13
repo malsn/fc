@@ -68,7 +68,7 @@ class BasketController extends Controller
      * @param  Form                                       $form
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    public function indexJsonAction($form = null)
+    /*public function indexJsonAction($form = null)
     {
         $response = new JsonResponse();
 
@@ -93,14 +93,14 @@ class BasketController extends Controller
         $response->setData(['basket'=>$this->get('sonata.basket')]);
 
         return $response;
-    }
+    }*/
 
     /**
      * Update basket form rendering & saving
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function updateAction()
+    /*public function updateAction()
     {
         $form = $this->createForm('sonata_basket_basket', $this->get('sonata.basket'), array('validation_groups' => array('elements')));
         $form->bind($this->get('request'));
@@ -119,7 +119,7 @@ class BasketController extends Controller
         return $this->forward('SonataBasketBundle:Basket:index', array(
             'form' => $form
         ));
-    }
+    }*/
 
     /**
      * Update basket form rendering & saving
