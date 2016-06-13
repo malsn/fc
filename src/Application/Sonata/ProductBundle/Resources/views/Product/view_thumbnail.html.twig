@@ -15,6 +15,7 @@ file that was distributed with this source code.
 
         <div class="product_item">
             <div class="image_wrap">
+                {% if not sonata_product_has_variations(product) %}
                 <div style="float:right; position:absolute; right:-20px; bottom:10px; z-index:100;">
                     <form id="form-add-basket-{{ product.id }}" class="form-horizontal" method="POST">
                         <input type="hidden" class="add_basket_quantity" name="add_basket[quantity]" required="required" value="1" {% if sonata_product_stock(product) == 0 %} disabled{% endif %}>
@@ -24,6 +25,7 @@ file that was distributed with this source code.
                         </a>
                     </form>
                 </div>
+                {% endif %}
                 <a href="{{ link }}" class="fancybox_item_media" rel="lightbox{{ product.id }}">
                     {% media product.image, 'small' with {'itemprop': 'image', 'width': 220, 'height': null, 'id': 'imgTov' ~  product.id } %}
                 </a>
