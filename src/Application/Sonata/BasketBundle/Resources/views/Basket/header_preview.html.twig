@@ -33,7 +33,7 @@ file that was distributed with this source code.
             <div class="animated_item  korzPoln order-button" style="transition-delay:0.4s">
                 <ul class="total_info" style="margin-bottom:10px;">
                     <li class="total"><b><span class="price">Cумма:</span> <span id="totalPrice2">{{ basket.getTotal(true) | number_format_currency(basket.currency.label, {}, {}, basket.locale) }}</span></b>
-                        <a id="ochKorz" class="curs"><button style="margin:3px 20px 0 0;" class="close2"></button></a>
+                        <a path-controller="{{ url('sonata_basket_clean_json') }}" class="close2 btn-basket-clean"></a>
                     </li>
                 </ul>
                 <a id="oformit" class="button_blue">Оформить заказ</a>

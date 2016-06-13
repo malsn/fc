@@ -67,6 +67,9 @@ $(document).ready(function(){
                     $("input.input-quantity").on('change',function(){
                         basket_update($(this));
                     })
+                    $('.btn-basket-clean').click(function() {
+                        basket_clean($(this));
+                    });
                 }
             },
             error: function () {
@@ -95,6 +98,30 @@ $(document).ready(function(){
                     $("input.input-quantity").on('change',function(){
                         basket_update($(this));
                     })
+                    $('.btn-basket-clean').click(function() {
+                        basket_clean($(this));
+                    });
+                }
+            },
+            error: function () {
+
+            }
+        });
+    }
+
+    var basket_clean = function($button){
+        var $form = $("form[id='form_basket_update']");
+        $.ajax({
+            url: $button.attr('path-controller'),
+            cache: false,
+            type: $form.attr('method') || 'POST',
+            data: null,
+            beforeSend: function () {
+            },
+            success: function (response) {
+                if (response !== false) {
+                    $(".div-cart").html(response);
+                    open_button($('.open_button'));
                 }
             },
             error: function () {
@@ -136,6 +163,10 @@ $(document).ready(function(){
 
     $('.btn-basket-delete').click(function() {
         basket_delete($(this));
+    });
+
+    $('.btn-basket-clean').click(function() {
+        basket_clean($(this));
     });
 
     $("input.input-quantity").on('change',function(){

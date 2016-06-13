@@ -148,6 +148,32 @@ class BasketController extends Controller
     }
 
     /**
+     * Update basket form rendering & saving
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function cleanJsonAction()
+    {
+        $form = $this->createForm('sonata_basket_basket', $this->get('sonata.basket'), array('validation_groups' => array('elements')));
+        $form->bind($this->get('request'));
+
+        if ($form->isValid()) {
+            $basket = $form->getData();
+            $basket->reset(true); // remove delivery and payment information
+            $basket->clean(); // clean the basket
+
+            // update the basket
+            $this->get('sonata.basket.factory')->save($basket);
+
+            return new RedirectResponse($this->generateUrl('sonata_basket_index'));
+        }
+
+        return $this->forward('SonataBasketBundle:Basket:index', array(
+            'form' => $form
+        ));
+    }
+
+    /**
      *
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
