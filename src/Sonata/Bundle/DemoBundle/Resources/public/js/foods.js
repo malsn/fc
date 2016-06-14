@@ -51,7 +51,7 @@ $(document).ready(function(){
         $.ajax({
             url: $button.attr('path-controller'),
             cache: false,
-            type: $form.attr('method') || 'POST',
+            type: $button.attr('method') || 'GET',
             data: $form.serialize(),
             beforeSend: function () {
             },
@@ -98,7 +98,7 @@ $(document).ready(function(){
                         basket_clean($(this));
                     });
                     $(".btn-basket-order").on('click',function(){
-                        basket_order_to_modal($(this));
+                        ajax_to_modal($(this));
                     });
                 }
             },
@@ -132,7 +132,7 @@ $(document).ready(function(){
                         basket_clean($(this));
                     });
                     $(".btn-basket-order").on('click',function(){
-                        basket_order_to_modal($(this));
+                        ajax_to_modal($(this));
                     });
                 }
             },
@@ -182,6 +182,6 @@ $(document).ready(function(){
     });
 
     $(".btn-basket-order").on('click',function(){
-        basket_order_to_modal($(this));
+        ajax_to_modal($(this));
     });
 });
