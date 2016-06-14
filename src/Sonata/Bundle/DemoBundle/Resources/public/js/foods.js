@@ -70,6 +70,9 @@ $(document).ready(function(){
                     $('.btn-basket-clean').click(function() {
                         basket_clean($(this));
                     });
+                    $(".btn-basket-order").on('click',function(){
+                        basket_update($(this));
+                    });
                 }
             },
             error: function () {
@@ -100,6 +103,9 @@ $(document).ready(function(){
                     })
                     $('.btn-basket-clean').click(function() {
                         basket_clean($(this));
+                    });
+                    $(".btn-basket-order").on('click',function(){
+                        basket_update($(this));
                     });
                 }
             },
@@ -148,7 +154,7 @@ $(document).ready(function(){
         basket_update($(this));
     });
 
-    $("btn-basket-order").on('click',function(){
+    $(".btn-basket-order").on('click',function(){
         basket_update($(this));
     });
 });
