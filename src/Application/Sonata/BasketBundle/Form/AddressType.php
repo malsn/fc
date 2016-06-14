@@ -54,7 +54,7 @@ class AddressType extends AbstractType
     {
         $addresses = $options['addresses'];
 
-        /*if (count($addresses) > 0) {
+        if (count($addresses) > 0) {
             $defaultAddress = current($addresses);
 
             foreach ($addresses as $address) {
@@ -84,7 +84,7 @@ class AddressType extends AbstractType
                 );
         }
 
-        $builder->add('name', null, array('required' => !count($addresses)));*/
+        $builder->add('name', null, array('required' => !count($addresses)));
 
         if (isset($options['types'])) {
             $builder->add('type', 'choice', array(
