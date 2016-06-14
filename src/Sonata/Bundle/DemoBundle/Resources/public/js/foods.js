@@ -147,4 +147,8 @@ $(document).ready(function(){
     $("input.input-quantity").on('change',function(){
         basket_update($(this));
     });
+
+    $("btn-basket-order").on('click',function(){
+        basket_update($(this));
+    });
 });
