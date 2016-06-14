@@ -54,7 +54,7 @@ class AddressType extends AbstractType
     {
         $addresses = $options['addresses'];
 
-        /*if (count($addresses) > 0) {
+        if (count($addresses) > 0) {
             $defaultAddress = current($addresses);
 
             foreach ($addresses as $address) {
@@ -82,7 +82,7 @@ class AddressType extends AbstractType
                         'validation_groups'  => false
                     )
                 );
-        }*/
+        }
 
         $builder->add('name', null, array('required' => !count($addresses)));
 
