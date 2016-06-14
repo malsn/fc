@@ -109,10 +109,10 @@ $(document).ready(function(){
         });
     }
 
-    var basket_update = function($input){
+    var basket_update = function($sender){
         var $form = $("form[id='form_basket_update']");
         $.ajax({
-            url: $input.attr('path-controller'),
+            url: $sender.attr('path-controller'),
             cache: false,
             type: $form.attr('method') || 'POST',
             data: $form.serialize(),
