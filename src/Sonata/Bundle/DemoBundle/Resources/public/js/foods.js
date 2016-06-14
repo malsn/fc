@@ -47,7 +47,7 @@ $(document).ready(function(){
     }
 
     var basket_order_to_modal = function($button){
-        var $form = $("form[id='form_basket_update']");
+        var $form = $("form[name='sonata_basket_address']");
         $.ajax({
             url: $button.attr('path-controller'),
             cache: false,
@@ -61,8 +61,8 @@ $(document).ready(function(){
                     $alertModal
                         .find('div.modal-body')
                         .html(response);
-                    $('.btn-ajax-to-modal').click(function(){
-                        ajax_to_modal($(this));
+                    $('.btn-basket-order').click(function(){
+                        basket_order_to_modal($(this));
                     });
                     $alertModal.modal({show: true});
                 }
@@ -98,7 +98,7 @@ $(document).ready(function(){
                         basket_clean($(this));
                     });
                     $(".btn-basket-order").on('click',function(){
-                        ajax_to_modal($(this));
+                        basket_order_to_modal($(this));
                     });
                 }
             },
@@ -132,7 +132,7 @@ $(document).ready(function(){
                         basket_clean($(this));
                     });
                     $(".btn-basket-order").on('click',function(){
-                        ajax_to_modal($(this));
+                        basket_order_to_modal($(this));
                     });
                 }
             },
@@ -182,6 +182,6 @@ $(document).ready(function(){
     });
 
     $(".btn-basket-order").on('click',function(){
-        ajax_to_modal($(this));
+        basket_order_to_modal($(this));
     });
 });
