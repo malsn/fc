@@ -10,6 +10,10 @@
                 <source>forgotten_password</source>
                 <target>Забыли пароль?</target>
             </trans-unit>
+            <trans-unit id="sonata_user_profile_breadcrumb_index">
+                <source>sonata_user_profile_breadcrumb_index</source>
+                <target>Личный кабинет пользователя</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
