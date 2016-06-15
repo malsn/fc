@@ -52,7 +52,7 @@ class AddressType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $addresses = $options['addresses'];
+        /*$addresses = $options['addresses'];
 
         if (count($addresses) > 0) {
             $defaultAddress = current($addresses);
@@ -66,7 +66,7 @@ class AddressType extends AbstractType
 
             $builder->add('addresses', 'entity', array(
                     'choices'  => $addresses,
-                    'preferred_choices' => array($defaultAddress),
+                    'preferred_choices' => $defaultAddress,
                     'class'    => $this->addressClass,
                     'property' => 'addressArrayForRender',
                     'expanded' => true,
@@ -91,7 +91,7 @@ class AddressType extends AbstractType
                     'choices' => $options['types'],
                     'translation_domain' => 'SonataCustomerBundle')
             );
-        }
+        }*/
 
         $builder
             ->add('firstname', null, array('required' => !count($addresses)))
