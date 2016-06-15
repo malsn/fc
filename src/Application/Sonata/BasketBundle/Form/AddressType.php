@@ -52,9 +52,9 @@ class AddressType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        /*$addresses = $options['addresses'];
+        $addresses = $options['addresses'];
 
-        if (count($addresses) > 0) {
+        /*if (count($addresses) > 0) {
             $defaultAddress = current($addresses);
 
             foreach ($addresses as $address) {
