@@ -14,6 +14,14 @@
                 <source>sonata_user_profile_breadcrumb_index</source>
                 <target>Личный кабинет пользователя</target>
             </trans-unit>
+            <trans-unit id="sonata_profile_title">
+                <source>sonata_profile_title</source>
+                <target>Профиль пользователя</target>
+            </trans-unit>
+            <trans-unit id="link_edit_profile">
+                <source>link_edit_profile</source>
+                <target>Редактировать данные</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
