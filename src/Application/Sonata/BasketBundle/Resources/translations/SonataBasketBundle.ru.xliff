@@ -132,7 +132,7 @@
             </trans-unit>
             <trans-unit id="sonata.basket.title_payment_method">
                 <source>sonata.basket.title_payment_method</source>
-                <target>Payment method</target>
+                <target>Способо оплаты</target>
             </trans-unit>
             <trans-unit id="sonata.basket.title_payment_step_basket">
                 <source>sonata.basket.title_payment_step_basket</source>
