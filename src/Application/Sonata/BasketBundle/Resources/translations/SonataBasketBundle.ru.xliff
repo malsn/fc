@@ -112,7 +112,7 @@
             </trans-unit>
             <trans-unit id="sonata.basket.title_delivery_methods">
                 <source>sonata.basket.title_delivery_methods</source>
-                <target>Delivery methods</target>
+                <target>Способ доставки</target>
             </trans-unit>
             <trans-unit id="sonata.basket.title_delivery_step_basket">
                 <source>sonata.basket.title_delivery_step_basket</source>
@@ -120,7 +120,7 @@
             </trans-unit>
             <trans-unit id="sonata.basket.title_address_delivery_step_basket">
                 <source>sonata.basket.title_address_delivery_step_basket</source>
-                <target>Selected delivery address</target>
+                <target>Адрес доставки</target>
             </trans-unit>
             <trans-unit id="sonata.basket.title_address_billing_step_basket">
                 <source>sonata.basket.title_address_billing_step_basket</source>
