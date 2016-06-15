@@ -108,11 +108,11 @@
             </trans-unit>
             <trans-unit id="sonata.basket.title_delivery_method">
                 <source>sonata.basket.title_delivery_method</source>
-                <target>Delivery method</target>
+                <target>Способ доставки</target>
             </trans-unit>
             <trans-unit id="sonata.basket.title_delivery_methods">
                 <source>sonata.basket.title_delivery_methods</source>
-                <target>Способ доставки</target>
+                <target>Способы доставки</target>
             </trans-unit>
             <trans-unit id="sonata.basket.title_delivery_step_basket">
                 <source>sonata.basket.title_delivery_step_basket</source>

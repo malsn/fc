@@ -9,9 +9,9 @@ file that was distributed with this source code.
 
 #}
 
-<!--{% sonata_template_box 'This is the basket final review template. Feel free to override it.' %}-->
+{# sonata_template_box 'This is the basket final review template. Feel free to override it.' #}
 
-{% include 'SonataBasketBundle:Basket:stepper.html.twig' with {step: 'checkout'} %}
+{# include 'SonataBasketBundle:Basket:stepper.html.twig' with {step: 'checkout'} #}
 
 <table class="table basket">
 
@@ -74,8 +74,8 @@ file that was distributed with this source code.
 
 <div class="row">
     <!-- Delivery address -->
-    <div class="col-sm-6">
-        <div class="panel panel-primary">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title">
                     {{ 'sonata.basket.title_address_delivery_step_basket'|trans({}, 'SonataBasketBundle') }}
@@ -94,7 +94,7 @@ file that was distributed with this source code.
         </div>
     </div>
 
-    <!-- Payment address -->
+    {#<!-- Payment address -->
     <div class="col-sm-6">
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -109,13 +109,13 @@ file that was distributed with this source code.
                 </address>
             </div>
         </div>
-    </div>
+    </div>#}
 </div>
 
 <div class="row">
     <!-- Delivery information -->
-    <div class="col-sm-6">
-        <div class="panel panel-primary">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title">
                     {{ 'sonata.basket.title_delivery_method'|trans({}, 'SonataBasketBundle') }}
@@ -126,10 +126,11 @@ file that was distributed with this source code.
             </div>
         </div>
     </div>
-
+</div>
+<div class="row">
     <!-- Payment information -->
-    <div class="col-sm-6">
-        <div class="panel panel-primary">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title">
                     {{ 'sonata.basket.title_payment_method'|trans({}, 'SonataBasketBundle') }}
