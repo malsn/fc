@@ -51,7 +51,7 @@ file that was distributed with this source code.
         <div class="col-lg-12">
             <div class="well">
                 {#<a href="{{ url('sonata_basket_payment_address') }}" class="btn btn-default"><i class="glyphicon glyphicon-arrow-left"></i>&nbsp;{% trans from 'SonataBasketBundle' %}sonata.basket.link_previous_step{% endtrans %}</a>#}
-                <a path-controller="{{ url('sonata_basket_delivery') }}" class="btn btn-default pull-left btn-basket-order" method="POST">{{ 'sonata.basket.btn_update_delivery_step'|trans({}, 'SonataBasketBundle') }}&nbsp;<i class="glyphicon glyphicon-arrow-left icon-white"></i></a>
+                <a path-controller="{{ url('sonata_basket_delivery') }}" class="btn btn-default pull-left btn-basket-order" method="POST">{{ 'sonata.basket.link_previous_step'|trans({}, 'SonataBasketBundle') }}&nbsp;<i class="glyphicon glyphicon-arrow-left icon-white"></i></a>
                 {#<button type="submit" class="btn btn-primary pull-right">{{ 'sonata.basket.btn_update_payment_step'|trans({}, 'SonataBasketBundle') }}&nbsp;<i class="glyphicon glyphicon-arrow-right icon-white"></i></button>#}
                 <a path-controller="{{ url('sonata_basket_payment') }}" class="btn btn-primary pull-right btn-basket-order" method="POST">{{ 'sonata.basket.btn_update_payment_step'|trans({}, 'SonataBasketBundle') }}&nbsp;<i class="glyphicon glyphicon-arrow-right icon-white"></i></a>
             </div>
