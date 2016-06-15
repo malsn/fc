@@ -18,7 +18,7 @@ file that was distributed with this source code.
 {# include 'SonataBasketBundle:Basket:stepper.html.twig' with {step: 'delivery'} #}
 
 {% block delivery_step %}
-    <form action="{{ url('sonata_basket_delivery') }}" method="POST" >
+    <form action="{{ url('sonata_basket_delivery') }}" name="sonata_basket_address" method="POST" >
         <div class="row">
             {% block selected_delivery_address %}
                 <div class="col-sm-12">
