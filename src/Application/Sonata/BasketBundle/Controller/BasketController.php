@@ -362,7 +362,9 @@ class BasketController extends Controller
                 // save the basket
                 $this->get('sonata.basket.factory')->save($form->getData());
 
-                return new RedirectResponse($this->generateUrl('sonata_basket_payment_address'));
+                //убираем шаг сохранения платежного адреса
+                /*return new RedirectResponse($this->generateUrl('sonata_basket_payment_address'));*/
+                return new RedirectResponse($this->generateUrl('sonata_basket_payment'));
             }
         }
 
