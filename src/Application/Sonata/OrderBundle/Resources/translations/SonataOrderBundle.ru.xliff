@@ -2,24 +2,6 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
     <file source-language="ru" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="view_all_orders">
-                <source>view_all_orders</source>
-                <target>Смотреть все заказы</target>
-            </trans-unit>
-            <trans-unit id="order_list">
-                <source>order_list</source>
-                <target>Заказы</target>
-            </trans-unit>
-            <trans-unit id="sonata.order.view.done_title">
-                <source>sonata.order.view.done_title</source>
-                <target>Текущие заказы</target>
-            </trans-unit>
-            <trans-unit id="sonata.order.view.done_title">
-                <source>sonata.order.view.done_title</source>
-                <target>Заказы</target>
-            </trans-unit>
-
-
             <!-- Begin - Titles -->
             <trans-unit id="order">
                 <source>order</source>
