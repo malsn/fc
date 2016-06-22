@@ -19,10 +19,23 @@ file that was distributed with this source code.
 
 {% form_theme form 'SonataBasketBundle:Form:label.html.twig' %}
 
-<h2>{% trans from 'SonataBasketBundle' %}sonata.basket.title_name_address_delivery_step_basket{% endtrans %}</h2>
-
 {{ form_start(form, {'attr': {'role': 'form', 'class': 'form-horizontal'}}) }}
     {{ form_errors(form) }}
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>{{ 'sonata.basket.title_name_address_delivery_step_basket'|trans({}, 'SonataBasketBundle') }}</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         {% if form.addresses is defined %}
@@ -78,13 +91,13 @@ file that was distributed with this source code.
                             <h4>{% trans from 'SonataBasketBundle' %}sonata.basket.delivery_create_new_title{% endtrans %}</h4>
                         </div>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body aaa">
                         {{ form_rest(form) }}
                     </div>
                 </div>
             </div>
         {% else %}
-            <div class="col-sm-12">
+            <div class="col-sm-12 fff">
                 {{ form_rest(form) }}
             </div>
         {% endif %}
