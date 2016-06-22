@@ -123,7 +123,7 @@
                 <target>Адрес доставки</target>
             </trans-unit>
             <trans-unit id="sonata.basket.title_name_address_delivery_step_basket">
-                <source>sonata.basket.title_address_delivery_step_basket</source>
+                <source>sonata.basket.title_name_address_delivery_step_basket</source>
                 <target>Имя получателя и адрес доставки</target>
             </trans-unit>
             <trans-unit id="sonata.basket.title_address_billing_step_basket">
