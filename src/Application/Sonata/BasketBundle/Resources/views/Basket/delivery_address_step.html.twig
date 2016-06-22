@@ -31,7 +31,7 @@ file that was distributed with this source code.
                     </div>
                 </div>
                 <div class="panel-body">
-
+                    {{ form_rest(form) }}
                 </div>
             </div>
         </div>
@@ -91,15 +91,15 @@ file that was distributed with this source code.
                             <h4>{% trans from 'SonataBasketBundle' %}sonata.basket.delivery_create_new_title{% endtrans %}</h4>
                         </div>
                     </div>
-                    <div class="panel-body aaa">
+                    <div class="panel-body">
                         {{ form_rest(form) }}
                     </div>
                 </div>
             </div>
         {% else %}
-            <div class="col-sm-12 fff">
+            {#<div class="col-sm-12">
                 {{ form_rest(form) }}
-            </div>
+            </div>#}
         {% endif %}
     </div>
 
