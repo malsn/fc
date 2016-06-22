@@ -256,7 +256,7 @@
             </trans-unit>
             <trans-unit id="header_basket_information">
                 <source>header_basket_information</source>
-                <target>Корзина</target>
+                <target>Заключительная проверка перед заказом</target>
             </trans-unit>
             <trans-unit id="header_basket_positions">
                 <source>header_basket_positions</source>
