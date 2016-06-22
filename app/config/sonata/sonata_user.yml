@@ -30,7 +30,7 @@ sonata_user:
     profile:
         dashboard:
             blocks:
-                - { position: left, type: sonata.block.service.text, settings: { content: "<!--<h2>Добро пожаловать!</h2>-->"} }
+                - { position: left, type: sonata.block.service.text, settings: { content: "<h2>Добро пожаловать!</h2>"} }
                 - { position: left, type: sonata.order.block.recent_orders, settings: { title: Последние заказы, number: 5, mode: public }}
                 - { position: right, type: sonata.timeline.block.timeline, settings: { max_per_page: 15 }}
                 - { position: right, type: sonata.news.block.recent_posts, settings: { title: Последние сообщения, number: 5, mode: public }}
