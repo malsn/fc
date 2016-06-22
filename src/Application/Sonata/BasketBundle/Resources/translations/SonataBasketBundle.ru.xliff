@@ -258,6 +258,10 @@
                 <source>header_basket_information</source>
                 <target>Корзина</target>
             </trans-unit>
+            <trans-unit id="header_basket_positions">
+                <source>header_basket_positions</source>
+                <target>Позиции</target>
+            </trans-unit>
             <trans-unit id="header_basket_price">
                 <source>header_basket_price</source>
                 <target>Цена</target>

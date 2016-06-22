@@ -19,7 +19,7 @@ file that was distributed with this source code.
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title">
-                    {{ 'sonata.basket.title_address_delivery_step_basket'|trans({}, 'SonataBasketBundle') }}
+                    {% trans from 'SonataBasketBundle'%}header_basket_information{% endtrans %}
                 </div>
             </div>
             <div class="panel-body">
@@ -27,7 +27,7 @@ file that was distributed with this source code.
 
                     <thead>
                     <tr>
-                        <th class="col-sm-6" colspan="2">{% trans from 'SonataBasketBundle'%}header_basket_information{% endtrans %}</th>
+                        <th class="col-sm-6" colspan="2">{% trans from 'SonataBasketBundle'%}header_basket_positions{% endtrans %}</th>
                         <th class="col-sm-2">{% trans from 'SonataBasketBundle'%}header_basket_unit_price{% endtrans %}</th>
                         <th class="col-sm-2">{% trans from 'SonataBasketBundle'%}header_basket_quantity{% endtrans %}</th>
                         <th>{% trans from 'SonataBasketBundle'%}header_basket_total_inc{% endtrans %}</th>
