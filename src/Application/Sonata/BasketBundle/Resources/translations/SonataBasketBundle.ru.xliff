@@ -40,7 +40,7 @@
             </trans-unit>
             <trans-unit id="sonata.basket.label_terms_and_condition">
                 <source>sonata.basket.label_terms_and_condition</source>
-                <target>I accept the terms and conditions of use</target>
+                <target>Я соглашаюсь с условиями доставки товара</target>
             </trans-unit>
             <trans-unit id="sonata.basket.link_previous_step">
                 <source>sonata.basket.link_previous_step</source>
@@ -132,27 +132,27 @@
             </trans-unit>
             <trans-unit id="sonata.basket.title_billing">
                 <source>sonata.basket.title_billing</source>
-                <target>Billing</target>
+                <target>Расчет</target>
             </trans-unit>
             <trans-unit id="sonata.basket.title_payment_method">
                 <source>sonata.basket.title_payment_method</source>
-                <target>Способо оплаты</target>
+                <target>Способы оплаты</target>
             </trans-unit>
             <trans-unit id="sonata.basket.title_payment_step_basket">
                 <source>sonata.basket.title_payment_step_basket</source>
-                <target>Your payment</target>
+                <target>Ваш платеж</target>
             </trans-unit>
             <trans-unit id="sonata.basket.total_vat">
                 <source>sonata.basket.total_vat</source>
-                <target>Total VAT</target>
+                <target>Налог</target>
             </trans-unit>
             <trans-unit id="sonata.basket.total_w_vat">
                 <source>sonata.basket.total_w_vat</source>
-                <target>Total incl. VAT</target>
+                <target>Итог с налогом</target>
             </trans-unit>
             <trans-unit id="sonata.basket.total_wo_vat">
                 <source>sonata.basket.total_wo_vat</source>
-                <target>Total excl. VAT</target>
+                <target>Итог без налога</target>
             </trans-unit>
             <trans-unit id="view_basket">
                 <source>view_basket</source>
