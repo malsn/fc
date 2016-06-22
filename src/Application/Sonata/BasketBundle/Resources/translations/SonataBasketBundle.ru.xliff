@@ -148,11 +148,11 @@
             </trans-unit>
             <trans-unit id="sonata.basket.total_w_vat">
                 <source>sonata.basket.total_w_vat</source>
-                <target>Итог с налогом</target>
+                <target>Всего</target>
             </trans-unit>
             <trans-unit id="sonata.basket.total_wo_vat">
                 <source>sonata.basket.total_wo_vat</source>
-                <target>Итог без налога</target>
+                <target>Всего без налога</target>
             </trans-unit>
             <trans-unit id="view_basket">
                 <source>view_basket</source>
@@ -288,7 +288,7 @@
             </trans-unit>
             <trans-unit id="footer_basket_vat">
                 <source>footer_basket_vat</source>
-                <target>Итого налог</target>
+                <target>Налог</target>
             </trans-unit>
             <trans-unit id="footer_basket_total_excl">
                 <source>footer_basket_total_excl</source>

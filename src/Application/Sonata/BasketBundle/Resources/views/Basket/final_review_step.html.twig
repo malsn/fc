@@ -58,10 +58,10 @@ file that was distributed with this source code.
             </tr>
         {% endfor %}
 
-        <tr>
+        {#<tr>
             <th style="text-align: right">{{ 'sonata.basket.total_vat'|trans({}, 'SonataBasketBundle') }}</th>
             <td class="number"><b>{{ basket.getVatAmount()|number_format_currency(basket.currency.label, {}, {}, basket.locale) }}</b></td>
-        </tr>
+        </tr>#}
 
         <tr>
             <th style="text-align: right">{{ 'sonata.basket.total_w_vat'|trans({}, 'SonataBasketBundle') }}</th>
