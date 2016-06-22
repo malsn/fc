@@ -435,6 +435,6 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 /* basket order */
 .well {
     min-height: 70px;
-    padding: 16px 0;
+    padding: 16px;
     margin-bottom: 0;
 }
