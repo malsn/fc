@@ -438,3 +438,9 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     padding: 16px;
     margin-bottom: 0;
 }
+
+.table>thead>tr>th {
+    border-bottom: 0px solid #ddd;
+    background: #FFF;
+    color: #777;
+}
