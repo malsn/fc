@@ -22,7 +22,7 @@ file that was distributed with this source code.
             {% endif %}
         {% endfor %}
 
-        <div class="{% if has_center %}span4 col-lg-4{% else %}span6 col-lg-6{% endif %}">
+        <div class="{% if has_center %}span4 col-lg-4{% else %}span12 col-lg-12{% endif %}">
             {% for block in blocks %}
                 {% if block.position == 'left' %}
                     {{ sonata_block_render({ 'type': block.type, 'settings': block.settings}) }}
@@ -30,6 +30,7 @@ file that was distributed with this source code.
             {% endfor %}
         </div>
 
+        {#
         {% if has_center %}
             <div class="span4 col-lg-4">
                 {% for block in blocks %}
@@ -46,6 +47,6 @@ file that was distributed with this source code.
                     {{ sonata_block_render({ 'type': block.type, 'settings': block.settings}) }}
                 {% endif %}
             {% endfor %}
-        </div>
+        </div>#}
     </div>
 {% endblock %}
