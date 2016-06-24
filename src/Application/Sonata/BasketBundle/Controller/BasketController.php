@@ -158,6 +158,7 @@ class BasketController extends Controller
         $basketRequest = $this->getRequest()->get('sonata_basket_basket');
         $basketElement->setQuantity((int)$basketRequest['basketElements'][$position]['quantity']);
         $totalPrice = $this->get('sonata.basket')->getTotal() + $this->get('sonata.basket')->getVatAmount();
+        $this->get('sonata.basket_element.manager')->save($basketElement);
         $response->setData(
             array(
                 'totalPrice' => sprintf("%01.2f", $totalPrice),

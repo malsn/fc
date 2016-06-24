@@ -59,4 +59,18 @@ class Basket extends BaseBasket
 
         return $element;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getElementByPos($pos)
+    {
+        foreach ($this->basketElements as $basketElement) {
+            if ( $pos == $basketElement->getPosition()){
+                return $basketElement;
+            }
+        }
+
+        return null;
+    }
 }
