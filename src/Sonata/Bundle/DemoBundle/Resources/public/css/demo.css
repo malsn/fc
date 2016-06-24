@@ -440,7 +440,9 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 }
 
 .table>thead>tr>th {
+    vertical-align: top;
     border-bottom: 0px solid #ddd;
     background: #FFF;
     color: #777;
 }
+
