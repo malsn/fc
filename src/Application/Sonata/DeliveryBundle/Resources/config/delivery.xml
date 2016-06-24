@@ -17,8 +17,8 @@
         <service id="application.sonata.delivery.free_courier" class="Application\Sonata\DeliveryBundle\Model\FreeCourierDelivery">
             <tag name="sonata.delivery.method" />
         </service>
-        <service id="application.demo.payment.bitcoin" class="Sonata\Bundle\DemoBundle\Payment\Bitcoi">
-            <tag name="sonata.delivery.method" />
+        <service id="application.demo.payment.bitcoin" class="Sonata\Bundle\DemoBundle\Payment\Bitcoin">
+            <tag name="sonata.payment.method" />
         </service>
     </services>
 </container>
