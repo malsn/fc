@@ -1,7 +1,7 @@
 sonata_payment:
     methods:
         pass: ~
-        bitcoin: application.demo.payment.bitcoin
+        bitcoin: application.demo.payment.bitcoi
     services:
 #        sonata.payment.method.paypal:
 #            name:     Paypal
