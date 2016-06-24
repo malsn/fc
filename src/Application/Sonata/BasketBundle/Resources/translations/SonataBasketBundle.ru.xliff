@@ -268,11 +268,11 @@
             </trans-unit>
             <trans-unit id="header_basket_unit_price">
                 <source>header_basket_unit_price</source>
-                <target>Стоимость за единицу</target>
+                <target>Стоимость, ед</target>
             </trans-unit>
             <trans-unit id="header_basket_quantity">
                 <source>header_basket_quantity</source>
-                <target>Количество</target>
+                <target>Кол-во</target>
             </trans-unit>
             <trans-unit id="header_basket_delete">
                 <source>header_basket_delete</source>
@@ -284,7 +284,7 @@
             </trans-unit>
             <trans-unit id="header_basket_total_inc">
                 <source>header_basket_total_inc</source>
-                <target>Итого с налогом</target>
+                <target>Всего, вкл налог</target>
             </trans-unit>
             <trans-unit id="header_basket_total">
                 <source>header_basket_total</source>
