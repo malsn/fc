@@ -108,7 +108,7 @@ file that was distributed with this source code.
                 {% endblock %}
             </div>
             <div class="col-sm-6">
-                {% block sonata_order_billing %}
+                {# block sonata_order_billing %}
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="panel-title">
@@ -119,7 +119,7 @@ file that was distributed with this source code.
                             {{ sonata_address_render(order.billingAsArray) }}
                         </div>
                     </div>
-                {% endblock %}
+                {% endblock #}
             </div>
         {% endblock %}
     </div>
