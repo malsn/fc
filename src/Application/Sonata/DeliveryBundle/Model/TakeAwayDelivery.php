@@ -30,7 +30,7 @@ class TakeAwayDelivery extends BaseServiceDelivery
      */
     public function isAddressRequired()
     {
-        return false;
+        return true;
     }
 
     /**
