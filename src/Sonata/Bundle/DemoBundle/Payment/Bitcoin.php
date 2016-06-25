@@ -121,4 +121,9 @@ class Bitcoin extends BasePayment
     {
         // TODO: Implement getOrderReference() method.
     }
+
+    public function getName()
+    {
+        return 'Биткоин';
+    }
 }
