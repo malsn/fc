@@ -29,7 +29,7 @@ class FreeCourierDelivery extends BaseServiceDelivery
      *@var bool
      */
     protected $enabled = true; //default is null (null = false)
-    
+
     /**
      * {@inheritdoc}
      */

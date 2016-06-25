@@ -11,6 +11,11 @@ use Sonata\Component\Product\ProductInterface;
 class Bitcoin extends BasePayment
 {
     /**
+     *@var bool
+     */
+    protected $enabled = true; //default is null (null = false)
+    
+    /**
      * {@inheritdoc}
      */
     public function getCode()
