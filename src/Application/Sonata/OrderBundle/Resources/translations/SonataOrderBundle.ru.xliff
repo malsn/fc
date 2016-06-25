@@ -5,7 +5,7 @@
             <!-- Begin - Titles -->
             <trans-unit id="order">
                 <source>order</source>
-                <target>Заказ</target>
+                <target>Заказы</target>
             </trans-unit>
             <trans-unit id="sonata.order.title_order">
                 <source>sonata.order.title_order</source>
@@ -24,7 +24,7 @@
             </trans-unit>
             <trans-unit id="sonata.order.sidemenu.link_oRDER_TO_INVOICE_list">
                 <source>sonata.order.sidemenu.link_oRDER_TO_INVOICE_edit</source>
-                <target>Счет</target>
+                <target>Счета</target>
             </trans-unit>
             <trans-unit id="sonata.order.sidemenu.link_oRDER_TO_INVOICE_generate">
                 <source>sonata.order.sidemenu.link_oRDER_TO_INVOICE_generate</source>

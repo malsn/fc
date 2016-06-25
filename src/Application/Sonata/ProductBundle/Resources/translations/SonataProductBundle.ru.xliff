@@ -67,7 +67,7 @@
             <!-- Begin - Sidemenu translations -->
             <trans-unit id="sidemenu.link_product_edit">
                 <source>sidemenu.link_product_edit</source>
-                <target>Продукт</target>
+                <target>Продукты</target>
             </trans-unit>
             <trans-unit id="sidemenu.link_category_list">
                 <source>sidemenu.link_category_list</source>
