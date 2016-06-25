@@ -415,7 +415,7 @@
 
             <trans-unit id="product.sidemenu.link_product_edit">
                 <source>product.sidemenu.link_product_edit</source>
-                <target>Продукт</target>
+                <target>Продукты</target>
             </trans-unit>
             <trans-unit id="no_product_found">
                 <source>no_product_found</source>
