@@ -6,6 +6,10 @@ sonata_delivery:
         free_courier: application.sonata.delivery.free_courier
 
     services:
+        take_away:
+            name: TakeAways
+            priority: 1
+            code: take_away
         free_address_required:
             name: free_address_required
             priority: 1
