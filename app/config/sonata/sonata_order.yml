@@ -1,5 +1,5 @@
 parameters:
-    sonata.order.admin.order.class: Application\Sonata\OrderBundle\Admin\OrderAdmin
+    sonata.order.admin.order.class: 'Application\Sonata\OrderBundle\Admin\OrderAdmin'
 
 # Enable Doctrine to map the provided entities
 doctrine:
