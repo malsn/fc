@@ -11,18 +11,6 @@ use Sonata\Component\Product\ProductInterface;
 class Bitcoin extends BasePayment
 {
     /**
-     *@var bool
-     */
-    protected $enabled = true; //default is null (null = false)
-
-    public function __construct(/* ... */)
-    {
-        $this->setCode('bitcoin');
-
-        // ...
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function getCode()
