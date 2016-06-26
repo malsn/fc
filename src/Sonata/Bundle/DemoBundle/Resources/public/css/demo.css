@@ -366,7 +366,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 }
 
 ::-webkit-scrollbar-thumb{
-    background: #279c45;
+    background: #0b019a;
     border:1px solid rgba(0,0,0,.2);
     border-radius:5px;
     box-shadow:1px 1px 1px 0 rgba(0,0,0,.2);
@@ -397,8 +397,8 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 .pagination>.active>span:hover,
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
-    background-color: #279c45;
-    border-color: #279c45;
+    background-color: #0b019a;
+    border-color: #0b019a;
 }
 
 .pagination>.disabled>span,
@@ -412,7 +412,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 }
 
 .pagination>li>a, .pagination>li>span {
-    color: #279c45;
+    color: #0b019a;
 }
 
 /* basket */
