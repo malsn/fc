@@ -1,3 +1,5 @@
+parameters:
+    sonata.invoice.admin.invoice.class: 'Application\Sonata\InvoiceBundle\Admin\InvoiceAdmin'
 # Enable Doctrine to map the provided entities
 doctrine:
     orm:
