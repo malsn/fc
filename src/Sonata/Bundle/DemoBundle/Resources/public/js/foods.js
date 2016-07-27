@@ -183,5 +183,6 @@ $(document).ready(function(){
 
     $(".btn-basket-order").on('click',function(){
         basket_order_to_modal($(this));
+        Delivery();
     });
 });
