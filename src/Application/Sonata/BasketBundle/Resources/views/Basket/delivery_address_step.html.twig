@@ -44,8 +44,8 @@ file that was distributed with this source code.
                             onSelect: function(suggestion) {
                                 $("#Item_place_geo_lat").html(suggestion.data.geo_lat);
                                 $("#Item_place_geo_lon").html(suggestion.data.geo_lon);
-                                $("#sonata_basket_address_postcode").html(suggestion.data.postal_code);
-                                $("#sonata_basket_address_city").html(suggestion.data.city);
+                                $("#sonata_basket_address_postcode").val(suggestion.data.postal_code);
+                                $("#sonata_basket_address_city").val(suggestion.data.city);
                             }
                         });
                     </script>
