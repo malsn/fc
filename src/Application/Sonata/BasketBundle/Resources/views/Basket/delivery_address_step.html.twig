@@ -31,28 +31,28 @@ file that was distributed with this source code.
                     </div>
                 </div>
                 <div class="panel-body">
-                    <div class="form-group control-group">
-                        <label for="Item_place" class="col-sm-3 control-label">{{ 'Местонахождение'|trans({}, 'SonataUserBundle') }}</label>
-                        <div class="col-sm-8"><input type="text" id="Item_place"/></div>
-                    </div>
+
+                    {{ form_rest(form) }}
 
                     <script type="text/javascript">
-                        $("#Item_place").suggestions({
+                        $("#sonata_basket_address_address1").suggestions({
                             serviceUrl: "https://suggestions.dadata.ru/suggestions/api/4_1/rs",
                             token: "d12783ba3618826d3096e6ceecf7290c90f56092",
                             type: "ADDRESS",
                             count: 5,
-                            /* Вызывается, когда пользователь выбирает одну из подсказок */
+                            /* Р’С‹Р·С‹РІР°РµС‚СЃСЏ, РєРѕРіРґР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РІС‹Р±РёСЂР°РµС‚ РѕРґРЅСѓ РёР· РїРѕРґСЃРєР°Р·РѕРє */
                             onSelect: function(suggestion) {
                                 $("#Item_place_geo_lat").html(suggestion.data.geo_lat);
                                 $("#Item_place_geo_lon").html(suggestion.data.geo_lon);
+                                $("#sonata_basket_address_postcode").html(suggestion.data.postal_code);
+                                $("#sonata_basket_address_city").html(suggestion.data.city);
                             }
                         });
                     </script>
 
                     <div id="Item_place_geo_lat"></div>
                     <div id="Item_place_geo_lon"></div>
-                    {{ form_rest(form) }}
+
                 </div>
             </div>
         </div>
