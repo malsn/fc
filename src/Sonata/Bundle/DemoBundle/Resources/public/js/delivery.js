@@ -12,7 +12,7 @@ function Delivery() {
 
         var deliveryMap = new ymaps.Map("delivery_map", {
             center: [59.96, 30.36],
-            zoom: 10,
+            zoom: 9,
         },
         {
             'geoObjectDraggable': false
