@@ -60,7 +60,8 @@ $(document).ready(function(){
                     var $alertModal = $('#alert_modal');
                     $alertModal
                         .find('div.modal-body')
-                        .html(response);
+                        .html(response)
+                        .width('100%');
                     $('.btn-basket-order').click(function(){
                         basket_order_to_modal($(this));
                     });
