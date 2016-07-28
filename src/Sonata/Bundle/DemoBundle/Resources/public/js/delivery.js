@@ -20,20 +20,20 @@ function Delivery() {
         ymaps.geoXml.load("kml315.kml")
            .then(function (res) {
 
-                deliveryMap.geoObjects.add(res.geoObjects); // Добавление геообъектов на карту
+                deliveryMap.geoObjects.add(res.geoObjects); // Р”РѕР±Р°РІР»РµРЅРёРµ РіРµРѕРѕР±СЉРµРєС‚РѕРІ РЅР° РєР°СЂС‚Сѓ
 
                 var polys = [];
 
                 res.geoObjects.each(function (obj) {
 
                     //obj.options.setParent(deliveryMap.options);
-                    // obj.setMap(deliveryMap); // этого метода тоже нет
+                    // obj.setMap(deliveryMap); // СЌС‚РѕРіРѕ РјРµС‚РѕРґР° С‚РѕР¶Рµ РЅРµС‚
 
                     if ( obj.properties.get('name') ) {
-                        polys.push(obj); // запихиваем многоугольники в массив
+                        polys.push(obj); // Р·Р°РїРёС…РёРІР°РµРј РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРєРё РІ РјР°СЃСЃРёРІ
                         }
 
-                    if ( obj.properties.get('name') != 'Красная зона' ) {
+                    if ( obj.properties.get('name') != 'РљСЂР°СЃРЅР°СЏ Р·РѕРЅР°' ) {
                             //alert(obj.properties.get('description'));
                             obj.options.set('fill',0);
                             obj.events.add('mouseenter', function (e) {
@@ -55,11 +55,11 @@ function Delivery() {
 
                 place_geo_lat.on('change', function(e){
 
-                    polys.forEach(function (poly) { // перебираем многоугольники
+                    polys.forEach(function (poly) { // РїРµСЂРµР±РёСЂР°РµРј РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРєРё
 
-                        if(poly.geometry.contains(coords)){ //если точка входит в многоугольник
-                            //if ( $("#order_total_sum").val() >= 10000 && poly.properties.get('name') == "Красная зона")
-                            if ( poly.properties.get('name') == "Красная зона")
+                        if(poly.geometry.contains(coords)){ //РµСЃР»Рё С‚РѕС‡РєР° РІС…РѕРґРёС‚ РІ РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРє
+                            //if ( $("#order_total_sum").val() >= 10000 && poly.properties.get('name') == "РљСЂР°СЃРЅР°СЏ Р·РѕРЅР°")
+                            if ( poly.properties.get('name') == "РљСЂР°СЃРЅР°СЏ Р·РѕРЅР°")
                             { cost = 350; }
                             else {	cost = poly.properties.get("Snippet").replace(/\D/g, "");	}
 
@@ -69,7 +69,7 @@ function Delivery() {
                             myCollection.add(new ymaps.Placemark(coords));
                             myCollection.each(function (obj) {
                                 obj.properties.set({
-                                    iconContent: '<div>Стоимость доставки ' + cost + ' рублей</div>'
+                                    iconContent: '<div>РЎС‚РѕРёРјРѕСЃС‚СЊ РґРѕСЃС‚Р°РІРєРё ' + cost + ' СЂСѓР±Р»РµР№</div>'
                                 });
                             });
                         } // contains
@@ -79,8 +79,8 @@ function Delivery() {
 
                 deliveryMap.geoObjects.add(myCollection);
 
-            }, function (error){   // Вызывается в случае неудачной загрузки YMapsML-файла
-                   alert('Ошибка: ' + error);
+            }, function (error){   // Р’С‹Р·С‹РІР°РµС‚СЃСЏ РІ СЃР»СѓС‡Р°Рµ РЅРµСѓРґР°С‡РЅРѕР№ Р·Р°РіСЂСѓР·РєРё YMapsML-С„Р°Р№Р»Р°
+                   alert('РћС€РёР±РєР°: ' + error);
             });
 
         myCollection = new ymaps.GeoObjectCollection({}, {preset: 'twirl#redStretchyIcon'});
