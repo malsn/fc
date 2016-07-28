@@ -52,9 +52,11 @@ function Delivery() {
 
                 var place_geo_lat = $("#Item_place_geo_lat");
                 var place_geo_lon = $("#Item_place_geo_lon");
-                var coords = [place_geo_lat,place_geo_lon];
 
                 place_geo_lat.on('change', function(e){
+
+                    var coords = [place_geo_lat.val(),place_geo_lon.val()];
+                    console.log(coords);
 
                     polys.forEach(function (poly) { // перебираем многоугольники
 
