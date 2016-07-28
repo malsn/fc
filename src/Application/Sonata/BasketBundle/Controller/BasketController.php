@@ -515,7 +515,7 @@ class BasketController extends Controller
     {
         $basket = $this->get('sonata.basket');
 
-        $violations = $this
+        /*$violations = $this
             ->get('validator')
             ->validate($basket, array('elements', 'delivery', 'payment'));
 
@@ -528,7 +528,7 @@ class BasketController extends Controller
             }
 
             return new RedirectResponse($this->generateUrl('sonata_basket_index'));
-        }
+        }*/
 
         if ($this->get('request')->getMethod() == 'POST' ) {
             if ($this->get('request')->get('tac')) {
