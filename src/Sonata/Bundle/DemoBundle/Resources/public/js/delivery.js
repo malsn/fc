@@ -60,7 +60,7 @@ function Delivery() {
 
                         $("#sonata_basket_address_postcode").val(suggestion.data.postal_code);
                         $("#sonata_basket_address_city").val(suggestion.data.city);
-                        $("#sonata_basket_address_countryCode").children.each(function(obj){
+                        $("#sonata_basket_address_countryCode").children().each(function(obj){
                             if (obj.text() == suggestion.data.country) { obj.attr('selected',true);}
                         });
 
