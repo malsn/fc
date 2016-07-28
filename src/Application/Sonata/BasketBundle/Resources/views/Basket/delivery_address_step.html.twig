@@ -31,28 +31,60 @@ file that was distributed with this source code.
                     </div>
                 </div>
                 <div class="panel-body">
-                    <div class="form-group control-group">
-                        <label for="sonata_basket_address_firstname" class="col-sm-3 control-label">{{ 'Имя'|trans({}, 'SonataUserBundle') }}</label>
-                        <div class="col-sm-9">
-                            {{ form_widget(form.firstname, {'attr': {'class':'form-control'}}) }}
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group control-group">
+                                <label for="sonata_basket_address_firstname" class="col-sm-3 control-label">{{ 'Имя'|trans({}, 'SonataUserBundle') }}</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.firstname, {'attr': {'class':'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group control-group">
+                                <label for="sonata_basket_address_lastname" class="col-sm-3 control-label">{{ 'Фамилия'|trans({}, 'SonataUserBundle') }}</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.lastname, {'attr': {'class':'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group control-group">
+                                <label for="sonata_basket_address_phone" class="col-sm-3 control-label">{{ 'Телефон'|trans({}, 'SonataUserBundle') }}</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.phone, {'attr': {'class':'form-control'}}) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group control-group">
+                                <label for="sonata_basket_address_address1" class="col-sm-3 control-label">{{ 'Адрес'|trans({}, 'SonataUserBundle') }}</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.address1, {'attr': {'class':'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group control-group">
+                                <label for="sonata_basket_address_postcode" class="col-sm-3 control-label">{{ 'Индекс'|trans({}, 'SonataUserBundle') }}</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.postcode, {'attr': {'class':'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group control-group">
+                                <label for="sonata_basket_address_city" class="col-sm-3 control-label">{{ 'Город'|trans({}, 'SonataUserBundle') }}</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.city, {'attr': {'class':'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group control-group">
+                                <label for="sonata_basket_address_countryCode" class="col-sm-3 control-label">{{ 'Страна'|trans({}, 'SonataUserBundle') }}</label>
+                                <div class="col-sm-9">
+                                    {{ form_widget(form.countryCode, {'attr': {'class':'form-control'}}) }}
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form-group control-group">
-                        <label for="sonata_basket_address_lastname" class="col-sm-3 control-label">{{ 'Фамилия'|trans({}, 'SonataUserBundle') }}</label>
-                        <div class="col-sm-9">
-                            {{ form_widget(form.lastname, {'attr': {'class':'form-control'}}) }}
-                        </div>
-                    </div>
-
-                    <div class="form-group control-group">
-                        <label for="sonata_basket_address_phone" class="col-sm-3 control-label">{{ 'Телефон'|trans({}, 'SonataUserBundle') }}</label>
-                        <div class="col-sm-9">
-                            {{ form_widget(form.phone, {'attr': {'class':'form-control'}}) }}
-                        </div>
-                    </div>
-
-
                     {{ form_rest(form) }}
                     <div id="delivery_map" style="width:auto;height:500px;"></div>
                 </div>
