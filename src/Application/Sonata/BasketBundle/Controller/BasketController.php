@@ -426,14 +426,14 @@ class BasketController extends Controller
                 $basket->setDeliveryAddress($address);
 
 
-                /* Save Delivery and Payment Methods */
+                /* Save Delivery and Payment Methods
                 $basket->setDeliveryMethodCode('free_address_required');
-                $basket->setPaymentMethodCode('pass');
+                $basket->setPaymentMethodCode('pass');*/
 
                 // save the basket
                 $this->get('sonata.basket.factory')->save($basket);
 
-                return new RedirectResponse($this->generateUrl('sonata_basket_final'));
+                return new RedirectResponse($this->generateUrl('sonata_basket_delivery'));
             }
         }
 
