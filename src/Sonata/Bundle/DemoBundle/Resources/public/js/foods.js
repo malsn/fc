@@ -57,11 +57,11 @@ $(document).ready(function(){
             },
             success: function (response) {
                 if (response !== false) {
+                    $('.modal-dialog').width('90%');
                     var $alertModal = $('#alert_modal');
                     $alertModal
                         .find('div.modal-body')
-                        .html(response)
-                        .width('100%');
+                        .html(response);
                     $('.btn-basket-order').click(function(){
                         basket_order_to_modal($(this));
                     });
