@@ -57,13 +57,12 @@ function Delivery() {
                     count: 5,
                     /* Вызывается, когда пользователь выбирает одну из подсказок */
                     onSelect: function(suggestion) {
-                        var place_geo_lat = $("#Item_place_geo_lat");
-                        var place_geo_lon = $("#Item_place_geo_lon");
 
-                        place_geo_lat.val(suggestion.data.geo_lat);
-                        place_geo_lon.val(suggestion.data.geo_lon);
                         $("#sonata_basket_address_postcode").val(suggestion.data.postal_code);
                         $("#sonata_basket_address_city").val(suggestion.data.city);
+                        $("#sonata_basket_address_countryCode").children.each(function(obj){
+                            if (obj.text() == suggestion.data.country) { obj.attr('selected',true);}
+                        });
 
                         var coords = [suggestion.data.geo_lat,suggestion.data.geo_lon];
                         console.log(coords);
