@@ -17,7 +17,7 @@ function Delivery() {
         {
             'geoObjectDraggable': false
         });
-        ymaps.geoXml.load("kml315.kml")
+        ymaps.geoXml.load("/bundles/sonatademo/js/kml315.kml")
            .then(function (res) {
 
                 deliveryMap.geoObjects.add(res.geoObjects); // Добавление геообъектов на карту
