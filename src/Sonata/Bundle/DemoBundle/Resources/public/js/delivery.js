@@ -79,9 +79,12 @@ function Delivery() {
                                 console.log(coords);
                                 console.log(cost);
 
-                                var obj = myCollection.add(new ymaps.Placemark(coords));
-                                obj.properties.set({
-                                    iconContent: '<div>Стоимость доставки ' + cost + ' рублей</div>'
+                                myCollection.removeAll();
+                                myCollection.add(new ymaps.Placemark(coords));
+                                myCollection.each(function (obj) {
+                                    obj.properties.set({
+                                        iconContent: '<div>' + suggestion.value + '</div><div>Стоимость доставки ' + cost + ' рублей</div>'
+                                    });
                                 });
                             } // contains
                         }); // polys.forEach
