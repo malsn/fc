@@ -427,7 +427,7 @@ class BasketController extends Controller
                 // save the basket
                 $this->get('sonata.basket.factory')->save($basket);
 
-                return new RedirectResponse($this->generateUrl('sonata_basket_delivery'));
+                return new RedirectResponse($this->generateUrl('sonata_basket_final'));
             }
         }
 
