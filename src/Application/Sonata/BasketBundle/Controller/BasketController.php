@@ -424,6 +424,12 @@ class BasketController extends Controller
 
                 $basket->setCustomer($customer);
                 $basket->setDeliveryAddress($address);
+
+
+                /* Save Delivery and Payment Methods */
+                $basket->setDeliveryMethodCode('free_address_required');
+                $basket->setPaymentMethodCode('pass');
+
                 // save the basket
                 $this->get('sonata.basket.factory')->save($basket);
 
@@ -515,7 +521,7 @@ class BasketController extends Controller
     {
         $basket = $this->get('sonata.basket');
 
-        /*$violations = $this
+        $violations = $this
             ->get('validator')
             ->validate($basket, array('elements', 'delivery', 'payment'));
 
@@ -528,7 +534,7 @@ class BasketController extends Controller
             }
 
             return new RedirectResponse($this->generateUrl('sonata_basket_index'));
-        }*/
+        }
 
         if ($this->get('request')->getMethod() == 'POST' ) {
             if ($this->get('request')->get('tac')) {
