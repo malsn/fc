@@ -50,34 +50,45 @@ function Delivery() {
 
                 });
 
-                var place_geo_lat = $("#Item_place_geo_lat");
-                var place_geo_lon = $("#Item_place_geo_lon");
+                $("#sonata_basket_address_address1").suggestions({
+                    serviceUrl: "https://suggestions.dadata.ru/suggestions/api/4_1/rs",
+                    token: "d12783ba3618826d3096e6ceecf7290c90f56092",
+                    type: "ADDRESS",
+                    count: 5,
+                    /* Вызывается, когда пользователь выбирает одну из подсказок */
+                    onSelect: function(suggestion) {
+                        var place_geo_lat = $("#Item_place_geo_lat");
+                        var place_geo_lon = $("#Item_place_geo_lon");
 
-                place_geo_lat.on('change', function(e){
+                        place_geo_lat.val(suggestion.data.geo_lat);
+                        place_geo_lon.val(suggestion.data.geo_lon);
+                        $("#sonata_basket_address_postcode").val(suggestion.data.postal_code);
+                        $("#sonata_basket_address_city").val(suggestion.data.city);
 
-                    var coords = [place_geo_lat.val(),place_geo_lon.val()];
-                    console.log(coords);
+                        var coords = [suggestion.data.geo_lat,suggestion.data.geo_lon];
+                        console.log(coords);
 
-                    polys.forEach(function (poly) { // перебираем многоугольники
+                        polys.forEach(function (poly) { // перебираем многоугольники
 
-                        if(poly.geometry.contains(coords)){ //если точка входит в многоугольник
-                            //if ( $("#order_total_sum").val() >= 10000 && poly.properties.get('name') == "Красная зона")
-                            if ( poly.properties.get('name') == "Красная зона")
-                            { cost = 350; }
-                            else {	cost = poly.properties.get("Snippet").replace(/\D/g, "");	}
+                            if(poly.geometry.contains(coords)){ //если точка входит в многоугольник
+                                //if ( $("#order_total_sum").val() >= 10000 && poly.properties.get('name') == "Красная зона")
+                                if ( poly.properties.get('name') == "Красная зона")
+                                { cost = 350; }
+                                else {	cost = poly.properties.get("Snippet").replace(/\D/g, "");	}
 
-                            console.log(coords);
-                            console.log(cost);
+                                console.log(coords);
+                                console.log(cost);
 
-                            myCollection.add(new ymaps.Placemark(coords));
-                            myCollection.each(function (obj) {
-                                obj.properties.set({
-                                    iconContent: '<div>Стоимость доставки ' + cost + ' рублей</div>'
+                                myCollection.add(new ymaps.Placemark(coords));
+                                myCollection.each(function (obj) {
+                                    obj.properties.set({
+                                        iconContent: '<div>Стоимость доставки ' + cost + ' рублей</div>'
+                                    });
                                 });
-                            });
-                        } // contains
-                    }); // polys.forEach
+                            } // contains
+                        }); // polys.forEach
 
+                    }
                 });
 
                 deliveryMap.geoObjects.add(myCollection);

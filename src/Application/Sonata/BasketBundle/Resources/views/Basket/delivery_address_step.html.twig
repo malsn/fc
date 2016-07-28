@@ -34,22 +34,6 @@ file that was distributed with this source code.
 
                     {{ form_rest(form) }}
 
-                    <script type="text/javascript">
-                        $("#sonata_basket_address_address1").suggestions({
-                            serviceUrl: "https://suggestions.dadata.ru/suggestions/api/4_1/rs",
-                            token: "d12783ba3618826d3096e6ceecf7290c90f56092",
-                            type: "ADDRESS",
-                            count: 5,
-                            /* Вызывается, когда пользователь выбирает одну из подсказок */
-                            onSelect: function(suggestion) {
-                                $("#Item_place_geo_lat").val(suggestion.data.geo_lat);
-                                $("#Item_place_geo_lon").val(suggestion.data.geo_lon);
-                                $("#sonata_basket_address_postcode").val(suggestion.data.postal_code);
-                                $("#sonata_basket_address_city").val(suggestion.data.city);
-                            }
-                        });
-                    </script>
-
                     <div id="delivery_map" style="width:auto;height:500px;"></div>
 
                     <input id="Item_place_geo_lat" type="text"/>
