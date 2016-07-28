@@ -60,8 +60,8 @@ function Delivery() {
 
                         $("#sonata_basket_address_postcode").val(suggestion.data.postal_code);
                         $("#sonata_basket_address_city").val(suggestion.data.city);
-                        $("#sonata_basket_address_countryCode").children().each(function(obj){
-                            if (obj.text() == suggestion.data.country) { obj.attr('selected',true);}
+                        $("#sonata_basket_address_countryCode option").each(function(key,obj){
+                            if ($(obj).text() == suggestion.data.country) { $(obj).attr('selected',true);}
                         });
 
                         var coords = [suggestion.data.geo_lat,suggestion.data.geo_lon];
