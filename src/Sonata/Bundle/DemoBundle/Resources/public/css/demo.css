@@ -448,3 +448,21 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 
 /* color replacement */
 
+.label-success {
+    background-color: #0b019a;
+}
+
+.label-info {
+    background-color: #003399;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #0b019a;
+    border-color: #0b019a;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #0a027d;
+    border-color: #0a027d;
+}
+
