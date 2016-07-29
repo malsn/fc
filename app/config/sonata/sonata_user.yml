@@ -38,7 +38,7 @@ sonata_user:
         menu:
             - { route: 'sonata_user_profile_show', label: 'sonata_profile_title', domain: 'SonataUserBundle'}
             - { route: 'sonata_user_profile_edit', label: 'link_edit_profile', domain: 'SonataUserBundle'}
-            - { route: 'sonata_customer_addresses', label: 'link_list_addresses', domain: 'SonataCustomerBundle'}
+            #- { route: 'sonata_customer_addresses', label: 'link_list_addresses', domain: 'SonataCustomerBundle'}
             - { route: 'sonata_order_index', label: 'order_list', domain: 'SonataOrderBundle'}
         form:
             type:                 sonata_user_profile
