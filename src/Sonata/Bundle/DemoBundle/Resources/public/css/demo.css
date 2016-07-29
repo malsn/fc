@@ -472,3 +472,7 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     border-color: #0a027d;
 }
 
+.panel {
+    margin-top: 8px;
+}
+
