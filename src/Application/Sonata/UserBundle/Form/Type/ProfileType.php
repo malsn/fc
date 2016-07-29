@@ -36,15 +36,15 @@ class ProfileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('gender', 'sonata_user_gender', array(
+            /*->add('gender', 'sonata_user_gender', array(
                 'label'    => 'form.label_gender',
-                'required' => true,
+                'required' => false,
                 'translation_domain' => 'SonataUserBundle',
                 'choices' => array(
                     UserInterface::GENDER_FEMALE => 'gender_female',
                     UserInterface::GENDER_MALE   => 'gender_male',
                 )
-            ))
+            ))*/
             ->add('firstname', null, array(
                 'label'    => 'form.label_firstname',
                 'required' => false
@@ -58,7 +58,7 @@ class ProfileType extends AbstractType
                 'required' => false,
                 'widget'   => 'single_text'
             ))
-            ->add('website', 'url', array(
+            /*->add('website', 'url', array(
                 'label'    => 'form.label_website',
                 'required' => false,
             ))
@@ -70,7 +70,7 @@ class ProfileType extends AbstractType
                 'label'    => 'form.label_locale',
                 'required' => false
             ))
-            /*->add('timezone', 'timezone', array(
+            ->add('timezone', 'timezone', array(
                 'label'    => 'form.label_timezone',
                 'required' => false
             ))*/
