@@ -96,6 +96,6 @@ class ProfileType extends AbstractType
      */
     public function getName()
     {
-        return 'sonata_user_profile';
+        return 'application_sonata_user_profile';
     }
 }
