@@ -466,3 +466,9 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
     border-color: #0a027d;
 }
 
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #0a027d;
+    border-color: #0a027d;
+}
+
