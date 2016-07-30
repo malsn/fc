@@ -10,7 +10,9 @@
 
 namespace Application\Sonata\CustomerBundle;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Application\Sonata\CustomerBundle\DependencyInjection\Compiler\OverrideServiceCompilerPass;
 
 
 /**
@@ -23,6 +25,12 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class ApplicationSonataCustomerBundle extends Bundle
 {
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+
+        $container->addCompilerPass(new OverrideServiceCompilerPass());
+    }
     /**
      * {@inheritdoc}
      */

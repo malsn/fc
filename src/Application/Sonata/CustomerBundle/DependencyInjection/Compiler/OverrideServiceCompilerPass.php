@@ -1,5 +1,5 @@
 <?php
-namespace Acme\DemoBundle\DependencyInjection\Compiler;
+namespace Application\Sonata\CustomerBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
