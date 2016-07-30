@@ -24,9 +24,9 @@ class Pool
     /**
      * add a delivery method into the pool
      *
-     * @param ServiceDeliveryInterface $instance
+     * @param ApplicationServiceDeliveryInterface $instance
      */
-    public function addMethod(ServiceDeliveryInterface $instance)
+    public function addMethod(ApplicationServiceDeliveryInterface $instance)
     {
         $this->methods[$instance->getCode()] = $instance;
     }
@@ -44,7 +44,7 @@ class Pool
      *
      * @param string $code
      *
-     * @return ServiceDeliveryInterface
+     * @return ApplicationServiceDeliveryInterface
      */
     public function getMethod($code)
     {

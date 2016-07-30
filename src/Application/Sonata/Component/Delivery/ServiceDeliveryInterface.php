@@ -12,7 +12,7 @@ namespace Application\Sonata\Component\Delivery;
 
 use Sonata\Component\Basket\BasketInterface;
 
-interface ServiceDeliveryInterface
+interface ApplicationServiceDeliveryInterface
 {
     const STATUS_OPEN       = 1;    // Not processed yet
     const STATUS_PENDING    = 2;    // Packing

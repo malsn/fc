@@ -16,7 +16,7 @@ use Sonata\Component\Basket\BasketInterface;
  * A free delivery method, used this only for testing
  *
  */
-abstract class BaseServiceDelivery implements ServiceDeliveryInterface
+abstract class BaseServiceDelivery implements ApplicationServiceDeliveryInterface
 {
     /**
      * @var float
