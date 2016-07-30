@@ -35,7 +35,7 @@ abstract class BaseBasketFactory implements BasketFactoryInterface, LogoutHandle
     protected $basketManager;
 
     /**
-     * @var \Sonata\Component\Basket\BasketBuilderInterface
+     * @var \Application\Sonata\Component\Basket\BasketBuilderInterface
      */
     protected $basketBuilder;
 
