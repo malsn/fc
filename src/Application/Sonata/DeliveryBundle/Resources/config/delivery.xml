@@ -9,6 +9,10 @@
         <parameter key="application.sonata.delivery.example.class">Application\Sonata\DeliveryBundle\Example</parameter>
     </parameters>
     -->
+    <parameters>
+        <parameter key="sonata.delivery.selector.class">Application\Sonata\Component\Delivery\Selector</parameter>
+        <parameter key="sonata.delivery.pool.class">Application\Sonata\Component\Delivery\Pool</parameter>
+    </parameters>
 
     <services>
         <service id="application.sonata.delivery.take_away" class="Application\Sonata\DeliveryBundle\Model\TakeAwayDelivery">
