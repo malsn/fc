@@ -15,7 +15,7 @@ use Application\Sonata\Component\Delivery\ServiceDeliveryInterface;
 use Sonata\Component\Payment\PaymentInterface;
 use Sonata\Component\Customer\AddressInterface;
 use Sonata\Component\Product\ProductInterface;
-use Sonata\Component\Basket\BasketInterface;
+use Application\Sonata\Component\Basket\BasketInterface;
 use Sonata\Component\Customer\CustomerInterface;
 use Sonata\Component\Product\Pool;
 use Sonata\Component\Currency\CurrencyInterface;
