@@ -15,7 +15,7 @@ sonata_delivery:
             priority: 1
             code: free_address_not_required
 
-    selector: sonata.delivery.selector.default
+    selector: application.sonata.delivery.selector.default
 
 # Enable Doctrine to map the provided entities
 doctrine:
