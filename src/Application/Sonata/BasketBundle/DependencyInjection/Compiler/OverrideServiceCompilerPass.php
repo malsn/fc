@@ -10,5 +10,8 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
     {
         $definition = $container->getDefinition('sonata.basket.builder.standard');
         $definition->setClass('Application\Sonata\Component\Basket\BasketBuilder');
+
+        $definition_basket = $container->getDefinition('sonata.basket');
+        $definition_basket->setClass('Application\Sonata\Component\Basket\Basket');
     }
 }
