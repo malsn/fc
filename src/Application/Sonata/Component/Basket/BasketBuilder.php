@@ -7,6 +7,7 @@ use Sonata\Component\Customer\AddressManagerInterface;
 use Application\Sonata\Component\Delivery\Pool as DeliveryPool;
 use Sonata\Component\Payment\Pool as PaymentPool;
 use Sonata\Component\Basket\BasketBuilderInterface;
+use Sonata\Component\Basket\BasketInterface;
 
 class BasketBuilder implements BasketBuilderInterface
 {
