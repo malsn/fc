@@ -14,7 +14,7 @@ namespace Application\Sonata\Component\Delivery;
  * The pool stored a group of available delivery method
  *
  */
-class Pool
+class Pools
 {
     /**
      * @var array
