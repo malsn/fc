@@ -11,7 +11,7 @@
 
 namespace Application\Sonata\DeliveryBundle\Model;
 
-use Sonata\Component\Delivery\BaseServiceDelivery;
+use Application\Sonata\Component\Delivery\BaseServiceDelivery;
 
 
 /**
