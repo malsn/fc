@@ -10,15 +10,10 @@
     </parameters>
     -->
 
-    <parameters>
-        <parameter key="application.sonata.delivery.selector.class">Application\Sonata\Component\Delivery\Selector</parameter>
-        <parameter key="application.sonata.delivery.pool.class">Application\Sonata\Component\Delivery\Pool</parameter>
-    </parameters>
-
     <services>
-        <service id="application.sonata.delivery.pool" class="%application.sonata.delivery.pool.class%" />
+        <service id="application.sonata.delivery.pool" class="%sonata.delivery.pool.class%" />
 
-        <service id="application.sonata.delivery.selector.default" class="%application.sonata.delivery.selector.class%">
+        <service id="application.sonata.delivery.selector.default" class="%sonata.delivery.selector.class%">
             <argument type="service" id="application.sonata.delivery.pool" />
             <argument type="service" id="sonata.product.pool" />
 
@@ -26,6 +21,17 @@
                 <argument type="service" id="logger" />
             </call>
         </service>
+
+        <service id="sonata.delivery.method.free_address_required" class="Application\Sonata\Component\Delivery\FreeDelivery">
+            <tag name="sonata.delivery.method" />
+            <argument>true</argument>
+        </service>
+
+        <service id="sonata.delivery.method.free_address_not_required" class="Application\Sonata\Component\Delivery\FreeDelivery">
+            <tag name="sonata.delivery.method" />
+            <argument>false</argument>
+        </service>
+
         <service id="application.sonata.delivery.take_away" class="Application\Sonata\DeliveryBundle\Model\TakeAwayDelivery">
             <tag name="sonata.delivery.method" />
         </service>
