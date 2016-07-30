@@ -1,7 +1,4 @@
 sonata_delivery:
-    sonata.delivery.selector.class: Application\Sonata\Component\Delivery\Selector
-    sonata.delivery.pool.class: Application\Sonata\Component\Delivery\Pool
-    
     methods:
         free_address_required: ~
         free_address_not_required: ~
@@ -20,6 +17,9 @@ sonata_delivery:
 
     selector: application.sonata.delivery.selector.default
 
+parameters:
+    sonata.delivery.selector.class: Application\Sonata\Component\Delivery\Selector
+    sonata.delivery.pool.class: Application\Sonata\Component\Delivery\Pool
 # Enable Doctrine to map the provided entities
 doctrine:
     orm:
