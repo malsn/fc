@@ -19,6 +19,7 @@ use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Http\Logout\LogoutHandlerInterface;
 use Sonata\Component\Basket\BasketManagerInterface;
 use Application\Sonata\Component\Basket\BasketFactoryInterface;
+use Sonata\Component\Basket\BasketInterface;
 
 /**
  * Class BaseBasketFactory
@@ -73,7 +74,7 @@ abstract class BaseBasketFactory implements BasketFactoryInterface, LogoutHandle
         $basket = $this->getFromSession($customer);
 
         if (!$basket) {
-            $basket = $this->basketManager->loadBasketPerCustomer($customer);
+            $basket = $this->basketManager->create();
             $basket->setLocale($customer->getLocale());
             $basket->setCurrency($this->currencyDetector->getCurrency());
         }
