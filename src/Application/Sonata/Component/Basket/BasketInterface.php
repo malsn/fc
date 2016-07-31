@@ -18,6 +18,7 @@ use Sonata\Component\Customer\CustomerInterface;
 use Sonata\Component\Product\ProductInterface;
 use Sonata\Component\Product\Pool;
 use Sonata\Component\Currency\CurrencyInterface;
+use Sonata\Component\Basket\BasketElementInterface;
 
 interface BasketInterface
 {
