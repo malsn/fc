@@ -16,5 +16,8 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
 
         $definition_basket_entity_factory = $container->getDefinition('sonata.basket.entity.factory');
         $definition_basket_entity_factory->setClass('Application\Sonata\Component\Basket\BasketEntityFactory');
+
+        $definition_basket_controller = $container->getDefinition('sonata.basket.controller.api.basket');
+        $definition_basket_controller->setClass('Application\Sonata\BasketBundle\Controller\Api\BasketController');
     }
 }
