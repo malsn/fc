@@ -23,7 +23,7 @@ use Application\Sonata\Component\Basket\BasketBuilderInterface;
 use Application\Sonata\Component\Basket\BasketInterface;
 use Application\Sonata\Component\Basket\BasketElementInterface;
 use Application\Sonata\Component\Basket\BasketManagerInterface;
-use Application\Sonata\Component\Basket\BasketElementManagerInterface;
+use Sonata\Component\Basket\BasketElementManagerInterface;
 use Sonata\Component\Product\ProductInterface;
 use Sonata\Component\Product\ProductManagerInterface;
 
