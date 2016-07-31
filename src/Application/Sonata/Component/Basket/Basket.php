@@ -15,11 +15,9 @@ use Application\Sonata\Component\Delivery\ServiceDeliveryInterface;
 use Sonata\Component\Payment\PaymentInterface;
 use Sonata\Component\Customer\AddressInterface;
 use Sonata\Component\Product\ProductInterface;
-use Application\Sonata\Component\Basket\BasketInterface;
 use Sonata\Component\Customer\CustomerInterface;
 use Sonata\Component\Product\Pool;
 use Sonata\Component\Currency\CurrencyInterface;
-use Sonata\Component\Basket\BasketElementInterface;
 
 /**
  * @author Thomas Rabaix <thomas.rabaix@sonata-project.org>
