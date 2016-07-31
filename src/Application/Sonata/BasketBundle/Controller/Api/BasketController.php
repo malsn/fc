@@ -21,9 +21,9 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use Application\Sonata\Component\Basket\BasketBuilderInterface;
 use Application\Sonata\Component\Basket\BasketInterface;
-use Sonata\Component\Basket\BasketElementInterface;
-use Sonata\Component\Basket\BasketManagerInterface;
-use Sonata\Component\Basket\BasketElementManagerInterface;
+use Application\Sonata\Component\Basket\BasketElementInterface;
+use Application\Sonata\Component\Basket\BasketManagerInterface;
+use Application\Sonata\Component\Basket\BasketElementManagerInterface;
 use Sonata\Component\Product\ProductInterface;
 use Sonata\Component\Product\ProductManagerInterface;
 
