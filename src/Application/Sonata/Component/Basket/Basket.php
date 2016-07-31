@@ -19,6 +19,7 @@ use Application\Sonata\Component\Basket\BasketInterface;
 use Sonata\Component\Customer\CustomerInterface;
 use Sonata\Component\Product\Pool;
 use Sonata\Component\Currency\CurrencyInterface;
+use Sonata\Component\Basket\BasketElementInterface;
 
 /**
  * @author Thomas Rabaix <thomas.rabaix@sonata-project.org>
