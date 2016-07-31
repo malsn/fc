@@ -10,13 +10,13 @@
 
 namespace Application\Sonata\Component\Basket;
 
-use Application\Sonata\Component\Basket\BasketFactoryInterface;
+use Sonata\Component\Basket\BasketFactoryInterface;
 use Sonata\Component\Customer\CustomerSelectorInterface;
 
 class Loader
 {
     /**
-     * @var \Application\Sonata\Component\Basket\BasketFactoryInterface
+     * @var \Sonata\Component\Basket\BasketFactoryInterface
      */
     protected $basketFactory;
 
@@ -26,12 +26,12 @@ class Loader
     protected $customerSelector;
 
     /**
-     * @var \Application\Sonata\Component\Basket\BasketInterface
+     * @var \Sonata\Component\Basket\BasketInterface
      */
     protected $basket;
 
     /**
-     * @param \Application\Sonata\Component\Basket\BasketFactoryInterface      $basketFactory
+     * @param \Sonata\Component\Basket\BasketFactoryInterface      $basketFactory
      * @param \Sonata\Component\Customer\CustomerSelectorInterface $customerSelector
      */
     public function __construct(BasketFactoryInterface $basketFactory, CustomerSelectorInterface $customerSelector)
@@ -44,7 +44,7 @@ class Loader
      * Get the basket
      *
      * @throws \Exception|\RuntimeException
-     * @return \Application\Sonata\Component\Basket\BasketInterface
+     * @return \Sonata\Component\Basket\BasketInterface
      */
     public function getBasket()
     {
