@@ -18,17 +18,18 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Http\Logout\LogoutHandlerInterface;
 use Sonata\Component\Basket\BasketManagerInterface;
+use Application\Sonata\Component\Basket\BasketFactoryInterface;
 
 /**
  * Class BaseBasketFactory
  *
- * @package Sonata\Component\Basket
+ * @package Application\Sonata\Component\Basket
  *
  * @author Hugo Briand <briand@ekino.com>
  */
 abstract class BaseBasketFactory implements BasketFactoryInterface, LogoutHandlerInterface
 {
-    const SESSION_BASE_NAME = "sonata/basket/factory/customer/";
+    const SESSION_BASE_NAME = 'sonata/basket/factory/customer/';
 
     /**
      * @var \Sonata\Component\Basket\BasketManagerInterface
@@ -52,7 +53,7 @@ abstract class BaseBasketFactory implements BasketFactoryInterface, LogoutHandle
 
     /**
      * @param BasketManagerInterface    $basketManager
-     * @param BasketBuilderInterface    $basketBuilder
+     * @param \Application\Sonata\Component\Basket\BasketBuilderInterface    $basketBuilder
      * @param CurrencyDetectorInterface $currencyDetector
      * @param SessionInterface          $session
      */
@@ -88,7 +89,7 @@ abstract class BaseBasketFactory implements BasketFactoryInterface, LogoutHandle
      *
      * @param CustomerInterface $customer
      *
-     * @return BasketInterface|null
+     * @return \Application\Sonata\Component\Basket\BasketInterface|null
      */
     protected function getFromSession(CustomerInterface $customer)
     {
@@ -104,7 +105,7 @@ abstract class BaseBasketFactory implements BasketFactoryInterface, LogoutHandle
     /**
      * Stores $basket in session
      *
-     * @param BasketInterface $basket
+     * @param \Application\Sonata\Component\Basket\BasketInterface $basket
      */
     protected function storeInSession(BasketInterface $basket)
     {

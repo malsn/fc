@@ -25,7 +25,7 @@ interface BasketFactoryInterface
     /**
      * Resets the basket
      *
-     * @param BasketInterface $basket
+     * @param \Application\Sonata\Component\Basket\BasketInterface $basket
      * @param bool            $full
      */
     public function reset(BasketInterface $basket, $full = true);

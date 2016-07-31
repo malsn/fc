@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 /**
  * Class BasketEntityFactory
  *
- * @package Sonata\Component\Basket
+ * @package Application\Sonata\Component\Basket
  *
  * @author  Hugo Briand <briand@ekino.com>
  */
@@ -58,7 +58,7 @@ class BasketEntityFactory extends BaseBasketFactory
     }
 
     /**
-     * {@inheritdoc}
+     * @param \Application\Sonata\Component\Basket\BasketInterface $basket
      */
     public function save(BasketInterface $basket)
     {
@@ -69,8 +69,10 @@ class BasketEntityFactory extends BaseBasketFactory
         }
     }
 
+
     /**
-     * {@inheritdoc}
+     * @param \Application\Sonata\Component\Basket\BasketInterface $basket
+     * @param bool|true $full
      */
     public function reset(BasketInterface $basket, $full = true)
     {
