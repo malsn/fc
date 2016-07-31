@@ -6,8 +6,6 @@ use Sonata\Component\Product\Pool;
 use Sonata\Component\Customer\AddressManagerInterface;
 use Application\Sonata\Component\Delivery\Pool as DeliveryPool;
 use Sonata\Component\Payment\Pool as PaymentPool;
-use Application\Sonata\Component\Basket\BasketBuilderInterface;
-use Application\Sonata\Component\Basket\BasketInterface;
 
 class BasketBuilder implements BasketBuilderInterface
 {
@@ -48,7 +46,7 @@ class BasketBuilder implements BasketBuilderInterface
     /**
      * Build a basket
      *
-     * @param \Application\Sonata\Component\Basket\BasketInterface $basket
+     * @param BasketInterface $basket
      *
      * @throws \RuntimeException
      */
