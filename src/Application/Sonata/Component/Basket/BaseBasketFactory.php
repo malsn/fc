@@ -73,7 +73,7 @@ abstract class BaseBasketFactory implements BasketFactoryInterface, LogoutHandle
         $basket = $this->getFromSession($customer);
 
         if (!$basket) {
-            $basket = $this->basketManager->create();
+            $basket = $this->basketManager->loadBasketPerCustomer($customer);
             $basket->setLocale($customer->getLocale());
             $basket->setCurrency($this->currencyDetector->getCurrency());
         }
