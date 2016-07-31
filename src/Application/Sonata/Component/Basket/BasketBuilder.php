@@ -34,7 +34,7 @@ class BasketBuilder implements BasketBuilderInterface
     /**
      * @param \Sonata\Component\Product\Pool                     $productPool
      * @param \Sonata\Component\Customer\AddressManagerInterface $addressManager
-     * @param \Sonata\Component\Delivery\Pool                    $deliveryPool
+     * @param \Application\Sonata\Component\Delivery\Pool                    $deliveryPool
      * @param \Sonata\Component\Payment\Pool                     $paymentPool
      */
     public function __construct(Pool $productPool, AddressManagerInterface $addressManager, DeliveryPool $deliveryPool, PaymentPool $paymentPool)
@@ -48,7 +48,7 @@ class BasketBuilder implements BasketBuilderInterface
     /**
      * Build a basket
      *
-     * @param \Sonata\Component\Basket\BasketInterface $basket
+     * @param \Application\Sonata\Component\Basket\BasketInterface $basket
      *
      * @throws \RuntimeException
      */
