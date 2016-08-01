@@ -46,11 +46,11 @@ class BasketBuilder implements BasketBuilderInterface
     /**
      * Build a basket
      *
-     * @param \Application\Sonata\BasketBundle\Entity\Basket $basket
+     * @param BasketInterface $basket
      *
      * @throws \RuntimeException
      */
-    public function build(Basket $basket)
+    public function build(BasketInterface $basket)
     {
         $basket->setProductPool($this->productPool);
 

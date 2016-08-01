@@ -7,7 +7,7 @@ interface BasketBuilderInterface
     /**
      * Build a basket
      *
-     * @param \Application\Sonata\BasketBundle\Entity\Basket $basket
+     * @param BasketInterface $basket
      */
-    public function build(Basket $basket);
+    public function build(BasketInterface $basket);
 }
