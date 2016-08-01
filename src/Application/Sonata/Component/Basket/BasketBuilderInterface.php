@@ -7,7 +7,7 @@ interface BasketBuilderInterface
     /**
      * Build a basket
      *
-     * @param BasketInterface $basket
+     * @param Basket $basket
      */
-    public function build(BasketInterface $basket);
+    public function build(Basket $basket);
 }

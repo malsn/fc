@@ -50,7 +50,7 @@ class BasketBuilder implements BasketBuilderInterface
      *
      * @throws \RuntimeException
      */
-    public function build(BasketInterface $basket)
+    public function build(Basket $basket)
     {
         $basket->setProductPool($this->productPool);
 
