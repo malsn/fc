@@ -21,7 +21,7 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
         $definition_basket_loader->setClass('Application\Sonata\Component\Basket\Loader');
 
         $definition_basket_manager = $container->getDefinition('sonata.basket.manager');
-        $definition_basket_manager->setClass('Application\Sonata\Component\Basket\BasketManagerInterface');
+        $definition_basket_manager->setClass('Application\Sonata\Component\Basket\BasketManager');
 
         //$definition_basket_element_manager = $container->getDefinition('sonata.basket_element.manager');
         //$definition_basket_element_manager->setClass('Application\Sonata\Component\Basket\BasketElementManager');
