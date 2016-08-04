@@ -29,6 +29,11 @@ class Address extends BaseAddress
     protected $id;
 
     /**
+     * @var float $delivery_cost
+     */
+    protected $delivery_cost;
+
+    /**
      * Get id
      *
      * @return integer $id
@@ -36,5 +41,21 @@ class Address extends BaseAddress
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return float
+     */
+    public function getDeliveryCost()
+    {
+        return $this->delivery_cost;
+    }
+
+    /**
+     * @param float $delivery_cost
+     */
+    public function setDeliveryCost($delivery_cost)
+    {
+        $this->delivery_cost = $delivery_cost;
     }
 }

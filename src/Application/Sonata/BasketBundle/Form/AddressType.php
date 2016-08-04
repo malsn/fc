@@ -102,6 +102,7 @@ class AddressType extends AbstractType
             ->add('postcode', null, array('required' => !count($addresses)))
             ->add('city', null, array('required' => !count($addresses)))
             ->add('phone')
+            ->add('delivery_cost', 'hidden');
         ;
 
         $countries = $this->getBasketDeliveryCountries();
