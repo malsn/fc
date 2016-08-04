@@ -8,7 +8,7 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        $definition = $container->getDefinition('sonata.basket.builder.standard');
+        /*$definition = $container->getDefinition('sonata.basket.builder.standard');
         $definition->setClass('Application\Sonata\Component\Basket\BasketBuilder');
 
         $definition_basket = $container->getDefinition('sonata.basket');
@@ -30,7 +30,7 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
         $definition_basket_entity_factory->setClass('Application\Sonata\Component\Basket\BasketEntityFactory');
 
         $definition_basket_session_factory = $container->getDefinition('sonata.basket.session.factory');
-        $definition_basket_session_factory->setClass('Application\Sonata\Component\Basket\BasketSessionFactory');
+        $definition_basket_session_factory->setClass('Application\Sonata\Component\Basket\BasketSessionFactory');*/
 
 
     }

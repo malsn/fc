@@ -23,13 +23,19 @@ use Sonata\Component\Delivery\BaseServiceDelivery;
  *
  * @author Hugo Briand <briand@ekino.com>
  */
-class FreeCourierDelivery extends BaseServiceDelivery
+class ThirdClassDelivery extends BaseServiceDelivery
 {
     /**
      *@var bool
      */
     protected $enabled = true; //default is null (null = false)
 
+    /**
+     *
+     */
+    public function __construct(){
+        $this->setPrice(5000);
+    }
     /**
      * {@inheritdoc}
      */
@@ -43,11 +49,11 @@ class FreeCourierDelivery extends BaseServiceDelivery
      */
     public function getCode()
     {
-        return 'free_courier';
+        return 'third_class_delivery';
     }
 
     public function getName()
     {
-        return 'Бесплатная курьерская доставка';
+        return 'Third Class Delivery';
     }
 }

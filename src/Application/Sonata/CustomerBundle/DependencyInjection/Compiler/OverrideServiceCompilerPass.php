@@ -8,7 +8,7 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        $definition = $container->getDefinition('sonata.customer.twig.address');
-        $definition->setClass('Application\Sonata\CustomerBundle\Twig\Extension\AddressExtension');
+        /*$definition = $container->getDefinition('sonata.customer.twig.address');
+        $definition->setClass('Application\Sonata\CustomerBundle\Twig\Extension\AddressExtension');*/
     }
 }

@@ -15,11 +15,11 @@ sonata_delivery:
             priority: 1
             code: free_address_not_required
 
-    selector: application.sonata.delivery.selector.default
+    selector: sonata.delivery.selector.default
 
 parameters:
-    sonata.delivery.selector.class: Application\Sonata\Component\Delivery\Selector
-    sonata.delivery.pool.class: Application\Sonata\Component\Delivery\Pool
+    sonata.delivery.selector.class: Sonata\Component\Delivery\Selector
+    sonata.delivery.pool.class: Sonata\Component\Delivery\Pool
 # Enable Doctrine to map the provided entities
 doctrine:
     orm:
