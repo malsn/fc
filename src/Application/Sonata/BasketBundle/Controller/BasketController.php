@@ -427,7 +427,7 @@ class BasketController extends Controller
 
 
                 /* Save Delivery and Payment Methods */
-                $basket->setDeliveryMethodCode('free_address_required');
+                $basket->setDeliveryMethodCode('first_class_delivery');
                 $basket->setPaymentMethodCode('pass');
 
                 $basket->setBillingAddressId($basket->getDeliveryAddressId());
