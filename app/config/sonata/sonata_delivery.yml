@@ -2,8 +2,12 @@ sonata_delivery:
     methods:
         free_address_required: ~
         free_address_not_required: ~
-        take_away: application.sonata.delivery.take_away
-        free_courier: application.sonata.delivery.free_courier
+        #take_away: application.sonata.delivery.take_away
+        #free_courier: application.sonata.delivery.free_courier
+        free_zero_delivery: application.sonata.delivery.free_zero_delivery
+        first_class_delivery: application.sonata.delivery.first_class_delivery
+        second_class_delivery: application.sonata.delivery.second_class_delivery
+        third_class_delivery: application.sonata.delivery.third_class_delivery
 
     services:
         free_address_required:
