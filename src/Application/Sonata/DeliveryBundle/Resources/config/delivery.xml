@@ -23,14 +23,14 @@
         <service id="application.sonata.delivery.free_zero_delivery" class="Application\Sonata\DeliveryBundle\Model\FreeZeroDelivery">
             <tag name="sonata.delivery.method" />
         </service>
-        <service id="application.sonata.delivery.take_away" class="Application\Sonata\DeliveryBundle\Model\TakeAwayDelivery">
+        <!--<service id="application.sonata.delivery.take_away" class="Application\Sonata\DeliveryBundle\Model\TakeAwayDelivery">
             <tag name="sonata.delivery.method" />
         </service>
-        <!--<service id="application.sonata.delivery.free_courier" class="Application\Sonata\DeliveryBundle\Model\FreeCourierDelivery">
+        <service id="application.sonata.delivery.free_courier" class="Application\Sonata\DeliveryBundle\Model\FreeCourierDelivery">
             <tag name="sonata.delivery.method" />
-        </service>
+        </service>-->
         <service id="application.demo.payment.bitcoin" class="Sonata\Bundle\DemoBundle\Payment\Bitcoin">
             <tag name="sonata.payment.method" />
-        </service>-->
+        </service>
     </services>
 </container>
