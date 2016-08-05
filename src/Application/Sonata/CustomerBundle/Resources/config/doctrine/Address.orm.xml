@@ -17,7 +17,7 @@
             <generator strategy="AUTO"/>
         </id>
 
-        <field name="delivery_cost" type="float" column="delivery_cost" nullable="false" />
+        <field name="delivery_cost" type="float" column="delivery_cost" nullable="true" />
 
     </entity>
 </doctrine-mapping>
