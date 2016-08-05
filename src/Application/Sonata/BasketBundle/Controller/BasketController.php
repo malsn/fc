@@ -13,6 +13,7 @@ namespace Application\Sonata\BasketBundle\Controller;
 
 use Sonata\Component\Delivery\UndeliverableCountryException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\DomCrawler\Form;
 use Symfony\Component\Form\Extension\Validator\ViolationMapper\ViolationMapper;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -427,9 +428,27 @@ class BasketController extends Controller
 
 
                 /* Save Delivery and Payment Methods */
-                $basket->setDeliveryMethodCode('first_class_delivery');
+                try{
+                    switch((int)$form->get('delivery_cost')->getData()){
+                        case 0:
+                            $basket->setDeliveryMethodCode('free_zero_delivery');
+                            break;
+                        case 350:
+                            $basket->setDeliveryMethodCode('first_class_delivery');
+                            break;
+                        case 2500:
+                            $basket->setDeliveryMethodCode('second_class_delivery');
+                            break;
+                        case 5000:
+                            $basket->setDeliveryMethodCode('third_class_delivery');
+                            break;
+                        default:
+                            $basket->setDeliveryMethodCode('free_zero_delivery');
+                    }
+                } catch (Exception $e) {
+                    $basket->setDeliveryMethodCode('free_zero_delivery');
+                }
                 $basket->setPaymentMethodCode('pass');
-
                 $basket->setBillingAddressId($basket->getDeliveryAddressId());
 
                 // save the basket

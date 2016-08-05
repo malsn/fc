@@ -16,6 +16,7 @@
         </service>
         <service id="application.sonata.delivery.second_class_delivery" class="Application\Sonata\DeliveryBundle\Model\SecondClassDelivery">
             <tag name="sonata.delivery.method" />
+            <argument type="string" id="sonata_deliveries."
         </service>
         <service id="application.sonata.delivery.first_class_delivery" class="Application\Sonata\DeliveryBundle\Model\FirstClassDelivery">
             <tag name="sonata.delivery.method" />

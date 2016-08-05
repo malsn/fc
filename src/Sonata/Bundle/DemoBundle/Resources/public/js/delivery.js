@@ -77,6 +77,7 @@ function Delivery() {
 
                                 console.log(coords);
                                 console.log(cost);
+                                $("#sonata_basket_address_delivery_cost").val(cost);
 
                                 myCollection.removeAll();
                                 myCollection.add(new ymaps.Placemark(coords));
