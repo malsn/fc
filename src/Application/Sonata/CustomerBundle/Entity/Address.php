@@ -31,7 +31,7 @@ class Address extends BaseAddress
     /**
      * @var float $delivery_cost
      */
-    protected $delivery_cost;
+    protected $deliveryCost;
 
     /**
      * Get id
@@ -48,14 +48,14 @@ class Address extends BaseAddress
      */
     public function getDeliveryCost()
     {
-        return $this->delivery_cost;
+        return $this->deliveryCost;
     }
 
     /**
      * @param float $delivery_cost
      */
-    public function setDeliveryCost($delivery_cost)
+    public function setDeliveryCost($deliveryCost)
     {
-        $this->delivery_cost = $delivery_cost;
+        $this->deliveryCost = $deliveryCost;
     }
 }
