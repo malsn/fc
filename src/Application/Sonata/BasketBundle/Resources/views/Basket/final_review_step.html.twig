@@ -168,9 +168,9 @@ file that was distributed with this source code.
         </label>
 
         <div>
-            <a path-controller="{{ url('sonata_basket_delivery') }}" class="btn btn-primary pull-right btn-basket-order" method="POST">{{ 'sonata.basket.btn_update_delivery_step'|trans({}, 'SonataBasketBundle') }}&nbsp;<i class="glyphicon glyphicon-arrow-left icon-white"></i></a>
             {#<input type="submit" value="{{ 'sonata.basket.label_process_to_payment'|trans({}, 'SonataBasketBundle') }}" class="btn btn-primary" />#}
             <a path-controller="{{ url('sonata_basket_final') }}" class="btn btn-primary pull-right btn-basket-order" method="POST">{{ 'sonata.basket.label_process_to_payment'|trans({}, 'SonataBasketBundle') }}&nbsp;<i class="glyphicon glyphicon-arrow-right icon-white"></i></a>
+            <a path-controller="{{ url('sonata_basket_delivery_address') }}" class="btn btn-primary pull-right btn-basket-order" method="POST">{{ 'sonata.basket.link_previous_step'|trans({}, 'SonataBasketBundle') }}&nbsp;<i class="glyphicon glyphicon-arrow-left icon-white"></i></a>
         </div>
     </div>
 </form>
