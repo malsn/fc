@@ -15,6 +15,7 @@ use Doctrine\ORM\EntityNotFoundException;
 use Sonata\Component\Payment\InvalidTransactionException;
 use Sonata\Component\Payment\PaymentHandlerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\BrowserKit\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
@@ -108,7 +109,8 @@ class PaymentController extends Controller
         $this->getBasketFactory()->reset($basket);
 
         // the payment must handle everything when calling the bank
-        return $payment->sendbank($order);
+        //return $payment->sendbank($order);
+        return new Response("A-OK");
     }
 
     /**
