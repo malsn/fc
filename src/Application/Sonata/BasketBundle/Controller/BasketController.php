@@ -448,7 +448,7 @@ class BasketController extends Controller
                 } catch (Exception $e) {
                     $basket->setDeliveryMethodCode('free_zero_delivery');
                 }
-                $basket->setPaymentMethodCode('pass');
+                $basket->setPaymentMethodCode('uniteller');
                 $basket->setBillingAddressId($basket->getDeliveryAddressId());
 
                 // save the basket

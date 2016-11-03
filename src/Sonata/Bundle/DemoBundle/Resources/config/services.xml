@@ -36,6 +36,10 @@
             <argument type="service" id="session"></argument>
         </service>
 
+        <service id="application.demo.payment.uniteller" class="Sonata\Bundle\DemoBundle\Payment\Uniteller">
+            <tag name="sonata.payment.method" />
+        </service>
+
     </services>
 
 </container>
