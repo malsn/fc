@@ -11,6 +11,7 @@
 
 namespace Application\Sonata\PaymentBundle\Controller;
 
+use Buzz\Message\Response;
 use Doctrine\ORM\EntityNotFoundException;
 use Sonata\Component\Payment\InvalidTransactionException;
 use Sonata\Component\Payment\PaymentHandlerInterface;
@@ -79,7 +80,8 @@ class PaymentController extends Controller
         $basket = $this->getBasket();
 
         if ($this->get('request')->getMethod() !== 'POST') {
-            return $this->redirect($this->generateUrl('sonata_basket_index'));
+            //return $this->redirect($this->generateUrl('sonata_basket_index'));
+            return new Response("method not POST");
         }
 
         if (!$basket->isValid()) {
