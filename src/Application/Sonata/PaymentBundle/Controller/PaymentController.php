@@ -90,7 +90,8 @@ class PaymentController extends Controller
                 $this->container->get('translator')->trans('basket_not_valid', array(), 'SonataPaymentBundle')
             );
 
-            return $this->redirect($this->generateUrl('sonata_basket_index'));
+            //return $this->redirect($this->generateUrl('sonata_basket_index'));
+            return new Response("basket is not valid");
         }
 
         $payment = $basket->getPaymentMethod();
@@ -102,7 +103,8 @@ class PaymentController extends Controller
                 $this->container->get('translator')->trans('basket_not_valid_with_current_payment_method', array(), 'SonataPaymentBundle')
             );
 
-            return $this->redirect($this->generateUrl('sonata_basket_index'));
+           // return $this->redirect($this->generateUrl('sonata_basket_index'));
+            return new Response("payment method is not valid");
         }
 
         // transform the basket into order
