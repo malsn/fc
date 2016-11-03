@@ -39,7 +39,7 @@ class Uniteller extends BasePayment
     public function sendbank(OrderInterface $order)
     {
         // TODO: Implement sendbank() method.
-        return new Response('Uniteller sendbank method');
+        //return new Response('Uniteller sendbank method');
     }
 
     /**
