@@ -97,7 +97,6 @@ class Bitcoin extends BasePayment
     public function isBasketValid(BasketInterface $basket)
     {
         // TODO: Implement isBasketValid() method.
-        return true;
     }
 
     /**
