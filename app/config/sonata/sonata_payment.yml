@@ -2,6 +2,7 @@ sonata_payment:
     methods:
         pass: ~
         bitcoin: application.demo.payment.bitcoin
+        uniteller: application.demo.payment.uniteller
     services:
 #        sonata.payment.method.paypal:
 #            name:     Paypal
