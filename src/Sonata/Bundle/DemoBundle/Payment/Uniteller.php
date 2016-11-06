@@ -82,12 +82,15 @@ class Uniteller extends BasePayment
         $form_request->setFields($params);
         $response = $this->browser->post(
             $this->getOption('payment_url'),
-            ['Content-Type'=>'application/x-www-form-urlencoded'],
+            [
+                'Content-Type'=>'application/x-www-form-urlencoded',
+                ''
+            ],
             $form_request->getContent()
             );
         //$routeName = $response->getContent() == 'ok' ? 'url_return_ok' : 'url_return_ko';
 
-        return new Response('<iframe style="width:400px; height: 400px;">'.$response->getContent().'</iframe>');
+        return new Response('<iframe style="width:400px; height: 400px;" name="pay_iframe">'.$response->getContent().'</iframe>');
     }
 
     /**
