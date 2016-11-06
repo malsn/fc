@@ -80,7 +80,7 @@ class Uniteller extends BasePayment
         // call the callback handler ...
         $form_request = new \Buzz\Message\Form\FormRequest;
         $form_request->setFields($params);
-        return new Response('<iframe style="width:400px; height: 400px;" src="'.$this->getOption('payment_url').'?'.$form_request->getContent().'"></iframe>');
+        return new Response('<iframe style="width:100%; height: 400px;" src="'.$this->getOption('payment_url').'?'.$form_request->getContent().'" data="'.$this->getOption('Uniteller_Point_ID').'"></iframe>');
     }
 
     /**
