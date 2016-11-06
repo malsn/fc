@@ -74,7 +74,7 @@ class Uniteller extends BasePayment
             'Shop_IDP' => $this->getOption('Uniteller_Point_ID'),
             'Order_IDP' => $order->getId(),
             'Subtotal_P' => sprintf('%0.2f', $order->getTotalInc()),
-            'Signature' => strtoupper(md5(md5($this->getOption('Uniteller_Point_ID')).'&'.md5($order->getId()).'&'.md5($order->getTotalInc()).'&'.md5('').'&'.md5('').'&'.md5(300).'&'.md5('').'&'.md5('').'&'.md5('').'&'.md5('').'&'.md5($this->getOption('password')))),
+            'Signature' => strtoupper(md5(md5($this->getOption('Uniteller_Point_ID')).'&'.md5($order->getId()).'&'.md5(sprintf('%0.2f', $order->getTotalInc())).'&'.md5('').'&'.md5('').'&'.md5(300).'&'.md5('').'&'.md5('').'&'.md5('').'&'.md5('').'&'.md5($this->getOption('password')))),
             'Language' => 'ru',
             'Email' => $order->getCustomer()->getEmail(),
             'URL_RETURN_OK' => 'http://foodcityspb.ru'.$this->router->generate($this->getOption('success_url')),
