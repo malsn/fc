@@ -38,6 +38,10 @@
 
         <service id="application.demo.payment.uniteller" class="Sonata\Bundle\DemoBundle\Payment\Uniteller">
             <tag name="sonata.payment.method" />
+            <argument type="service" id="sonata.payment.browser.curl"/>
+            <argument type="service" id="sonata.payment.transformer.basket" />
+            <argument type="service" id="sonata.payment.transformer.order" />
+            <argument>%uniteller_payment%</argument>
         </service>
 
     </services>
