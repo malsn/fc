@@ -80,17 +80,7 @@ class Uniteller extends BasePayment
         // call the callback handler ...
         $form_request = new \Buzz\Message\Form\FormRequest;
         $form_request->setFields($params);
-        $response = $this->browser->post(
-            $this->getOption('payment_url'),
-            [
-                'Content-Type'=>'application/x-www-form-urlencoded',
-                ''
-            ],
-            $form_request->getContent()
-            );
-        //$routeName = $response->getContent() == 'ok' ? 'url_return_ok' : 'url_return_ko';
-
-        return new Response('<iframe style="width:400px; height: 400px;" name="pay_iframe">'.$response->getContent().'</iframe>');
+        return new Response('<iframe style="width:400px; height: 400px;" src="'.$this->getOption('payment_url').'?'.$form_request->getContent().'"></iframe>');
     }
 
     /**
