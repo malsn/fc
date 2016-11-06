@@ -90,7 +90,7 @@ class Uniteller extends BasePayment
             );
         //$routeName = $response->getContent() == 'ok' ? 'url_return_ok' : 'url_return_ko';
 
-        return new Response($response->getContent());
+        return new Response('<div style="width:400px; height: 400px;" name="pay_iframe">'.$response->getContent().'</div>');
     }
 
     /**
