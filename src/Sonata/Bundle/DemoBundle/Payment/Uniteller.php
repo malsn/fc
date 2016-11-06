@@ -77,8 +77,8 @@ class Uniteller extends BasePayment
             'Signature' => strtoupper(md5(md5($this->getOption('Uniteller_Point_ID')).'&'.md5($order->getId()).'&'.md5($order->getTotalInc()).'&'.md5('').'&'.md5('').'&'.md5(300).'&'.md5('').'&'.md5('').'&'.md5('').'&'.md5('').'&'.md5($this->getOption('password')))),
             'Language' => 'ru',
             'Email' => $order->getCustomer()->getEmail(),
-            'URL_RETURN_OK' => $this->router->generate($this->getOption('success_url')),
-            'URL_RETURN_NO' => $this->router->generate($this->getOption('decline_url')),
+            'URL_RETURN_OK' => 'http://foodcityspb.ru'.$this->router->generate($this->getOption('success_url')),
+            'URL_RETURN_NO' => 'http://foodcityspb.ru'.$this->router->generate($this->getOption('decline_url')),
             'Lifetime' => 300,
         );
 
