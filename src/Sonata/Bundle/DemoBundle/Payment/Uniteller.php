@@ -15,6 +15,10 @@ use Buzz\Browser;
 class Uniteller extends BasePayment
 {
     /**
+     * @var RouterInterface
+     */
+    protected $router;
+    /**
      * @var Browser
      */
     protected $browser;
@@ -26,7 +30,7 @@ class Uniteller extends BasePayment
      * @param BaseTransformer $order_transformer
      * @param array $options
      */
-    public function __construct(Browser $browser = null, BaseTransformer $basket_transformer, BaseTransformer $order_transformer, array $options)
+    public function __construct(RouterInterface $router, Browser $browser = null, BaseTransformer $basket_transformer, BaseTransformer $order_transformer, array $options)
     {
         $this->setCode('uniteller');
         $this->setEnabled(true);
@@ -35,6 +39,7 @@ class Uniteller extends BasePayment
         $this->addTransformer('order', $order_transformer);
         $this->setOptions($options);
 
+        $this->router = $router;
         $this->browser = $browser;
     }
     /**
@@ -72,15 +77,15 @@ class Uniteller extends BasePayment
             'Signature' => strtoupper(md5(md5($this->getOption('Uniteller_Point_ID')).'&'.md5($order->getId()).'&'.md5($order->getTotalInc()).'&'.md5('').'&'.md5('').'&'.md5(300).'&'.md5('').'&'.md5('').'&'.md5('').'&'.md5('').'&'.md5($this->getOption('password')))),
             'Language' => 'ru',
             'Email' => $order->getCustomer()->getEmail(),
-            'URL_RETURN_OK' => $this->getOption('success_url'),
-            'URL_RETURN_NO' => $this->getOption('decline_url'),
+            'URL_RETURN_OK' => $this->router->generate($this->getOption('success_url')),
+            'URL_RETURN_NO' => $this->router->generate($this->getOption('decline_url')),
             'Lifetime' => 300,
         );
 
         // call the callback handler ...
         $form_request = new \Buzz\Message\Form\FormRequest;
         $form_request->setFields($params);
-        return new Response('<iframe style="width:100%; height: 400px;" src="'.$this->getOption('payment_url').'?'.$form_request->getContent().'" data="'.$this->getOption('Uniteller_Point_ID').'"></iframe>');
+        return new Response('<iframe style="width:100%; height: 400px;" src="'.$this->getOption('payment_url').'?'.$form_request->getContent().'"></iframe>');
     }
 
     /**
